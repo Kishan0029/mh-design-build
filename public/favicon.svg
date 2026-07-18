@@ -1,11 +1,11 @@
-<svg viewBox="0 0 186 186" fill="none" strokeWidth="16" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    path { stroke: #121212; }
-    @media (prefers-color-scheme: dark) {
-      path { stroke: #F2EBE5; }
-    }
-  </style>
-  <path d="M 12,143 L 12,43 L 56,128 L 100,43 L 100,143" />
-  <path d="M 120,143 L 120,88 L 180,88" />
-  <path d="M 174,143 L 174,43" />
+<svg viewBox="0 0 240 240" fill="none" strokeWidth="16" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded black background -->
+  <rect width="240" height="240" rx="50" fill="#0A0A0A" />
+  
+  <!-- Centered white logo -->
+  <g transform="translate(27, 27)">
+    <path d="M 12,143 L 12,43 L 56,128 L 100,43 L 100,143" stroke="#F2EBE5" />
+    <path d="M 120,143 L 120,88 L 180,88" stroke="#F2EBE5" />
+    <path d="M 174,143 L 174,43" stroke="#F2EBE5" />
+  </g>
 </svg>
