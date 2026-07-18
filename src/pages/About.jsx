@@ -6,6 +6,7 @@ import { ParallaxImage } from '../components/ParallaxImage';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Search, PenTool, Hammer, Home as HomeIcon } from 'lucide-react';
+import MagneticButton from '../components/MagneticButton';
 
 const processIcons = [Search, PenTool, Hammer, HomeIcon];
 
@@ -52,7 +53,7 @@ const About = () => {
           <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
             <div className="w-full md:w-5/12">
               <FadeUp delay={1} className="relative aspect-[3/4] w-full overflow-hidden">
-                <ParallaxImage src={about.founder.image} alt={about.founder.name} className="w-full h-full absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700" />
+                <ParallaxImage src={about.founder.image} alt={about.founder.name} className="w-full h-full absolute inset-0 grayscale hover:grayscale-0 transition-all duration-500" />
               </FadeUp>
             </div>
             <div className="w-full md:w-7/12 flex flex-col items-start">
@@ -65,6 +66,32 @@ const About = () => {
                 </p>
               </FadeUp>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2.75 Leadership Section */}
+      <section className="py-24 md:py-32 px-4 border-t border-black/10">
+        <div className="container mx-auto">
+          <FadeUp>
+            <span className="text-sm uppercase tracking-widest text-mh-gold mb-12 block">Leadership</span>
+          </FadeUp>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {about.team.map((member, index) => (
+              <FadeUp key={index} delay={index * 2} className="flex flex-col group cursor-pointer" data-cursor="view">
+                <div className="relative aspect-[3/4] w-full overflow-hidden mb-6">
+                  <ParallaxImage 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out" 
+                  />
+                  {/* Subtle overlay for better text contrast if we had any, but here just for premium feel */}
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                </div>
+                <h3 className="text-xl font-serif mb-1">{member.name}</h3>
+                <span className="text-xs uppercase tracking-widest text-mh-black/60">{member.role}</span>
+              </FadeUp>
+            ))}
           </div>
         </div>
       </section>
@@ -97,9 +124,11 @@ const About = () => {
                 <FadeUp key={step.id} delay={index * 2} className="border-t border-white/20 pt-8">
                   <div className="flex justify-between items-start mb-6">
                     <div className="font-serif text-4xl text-mh-gold">{step.id}</div>
-                    <Icon className="w-8 h-8 text-white/20 stroke-1" />
                   </div>
-                  <h3 className="text-xl mb-4">{step.title}</h3>
+                  <h3 className="text-xl mb-4 flex items-center gap-3">
+                    <Icon className="w-5 h-5 text-mh-gold stroke-1" />
+                    {step.title}
+                  </h3>
                   <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
                 </FadeUp>
               );
@@ -109,13 +138,15 @@ const About = () => {
       </section>
 
       {/* 5. CTA */}
-      <section className="py-24 md:py-32 px-4">
-        <div className="container mx-auto flex flex-col items-center text-center gap-8">
-          <TextReveal text="Start a Conversation" tag="h2" className="text-4xl md:text-5xl font-serif justify-center" />
+      <section className="py-24 md:py-40 px-4 bg-mh-white">
+        <div className="container mx-auto flex flex-col items-center text-center gap-12">
+          <TextReveal text="Start a Conversation" tag="h2" className="text-4xl md:text-6xl font-serif justify-center leading-tight" />
           <FadeUp delay={4}>
-            <Button className="rounded-none uppercase tracking-[0.2em] text-xs px-10 py-7 bg-mh-black text-mh-white hover:bg-mh-gold" asChild>
-              <Link to="/contact">Contact Us</Link>
-            </Button>
+            <MagneticButton>
+              <Button className="rounded-none uppercase tracking-[0.2em] text-sm px-12 py-8 bg-mh-black text-mh-white hover:bg-mh-gold transition-colors duration-300" asChild>
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </MagneticButton>
           </FadeUp>
         </div>
       </section>

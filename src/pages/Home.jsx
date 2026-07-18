@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { siteContent } from '../content';
 import ProjectCard from '../components/ProjectCard';
 import { TextReveal, FadeUp } from '../components/TextReveal';
 import { ParallaxImage } from '../components/ParallaxImage';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Search, PenTool, Hammer, Home as HomeIcon, ArrowRight } from 'lucide-react';
+import MagneticButton from '../components/MagneticButton';
+import Marquee from '../components/Marquee';
 
 const processIcons = [Search, PenTool, Hammer, HomeIcon];
 
 const Home = () => {
   const { home, projects } = siteContent;
+
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  // Auto-play for testimonials
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % home.testimonials.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [home.testimonials.length]);
 
   return (
     <div className="bg-mh-white min-h-screen">
@@ -66,7 +78,7 @@ const Home = () => {
             {home.featuredIn.map((mag, i) => (
               <FadeUp key={i} delay={i + 1} className="flex flex-col items-center gap-6 group cursor-pointer">
                 <div className="w-full aspect-[3/4] overflow-hidden relative">
-                   <img src={mag.cover} alt={mag.name} className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 hover:scale-105" />
+                   <img src={mag.cover} alt={mag.name} className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 hover:scale-105" />
                 </div>
                 <span className="font-serif text-base md:text-lg tracking-widest uppercase text-center">{mag.name}</span>
               </FadeUp>
@@ -81,9 +93,11 @@ const Home = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
             <TextReveal text="Selected Works" tag="h2" className="text-4xl md:text-5xl font-serif" />
             <FadeUp delay={4}>
-              <Button variant="outline" className="rounded-none uppercase tracking-[0.2em] text-xs px-8 py-6 hover:bg-mh-black hover:text-mh-white border-mh-black text-mh-black" asChild>
-                <Link to="/projects">View All Projects</Link>
-              </Button>
+              <MagneticButton>
+                <Button variant="outline" className="rounded-none uppercase tracking-[0.2em] text-xs px-10 py-7 hover:bg-mh-black hover:text-mh-white border-mh-black text-mh-black transition-colors duration-300" asChild>
+                  <Link to="/projects">View All Projects</Link>
+                </Button>
+              </MagneticButton>
             </FadeUp>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -113,9 +127,11 @@ const Home = () => {
 
             <FadeUp delay={4}>
               <p className="text-lg text-black/80 mb-8 leading-relaxed">{home.aboutTeaser.text}</p>
-              <Button className="rounded-none uppercase tracking-[0.2em] text-xs px-8 py-6 bg-mh-black text-mh-white hover:bg-mh-gold" asChild>
-                <Link to="/about">Know More</Link>
-              </Button>
+              <MagneticButton>
+                <Button className="rounded-none uppercase tracking-[0.2em] text-xs px-10 py-7 bg-mh-black text-mh-white hover:bg-mh-gold transition-colors duration-300" asChild>
+                  <Link to="/about">Know More</Link>
+                </Button>
+              </MagneticButton>
             </FadeUp>
           </div>
         </div>
@@ -133,10 +149,12 @@ const Home = () => {
               return (
                 <FadeUp key={step.id} delay={index * 2} className="border-t border-white/20 pt-8">
                   <div className="flex justify-between items-start mb-6">
-                    <div className="font-serif text-4xl text-mh-gold">{step.id}</div>
-                    <Icon className="w-8 h-8 text-white/20 stroke-1" />
+                     <div className="font-serif text-4xl text-mh-gold">{step.id}</div>
                   </div>
-                  <h3 className="text-xl mb-4">{step.title}</h3>
+                  <h3 className="text-xl mb-4 flex items-center gap-3">
+                     <Icon className="w-5 h-5 text-mh-gold stroke-1" />
+                     {step.title}
+                  </h3>
                   <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
                 </FadeUp>
               );
@@ -159,23 +177,55 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 7. Testimonials */}
-      <section className="py-24 md:py-32 bg-mh-off-white px-4">
-        <div className="container mx-auto">
-          <FadeUp className="text-center mb-16">
-            <span className="text-sm uppercase tracking-widest text-mh-gold block">Client Stories</span>
+      {/* 7. Testimonials (Ultra Minimal Crossfade) */}
+      <section className="py-32 md:py-48 bg-mh-off-white overflow-hidden relative border-y border-black/10">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeUp className="flex justify-center mb-16">
+             <span className="text-xs uppercase tracking-[0.2em] text-mh-gold">Client Stories</span>
           </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {home.testimonials.map((testimonial, index) => (
-              <FadeUp key={index} delay={index * 2} className="bg-mh-white p-8 md:p-12 flex flex-col justify-between shadow-sm">
-                <p className="font-serif text-xl leading-relaxed mb-8">"{testimonial.quote}"</p>
-                <div>
-                  <strong className="block font-medium mb-1">{testimonial.name}</strong>
-                  <span className="text-sm text-black/60">{testimonial.role}</span>
-                </div>
-              </FadeUp>
-            ))}
+          
+          <div className="relative min-h-[250px] md:min-h-[200px] flex items-center justify-center">
+             <AnimatePresence mode="wait">
+                <motion.div 
+                   key={activeTestimonial}
+                   initial={{ opacity: 0, y: 15 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   exit={{ opacity: 0, y: -15 }}
+                   transition={{ duration: 0.6, ease: "easeOut" }}
+                   className="text-center flex flex-col items-center w-full absolute"
+                >
+                   <p className="font-serif text-2xl md:text-4xl leading-relaxed md:leading-tight mb-12 text-mh-black">
+                     "{home.testimonials[activeTestimonial].quote}"
+                   </p>
+                   <strong className="block text-sm uppercase tracking-widest mb-2 font-medium">{home.testimonials[activeTestimonial].name}</strong>
+                   <span className="text-[10px] text-black/50 uppercase tracking-[0.2em]">{home.testimonials[activeTestimonial].role}</span>
+                </motion.div>
+             </AnimatePresence>
           </div>
+
+          <FadeUp delay={4} className="flex justify-center items-center gap-8 mt-16 md:mt-24">
+             <button 
+                onClick={() => setActiveTestimonial(prev => (prev === 0 ? home.testimonials.length - 1 : prev - 1))}
+                className="text-[10px] uppercase tracking-[0.2em] text-mh-black/50 hover:text-mh-gold transition-colors"
+             >
+                Prev
+             </button>
+             <div className="flex gap-4">
+                {home.testimonials.map((_, idx) => (
+                   <button 
+                      key={idx}
+                      onClick={() => setActiveTestimonial(idx)}
+                      className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${idx === activeTestimonial ? 'bg-mh-gold scale-150' : 'bg-black/15 hover:bg-black/30'}`}
+                   />
+                ))}
+             </div>
+             <button 
+                onClick={() => setActiveTestimonial(prev => (prev + 1) % home.testimonials.length)}
+                className="text-[10px] uppercase tracking-[0.2em] text-mh-black/50 hover:text-mh-gold transition-colors"
+             >
+                Next
+             </button>
+          </FadeUp>
         </div>
       </section>
 
@@ -227,14 +277,19 @@ const Home = () => {
         </div>
       </section>
 
+      {/* 8.5 Marquee */}
+      <Marquee text="MH DESIGN • ARCHITECTURE • INTERIORS • REAL ESTATE • " speed={40} className="border-y border-white/10" />
+
       {/* 9. CTA */}
-      <section className="py-24 md:py-32 border-t border-black/10 px-4">
-        <div className="container mx-auto flex flex-col items-center text-center gap-8">
-          <TextReveal text={home.cta.text} tag="h2" className="text-4xl md:text-6xl font-serif justify-center" />
+      <section className="py-24 md:py-40 bg-mh-white px-4 border-t border-black/10">
+        <div className="container mx-auto flex flex-col items-center text-center gap-12">
+          <TextReveal text={home.cta.text} tag="h2" className="text-4xl md:text-7xl font-serif justify-center leading-tight" />
           <FadeUp delay={4}>
-            <Button className="rounded-none uppercase tracking-[0.2em] text-xs px-10 py-7 bg-mh-black text-mh-white hover:bg-mh-gold" asChild>
-              <Link to="/contact">Contact Us</Link>
-            </Button>
+            <MagneticButton>
+              <Button className="rounded-none uppercase tracking-[0.2em] text-sm px-12 py-8 bg-mh-black text-mh-white hover:bg-mh-gold transition-colors duration-300" asChild>
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </MagneticButton>
           </FadeUp>
         </div>
       </section>

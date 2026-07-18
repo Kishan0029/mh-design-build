@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
 import { siteContent } from '../content';
 import { TextReveal, FadeUp } from '../components/TextReveal';
 import { ParallaxImage } from '../components/ParallaxImage';
@@ -26,21 +26,35 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-mh-white pt-24 md:pt-32">
-      {/* 1. Hero Section */}
-      <section className="px-4 mb-16 md:mb-24">
-        <div className="container mx-auto">
-          <FadeUp className="mb-8">
-            <Link to="/projects" className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-mh-black/60 hover:text-mh-gold transition-colors">
-              <ArrowLeft size={14} /> Back to Projects
-            </Link>
-          </FadeUp>
-          <TextReveal text={project.name} tag="h1" className="text-4xl md:text-7xl font-serif mb-8 md:mb-16" />
-          
-          <FadeUp delay={2} className="relative aspect-video md:aspect-[21/9] w-full overflow-hidden">
-            <ParallaxImage src={project.image} alt={project.name} className="w-full h-full absolute inset-0" />
-          </FadeUp>
+    <div className="min-h-screen bg-mh-white">
+      {/* 1. Full-Screen Parallax Hero */}
+      <section className="relative h-screen min-h-[600px] flex items-center justify-center text-mh-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <ParallaxImage src={project.image} alt={project.name} className="w-full h-full absolute inset-0" />
+          <div className="absolute inset-0 bg-mh-black/40"></div>
         </div>
+        
+        <div className="container relative z-10 text-center max-w-5xl px-4 mt-20">
+          <FadeUp delay={0}>
+            <span className="text-white/80 text-xs uppercase tracking-widest block mb-6">
+              <Link to="/projects" className="inline-flex items-center gap-2 hover:text-mh-gold transition-colors">
+                <ArrowLeft size={14} /> Back to Projects
+              </Link>
+            </span>
+          </FadeUp>
+          <TextReveal text={project.name} tag="h1" delay={2} className="text-5xl md:text-8xl font-serif leading-tight justify-center" />
+        </div>
+        
+        <FadeUp delay={6} className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
+          <span className="text-[10px] uppercase tracking-[0.2em]">Scroll to Explore</span>
+          <div className="w-[1px] h-[60px] bg-white/30 relative overflow-hidden">
+            <motion.div 
+              className="absolute top-0 left-0 w-full h-full bg-white"
+              animate={{ y: ["-100%", "100%"] }}
+              transition={{ duration: 2, repeat: Infinity, ease: [0.77, 0, 0.175, 1] }}
+            />
+          </div>
+        </FadeUp>
       </section>
 
       {/* 2. Metadata & Description */}
@@ -119,35 +133,51 @@ const ProjectDetail = () => {
             <h3 className="text-2xl md:text-4xl font-serif mb-16 text-center">Video Tour</h3>
           </FadeUp>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-            <FadeUp delay={1} className="relative aspect-[9/16] w-full overflow-hidden cursor-pointer group">
+            <FadeUp delay={1} className="relative aspect-[9/16] w-full overflow-hidden cursor-pointer group bg-mh-black/5 rounded-sm" data-cursor="play">
               <video 
-                src={project.videos?.[0] || "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"} 
+                src={project.videos?.[0] || "https://www.w3schools.com/html/mov_bbb.mp4"} 
                 autoPlay muted loop playsInline 
-                className="w-full h-full object-cover absolute inset-0 filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+                className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-all duration-500" 
               />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20">
+                 <div className="w-20 h-20 rounded-full border border-white/50 backdrop-blur-md flex items-center justify-center bg-black/10">
+                    <Play className="w-8 h-8 text-white fill-white ml-1" />
+                 </div>
+              </div>
             </FadeUp>
-            <FadeUp delay={2} className="relative aspect-[9/16] w-full overflow-hidden mt-0 md:mt-32 cursor-pointer group">
+            <FadeUp delay={2} className="relative aspect-[9/16] w-full overflow-hidden mt-0 md:mt-32 cursor-pointer group bg-mh-black/5 rounded-sm" data-cursor="play">
               <video 
-                src={project.videos?.[1] || "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"} 
+                src={project.videos?.[1] || "https://www.w3schools.com/html/mov_bbb.mp4"} 
                 autoPlay muted loop playsInline 
-                className="w-full h-full object-cover absolute inset-0 filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+                className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-all duration-500" 
               />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20">
+                 <div className="w-20 h-20 rounded-full border border-white/50 backdrop-blur-md flex items-center justify-center bg-black/10">
+                    <Play className="w-8 h-8 text-white fill-white ml-1" />
+                 </div>
+              </div>
             </FadeUp>
           </div>
         </div>
       </section>
 
-      {/* 4. Next Project */}
+      {/* 4. Massive Next Project Footer */}
       {nextProject && (
-        <section className="py-24 md:py-40 bg-mh-black text-mh-white px-4 text-center cursor-pointer group">
-          <Link to={`/projects/${nextProject.id}`} className="block container mx-auto">
-            <FadeUp>
-              <span className="text-xs uppercase tracking-[0.2em] text-mh-white/50 mb-8 block">Next Project</span>
-              <h2 className="text-4xl md:text-6xl font-serif mb-8 group-hover:text-mh-gold transition-colors duration-500">{nextProject.name}</h2>
-              <div className="flex items-center justify-center gap-4 text-mh-white/80 group-hover:text-mh-white transition-colors duration-500 uppercase tracking-widest text-sm">
-                View Project <ArrowRight size={16} className="transform group-hover:translate-x-2 transition-transform duration-500" />
-              </div>
-            </FadeUp>
+        <section className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-mh-white cursor-pointer group" data-cursor="view">
+          <Link to={`/projects/${nextProject.id}`} className="absolute inset-0 z-10 w-full h-full block">
+            <div className="absolute inset-0 z-0 overflow-hidden">
+               <ParallaxImage src={nextProject.image} alt={nextProject.name} className="w-full h-full absolute inset-0 scale-105 group-hover:scale-110 transition-transform duration-[1.5s] ease-out" />
+               <div className="absolute inset-0 bg-mh-black/60 group-hover:bg-mh-black/40 transition-colors duration-700"></div>
+            </div>
+            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+              <FadeUp>
+                <span className="text-xs uppercase tracking-[0.2em] text-mh-white/70 mb-6 block">Next Project</span>
+                <h2 className="text-5xl md:text-8xl font-serif mb-8">{nextProject.name}</h2>
+                <div className="flex items-center justify-center gap-4 text-mh-white uppercase tracking-widest text-sm">
+                  Explore <ArrowRight size={16} className="transform group-hover:translate-x-3 transition-transform duration-500" />
+                </div>
+              </FadeUp>
+            </div>
           </Link>
         </section>
       )}

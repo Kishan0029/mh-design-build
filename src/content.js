@@ -55,6 +55,21 @@ export const siteContent = {
         quote: "An extraordinary team that delivers on their promises. The craftsmanship in our new office space speaks for itself.",
         name: "Elena Rodriguez",
         role: "CEO, TechNova"
+      },
+      {
+        quote: "The level of sophistication and modern elegance they brought to our coastal property is beyond words. True visionaries.",
+        name: "Michael & Clara",
+        role: "Private Clients"
+      },
+      {
+        quote: "From initial concept to the final handover, every step was handled with profound professionalism and creative brilliance.",
+        name: "Jonathan Reyes",
+        role: "Real Estate Developer"
+      },
+      {
+        quote: "They transformed a rigid corporate brief into a breathing, dynamic workspace. Our employees have never been happier.",
+        name: "Amanda Foster",
+        role: "VP of Operations"
       }
     ],
     cta: {
@@ -75,6 +90,28 @@ export const siteContent = {
       { title: "Transparency", description: "Clear communication and honest practices guide every client relationship." },
       { title: "Sustainability", description: "Integrating eco-conscious solutions without compromising on luxury or aesthetics." },
       { title: "Timeless Design", description: "Creating spaces that transcend trends and remain beautiful for generations." },
+    ],
+    team: [
+      {
+        name: "Elena Rostova",
+        role: "Head of Interior Design",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        name: "James Sterling",
+        role: "Director of Architecture",
+        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        name: "Sophia Lin",
+        role: "Managing Partner",
+        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        name: "Arthur Pendelton",
+        role: "Lead Project Manager",
+        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      }
     ]
   },
   projects: {
@@ -185,9 +222,10 @@ export const siteContent = {
     ]
   },
   contact: {
-    address: "1250 Avenue of the Americas\nSuite 4500\nNew York, NY 10020",
+    address: "5th floor, Golf Vista apartment,\nDouble Rd, Jadhav Nagar, Sadashiv Nagar,\nBelagavi, Karnataka 590019",
+    mapsLink: "https://www.google.com/maps/place/MH+Design-Build/@15.8735271,74.5033787,954m/data=!3m1!1e3!4m12!1m5!3m4!2zMTXCsDUyJzI0LjEiTiA3NMKwMzAnMDkuNCJF!8m2!3d15.8733611!4d74.5026111!3m5!1s0x3bbf675996d910dd:0xa70a2ff81c3bdc91!8m2!3d15.8731525!4d74.5025846!16s%2Fg%2F11lynkc1lp?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
     email: "hello@mhdesign.com",
-    phone: "+1 (212) 555-0198",
+    phone: "+1 (555) 123-4567",
     socials: {
       instagram: "#",
       linkedin: "#",

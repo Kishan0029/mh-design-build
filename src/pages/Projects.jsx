@@ -4,6 +4,7 @@ import ProjectCard from '../components/ProjectCard';
 import { TextReveal, FadeUp } from '../components/TextReveal';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
   const { projects } = siteContent;
@@ -28,14 +29,14 @@ const Projects = () => {
               <button 
                 key={index}
                 className={cn(
-                  "text-sm uppercase tracking-widest relative pb-1 transition-colors duration-300",
+                  "text-sm uppercase tracking-widest relative pb-1 transition-colors duration-500",
                   activeCategory === category ? "text-mh-black" : "text-black/50 hover:text-mh-black"
                 )}
                 onClick={() => setActiveCategory(category)}
               >
                 {category}
                 <div className={cn(
-                  "absolute bottom-0 left-0 h-[1px] bg-mh-gold transition-all duration-300",
+                  "absolute bottom-0 left-0 h-[1px] bg-mh-gold transition-all duration-500",
                   activeCategory === category ? "w-full" : "w-0"
                 )}></div>
               </button>
@@ -43,11 +44,23 @@ const Projects = () => {
           </FadeUp>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="h-full"
+              >
+                <ProjectCard project={project} index={index} animated={false} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
         <FadeUp className="flex justify-center mt-24">
           <Button variant="outline" className="rounded-none uppercase tracking-[0.2em] text-xs px-8 py-6 hover:bg-mh-black hover:text-mh-white border-mh-black text-mh-black">
