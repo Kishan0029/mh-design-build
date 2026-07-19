@@ -77,8 +77,8 @@ const CustomCursor = () => {
       width: 48,
       height: 48,
       backgroundColor: "rgba(255, 255, 255, 0)",
-      border: "1px solid rgba(0,0,0,0.5)",
-      mixBlendMode: "normal"
+      border: "1.5px solid rgba(255, 255, 255, 1)",
+      mixBlendMode: "difference"
     },
     view: {
       width: 80,
