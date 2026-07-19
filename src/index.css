@@ -56,6 +56,16 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
   }
+  
+  ::selection {
+    background-color: var(--mh-gold);
+    color: var(--mh-white);
+  }
+  
+  ::-moz-selection {
+    background-color: var(--mh-gold);
+    color: var(--mh-white);
+  }
 }
 
 @layer utilities {
@@ -75,4 +85,47 @@
   * {
     cursor: none !important;
   }
+}
+
+/* --- MICRO-DETAIL: Custom Scrollbar --- */
+/* To remove, delete this block */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--mh-off-white);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--mh-gold);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mh-black);
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mh-gold) var(--mh-off-white);
+}
+
+/* --- MICRO-DETAIL: Animated Link Underlines --- */
+/* To remove, delete this block and remove 'animated-underline' class from your links */
+.animated-underline {
+  position: relative;
+  display: inline-block;
+}
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.animated-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

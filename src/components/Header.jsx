@@ -39,9 +39,9 @@ const Header = () => {
         
         {/* Left Nav (Desktop) */}
         <nav className="hidden md:flex gap-8 lg:gap-10 items-center justify-start">
-          <Link to="/" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors">Home</Link>
-          <Link to="/about" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors">About</Link>
-          <Link to="/projects" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors">Projects</Link>
+          <Link to="/" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors animated-underline">Home</Link>
+          <Link to="/about" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors animated-underline">About</Link>
+          <Link to="/projects" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors animated-underline">Projects</Link>
         </nav>
 
         {/* Center Logo */}

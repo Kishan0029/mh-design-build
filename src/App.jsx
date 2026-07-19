@@ -14,6 +14,8 @@ import Terms from './pages/Terms';
 import CustomCursor from './components/CustomCursor';
 import Preloader from './components/Preloader';
 import PageTransition from './components/PageTransition';
+import NoiseOverlay from './components/NoiseOverlay';
+import SmoothScroll from './components/SmoothScroll';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 // Scroll to top on route change
@@ -54,25 +56,28 @@ function App() {
   });
 
   return (
-    <Router>
-      <Preloader />
-      <CustomCursor />
-      <ScrollToTop />
-      
-      {/* Global Scroll Progress Bar */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-[2px] bg-mh-gold z-[9999] origin-left"
-        style={{ scaleX }}
-      />
-      
-      <div className="app-wrapper">
-        <Header />
-        <main className="main-content">
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <SmoothScroll>
+      <Router>
+        <Preloader />
+        <NoiseOverlay />
+        <CustomCursor />
+        <ScrollToTop />
+        
+        {/* Global Scroll Progress Bar */}
+        <motion.div 
+          className="fixed top-0 left-0 right-0 h-[2px] bg-mh-gold z-[9999] origin-left"
+          style={{ scaleX }}
+        />
+        
+        <div className="app-wrapper">
+          <Header />
+          <main className="main-content">
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </SmoothScroll>
   );
 }
 

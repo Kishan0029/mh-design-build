@@ -45,7 +45,7 @@ const Footer = () => {
             <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/40 mb-8">Navigation</h4>
             <nav className="flex flex-col gap-4">
               {['Home', 'About', 'Projects', 'Contact'].map((item) => (
-                <Link key={item} to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="text-lg md:text-xl font-serif text-white hover:text-mh-gold transition-colors w-fit">
+                <Link key={item} to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="text-lg md:text-xl font-serif text-white hover:text-mh-gold transition-colors w-fit animated-underline">
                   {item}
                 </Link>
               ))}
@@ -79,8 +79,8 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row gap-6 items-center justify-between text-[10px] uppercase tracking-[0.2em] text-white/40 mb-8 md:mb-16">
           <p>&copy; {new Date().getFullYear()} MH Design. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors animated-underline">Privacy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors animated-underline">Terms</Link>
           </div>
         </div>
       </div>

@@ -19,7 +19,10 @@ const CustomCursor = () => {
 
     const updateCursorType = (clientX, clientY) => {
       const target = document.elementFromPoint(clientX, clientY);
-      if (!target) return;
+      if (!target || typeof target.closest !== 'function') {
+        setCursorType('default');
+        return;
+      }
       
       const cursorAttr = target.closest('[data-cursor]');
       if (cursorAttr) {
