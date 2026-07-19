@@ -9,6 +9,8 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import ContactUs from './pages/ContactUs';
 import NotFound from './pages/NotFound';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import CustomCursor from './components/CustomCursor';
 import Preloader from './components/Preloader';
 import PageTransition from './components/PageTransition';
@@ -35,6 +37,8 @@ const AnimatedRoutes = () => {
         <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
         <Route path="/projects/:id" element={<PageTransition><ProjectDetail /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><ContactUs /></PageTransition>} />
+        <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
+        <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </AnimatePresence>

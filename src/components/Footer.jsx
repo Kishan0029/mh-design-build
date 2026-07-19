@@ -79,8 +79,8 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row gap-6 items-center justify-between text-[10px] uppercase tracking-[0.2em] text-white/40 mb-8 md:mb-16">
           <p>&copy; {new Date().getFullYear()} MH Design. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link to="#" className="hover:text-white transition-colors">Privacy</Link>
-            <Link to="#" className="hover:text-white transition-colors">Terms</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
           </div>
         </div>
       </div>
