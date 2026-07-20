@@ -266,10 +266,14 @@ export const siteContent = {
   contact: {
     address: "5th floor, Golf Vista apartment,\nDouble Rd, Jadhav Nagar, Sadashiv Nagar,\nBelagavi, Karnataka 590019",
     mapsLink: "https://www.google.com/maps/place/MH+Design-Build/@15.8735271,74.5033787,954m/data=!3m1!1e3!4m12!1m5!3m4!2zMTXCsDUyJzI0LjEiTiA3NMKwMzAnMDkuNCJF!8m2!3d15.8733611!4d74.5026111!3m5!1s0x3bbf675996d910dd:0xa70a2ff81c3bdc91!8m2!3d15.8731525!4d74.5025846!16s%2Fg%2F11lynkc1lp?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
-    email: "hello@mhdesign.com",
+    email: "ummehanny@mhdesignbuild.in",
     phone: "+1 (555) 123-4567",
+    timings: [
+      "Mon to Sat: 10:30 AM - 6:30 PM",
+      "Sunday: Closed"
+    ],
     socials: {
-      instagram: "#",
+      instagram: "https://www.instagram.com/mhdesignbuild.in/",
       linkedin: "#",
       twitter: "#"
     }

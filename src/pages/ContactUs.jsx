@@ -79,7 +79,16 @@ const ContactUs = () => {
             <div className="relative z-10">
               <span className="text-sm uppercase tracking-widest text-mh-gold mb-2 block">Contact</span>
               <a href={`mailto:${contact.email}`} className="block text-lg text-mh-black hover:text-mh-gold transition-colors mb-1">{contact.email}</a>
-              <a href={`tel:${contact.phone}`} className="block text-lg text-mh-black hover:text-mh-gold transition-colors">{contact.phone}</a>
+              <a href={`tel:${contact.phone}`} className="block text-lg text-mh-black hover:text-mh-gold transition-colors mb-6">{contact.phone}</a>
+              
+              {contact.timings && (
+                <>
+                  <span className="text-sm uppercase tracking-widest text-mh-gold mb-2 block">Business Hours</span>
+                  {contact.timings.map((time, i) => (
+                    <p key={i} className="text-mh-black leading-relaxed">{time}</p>
+                  ))}
+                </>
+              )}
             </div>
 
             <div className="relative z-10">

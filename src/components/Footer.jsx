@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Footer = () => {
-  const { address, email, phone, socials } = siteContent.contact;
+  const { address, email, phone, timings, socials } = siteContent.contact;
   const containerRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -54,8 +54,15 @@ const Footer = () => {
             <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/40 mb-8">Contact</h4>
             <div className="flex flex-col gap-4 text-sm text-white/70">
                <p className="whitespace-pre-line leading-relaxed">{address}</p>
-               <a href={`mailto:${email}`} className="hover:text-mh-gold transition-colors inline-block w-fit mt-2">{email}</a>
-               <a href={`tel:${phone}`} className="hover:text-mh-gold transition-colors inline-block w-fit">{phone}</a>
+               <div className="mt-2 flex flex-col gap-2">
+                 <a href={`mailto:${email}`} className="hover:text-mh-gold transition-colors inline-block w-fit">{email}</a>
+                 <a href={`tel:${phone}`} className="hover:text-mh-gold transition-colors inline-block w-fit">{phone}</a>
+               </div>
+               {timings && (
+                 <div className="mt-2 text-white/50 text-xs">
+                   {timings.map((time, i) => <p key={i} className="mb-1">{time}</p>)}
+                 </div>
+               )}
             </div>
           </div>
 
