@@ -41,20 +41,21 @@ const Header = () => {
         <nav className="hidden md:flex gap-8 lg:gap-10 items-center justify-start">
           <Link to="/" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors animated-underline">Home</Link>
           <Link to="/about" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors animated-underline">About</Link>
+          <Link to="/services" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors animated-underline">Services</Link>
           <Link to="/projects" className="text-sm uppercase tracking-widest font-medium hover:text-mh-gold transition-colors animated-underline">Projects</Link>
         </nav>
 
         {/* Center Logo */}
         <div className="flex justify-start md:justify-center">
           <Link to="/" className="flex flex-col items-center justify-center group">
-            <svg viewBox="0 0 186 100" className="w-16 md:w-20 h-auto overflow-hidden group-hover:text-mh-gold transition-colors" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10">
-              <path d="M 6,100 L 6,0 L 50,85 L 94,0 L 94,100" />
-              <path d="M 120,100 L 120,45 L 186,45" />
-              <path d="M 180,100 L 180,0" />
-            </svg>
-            <span className="font-sans text-[7px] md:text-[9px] tracking-[0.35em] uppercase mt-1.5 font-light pl-[0.35em] group-hover:text-mh-gold transition-colors">
-              DESIGN-BUILD
-            </span>
+            <img 
+              src="/logo.png" 
+              alt="MH Design-Build" 
+              className={cn(
+                "h-12 md:h-14 w-auto transition-all duration-500", 
+                (!isScrolled && isHome) ? "invert brightness-0" : ""
+              )}
+            />
           </Link>
         </div>
         
@@ -97,6 +98,7 @@ const Header = () => {
           >
             <Link to="/" className="text-xl uppercase tracking-widest font-medium">Home</Link>
             <Link to="/about" className="text-xl uppercase tracking-widest font-medium">About</Link>
+            <Link to="/services" className="text-xl uppercase tracking-widest font-medium">Services</Link>
             <Link to="/projects" className="text-xl uppercase tracking-widest font-medium">Projects</Link>
             <Button variant="default" className="rounded-none tracking-widest uppercase w-3/4 mt-4" asChild>
               <Link to="/contact">Contact</Link>

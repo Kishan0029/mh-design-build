@@ -10,7 +10,7 @@ export const siteContent = {
       text: "We believe that exceptional design has the power to transform how we live and work. MH Design is dedicated to crafting timeless spaces that blend uncompromising quality with understated elegance.",
     },
     aboutTeaser: {
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1769&q=80",
+      image: "/images/Studio.png",
       text: "With over a decade of experience in premium real estate development, our multidisciplinary team brings a meticulous approach to every project, ensuring that every detail reflects our commitment to excellence.",
     },
     featuredIn: [
@@ -30,10 +30,11 @@ export const siteContent = {
       ]
     },
     process: [
-      { id: "01", title: "Discover", description: "Understanding your vision, lifestyle, and requirements to form the foundation of our approach." },
-      { id: "02", title: "Design", description: "Crafting bespoke architectural and interior solutions that elevate the everyday experience." },
-      { id: "03", title: "Build", description: "Executing with precision, utilizing premium materials and unmatched craftsmanship." },
-      { id: "04", title: "Handover", description: "Delivering a seamless transition into your new space, fully realized and ready." },
+      { id: "01", title: "Discovery", description: "Understand needs, budget, lifestyle." },
+      { id: "02", title: "Design", description: "Concept, drawings, approvals." },
+      { id: "03", title: "Cost Planning", description: "Transparent scope + budgeting." },
+      { id: "04", title: "Build", description: "Managed execution with updates." },
+      { id: "05", title: "Handover", description: "Finished home, ready to live in." },
     ],
     stats: [
       { value: "150+", label: "Projects Delivered" },
@@ -77,20 +78,15 @@ export const siteContent = {
     }
   },
   about: {
-    heroImage: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    story: "Founded on the principles of integrity, innovation, and impeccable design, MH Design and Build has established itself as a premier developer of luxury properties. Our journey began with a simple mission: to create spaces that inspire. Today, we continue to push the boundaries of architectural excellence, delivering projects that stand as testaments to our unwavering dedication.",
+    heroImage: "/projects/mh-design-studio/Copy of 4.webp",
+    story: "We design homes with intention, and build them with accountability. At MH Design Build, we bridge the gap between architecture and execution by offering an integrated design & build experience.",
     founder: {
       name: "Marcus Hayes",
       role: "Founder & Principal Architect",
       image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       bio: "With a background deeply rooted in both fine arts and structural engineering, Marcus founded MH Design to bridge the gap between aesthetic beauty and functional longevity.\n\nHis philosophy is simple: space should not merely contain life, it should elevate it. Every project under his direction is approached as a unique dialogue between the environment, the materials, and the people who will eventually call it home."
     },
-    pillars: [
-      { title: "Craftsmanship", description: "We partner with the finest artisans to ensure every detail is executed flawlessly." },
-      { title: "Transparency", description: "Clear communication and honest practices guide every client relationship." },
-      { title: "Sustainability", description: "Integrating eco-conscious solutions without compromising on luxury or aesthetics." },
-      { title: "Timeless Design", description: "Creating spaces that transcend trends and remain beautiful for generations." },
-    ],
+
     team: [
       {
         name: "Elena Rostova",
@@ -114,109 +110,155 @@ export const siteContent = {
       }
     ]
   },
+  services: {
+    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    packages: [
+      {
+        id: "design",
+        title: "Design",
+        description: "For clients who want expert planning and design while managing execution independently.",
+        image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+        features: [
+          "Client consultation & Site study",
+          "Spatial planning",
+          "Concept development",
+          "3D visualisations",
+          "2d working drawings (Civil, electrical and plumbing + structural drawings)",
+          "Interior detailing (If applicable)",
+          "Material guidance"
+        ]
+      },
+      {
+        id: "design-construction",
+        title: "Design & Construction",
+        description: "For clients seeking complete delivery from concept to completion.",
+        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+        includesDesign: true,
+        features: [
+          "Civil construction",
+          "Electrical & plumbing execution",
+          "Flooring",
+          "Carpentry",
+          "Site supervision",
+          "Timeline management",
+          "Quality checks",
+          "Final handover"
+        ]
+      }
+    ]
+  },
   projects: {
-    categories: ["All", "Residential", "Commercial", "Hospitality"],
+    categories: ["All", "Residential", "Commercial"],
     list: [
       {
-        id: 1,
-        name: "The Glasshouse Retreat",
-        location: "Beverly Hills, CA",
+        id: "villa-79",
+        name: "Villa 79",
+        location: "Vidyanagar, Belgaum.",
+        mapsLink: "https://maps.app.goo.gl/nuH6Kq6Brsp6ex587",
         category: "Residential",
-        year: "2023",
-        area: "12,500 sq ft",
+        status: "Completed",
+        area: "4400 sqft",
         client: "Private",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        description: "A modern architectural marvel blending seamless indoor-outdoor living.",
-        fullDescription: "Nestled in the lush hills of Beverly Hills, The Glasshouse Retreat is a masterclass in modern minimalism and environmental integration. Designed to blur the boundaries between the opulent interior and the natural landscape, the residence features floor-to-ceiling retractable glass walls, native stone accents, and a cantilevered infinity pool that seemingly drops off into the canyon below.\n\nEvery element, from the bespoke Italian cabinetry to the sustainable smart-home climate systems, was meticulously curated to provide an unparalleled living experience that honors both luxury and ecological responsibility.",
+        image: "/projects/villa-79/Hero.png",
+        description: "A luxury residential villa designed for modern living.",
+        fullDescription: "Villa 79 is a testament to modern luxury and sophisticated design, located in the serene neighborhood of Vidyanagar, Belgaum. Spanning 4,400 sqft, the completed residence features elegant interiors and meticulous attention to detail.",
         imageGallery: [
-           "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+          "/projects/villa-79/Feature Image.png",
+          "/projects/villa-79/Left Image.png",
+          "/projects/villa-79/Right Image.png",
+          "/projects/villa-79/1.jpeg",
+          "/projects/villa-79/2.jpeg",
+          "/projects/villa-79/3.jpeg",
+          "/projects/villa-79/4.jpeg",
+          "/projects/villa-79/5.jpeg",
+          "/projects/villa-79/8.jpeg",
+          "/projects/villa-79/9.jpeg",
+          "/projects/villa-79/10.jpeg",
+          "/projects/villa-79/11.jpeg",
+          "/projects/villa-79/12.jpeg",
+          "/projects/villa-79/15.jpeg"
         ]
       },
       {
-        id: 2,
-        name: "Lumina Office Towers",
-        location: "Downtown Chicago, IL",
+        id: "mh-design-studio",
+        name: "MH Design Studio",
+        location: "Belgaum",
         category: "Commercial",
-        year: "2022",
-        area: "450,000 sq ft",
-        client: "Apex Holdings",
-        image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
-        description: "State-of-the-art corporate workspaces designed for productivity and wellbeing.",
-        fullDescription: "Lumina Office Towers redefines the corporate skyline of Downtown Chicago. This twin-tower development prioritizes occupant wellbeing through biophilic design, featuring expansive indoor sky-gardens, advanced air purification, and dynamic electrochromic glass that adjusts to natural light levels throughout the day.\n\nDesigned for the modern workforce, Lumina offers flexible, open-plan workspaces interspersed with serene focus pods and collaborative lounges, setting a new benchmark for Class-A commercial real estate.",
+        status: "Completed",
+        area: "1500 sqft",
+        client: "MH Design-Build",
+        image: "/projects/mh-design-studio/Copy of 17.webp",
+        description: "Our own creative headquarters, designed to inspire and showcase our design-build philosophy.",
+        fullDescription: "The MH Design Studio serves as both our creative sanctuary and the ultimate showcase of our architectural capabilities. Every detail, from the material selection to the spatial flow, was meticulously planned to foster innovation and reflect our commitment to excellence.",
         imageGallery: [
-           "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+          "/projects/mh-design-studio/Copy of 2.webp",
+          "/projects/mh-design-studio/Copy of 1-1.webp",
+          "/projects/mh-design-studio/Copy of 13.webp",
+          "/projects/mh-design-studio/Copy of 3.webp",
+          "/projects/mh-design-studio/Copy of 4.webp",
+          "/projects/mh-design-studio/Copy of 5.webp",
+          "/projects/mh-design-studio/Copy of 6.webp",
+          "/projects/mh-design-studio/Copy of 7.webp",
+          "/projects/mh-design-studio/Copy of 8.webp",
+          "/projects/mh-design-studio/Copy of 9.webp",
+          "/projects/mh-design-studio/Copy of 10.webp",
+          "/projects/mh-design-studio/Copy of 11.webp",
+          "/projects/mh-design-studio/Copy of 12.webp",
+          "/projects/mh-design-studio/Copy of 14.webp",
+          "/projects/mh-design-studio/Copy of 15.webp",
+          "/projects/mh-design-studio/Copy of 16.webp",
+          "/projects/mh-design-studio/Copy of 18.webp",
+          "/projects/mh-design-studio/Copy of 19.webp",
+          "/projects/mh-design-studio/Copy of 20.webp",
+          "/projects/mh-design-studio/Copy of 21.webp",
+          "/projects/mh-design-studio/Copy of 2-1.webp",
+          "/projects/mh-design-studio/Copy of 3-1.webp",
+          "/projects/mh-design-studio/Copy of 4-1.webp"
         ]
       },
       {
-        id: 3,
-        name: "Azure Boutique Hotel",
-        location: "Miami Beach, FL",
-        category: "Hospitality",
-        year: "2024",
-        area: "85,000 sq ft",
-        client: "Azure Hospitality Group",
-        image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        description: "A serene coastal escape featuring bespoke interiors and premium amenities.",
-        fullDescription: "The Azure Boutique Hotel offers a tranquil refuge amidst the vibrant energy of Miami Beach. The design ethos centers on understated luxury, utilizing a palette of washed woods, honed travertine, and brushed brass to reflect the coastal environment.\n\nEach of the 60 bespoke suites features unobstructed ocean views, private plunge pools, and curated artwork, delivering an intimate and highly personalized guest experience.",
+        id: "shs-clinic",
+        name: "SHS Clinic",
+        location: "Ayodhya nagar, Belgaum.",
+        category: "Commercial",
+        status: "Completed",
+        area: "N/A",
+        client: "SHS",
+        image: "/projects/shs-clinic/6.webp",
+        description: "A modern commercial clinic space designed for both patient comfort and operational efficiency.",
+        fullDescription: "The SHS Clinic in Ayodhya nagar was designed with a focus on creating a calming, healing environment. The layout maximizes natural light while ensuring privacy and efficient circulation for both staff and patients.",
         imageGallery: [
-           "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+           "/projects/shs-clinic/9.webp",
+           "/projects/shs-clinic/3.webp",
+           "/projects/shs-clinic/12.webp",
+           "/projects/shs-clinic/1.webp",
+           "/projects/shs-clinic/2.webp",
+           "/projects/shs-clinic/4.webp",
+           "/projects/shs-clinic/5.webp",
+           "/projects/shs-clinic/7.webp",
+           "/projects/shs-clinic/8.webp",
+           "/projects/shs-clinic/10.webp",
+           "/projects/shs-clinic/11.webp"
         ]
       },
       {
-        id: 4,
-        name: "Oakhaven Estate",
-        location: "Aspen, CO",
+        id: "the-grove",
+        name: "The Grove",
+        location: "Mahantesh nagar, Belgaum",
         category: "Residential",
-        year: "2021",
-        area: "18,000 sq ft",
+        status: "Completed",
+        area: "11103 sqft",
         client: "Private",
-        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        description: "A luxurious mountain retreat crafted with natural stone and timber.",
-        fullDescription: "Oakhaven Estate is a masterwork of alpine architecture, seamlessly integrated into its dramatic mountain surroundings. Constructed using locally sourced stone, reclaimed timber, and expansive walls of glass, the home feels both monumental and deeply grounded.\n\nThe interior features double-height vaulted ceilings, a massive central hearth, and panoramic views of the Rockies, providing a warm, luxurious sanctuary against the rugged landscape.",
+        image: "/projects/the-grove/Hero.webp",
+        description: "A contemporary apartment development that celebrates clean architectural geometry, thoughtful planning, and a distinctive visual identity.",
+        fullDescription: "The Grove is a contemporary apartment development that celebrates clean architectural geometry, thoughtful planning, and a distinctive visual identity. Designed on a compact 40' × 60' site, the project explores the relationship between bold massing and functional living, creating a composition that is both dynamic and balanced.\n\nThe architectural language is defined by projecting balcony volumes that break down the overall mass into a series of articulated forms, giving the building depth, rhythm, and a strong street presence. A carefully curated material and color palette of warm terracotta and sophisticated grey creates a timeless yet contemporary character. The terracotta frames add warmth and vibrancy, while the grey surfaces provide a refined contrast that enhances the building's sculptural expression.\n\nThe typical floor plan accommodates a spacious three-bedroom apartment organized around a centrally positioned lift and staircase core, ensuring efficient circulation and a clear distinction between public and private spaces. Large openings and generous balconies extend the living areas outward, creating bright, open interiors while strengthening the connection between indoor and outdoor spaces.\n\nDesigned with an emphasis on simplicity, proportion, and enduring aesthetics, The Grove is a residential project where expressive massing, a harmonious color palette, and intelligent planning come together to create a refined and memorable urban living experience.",
         imageGallery: [
-           "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-        ]
-      },
-      {
-        id: 5,
-        name: "Nexus Innovation Hub",
-        location: "Austin, TX",
-        category: "Commercial",
-        year: "2023",
-        area: "210,000 sq ft",
-        client: "TechVentures Inc.",
-        image: "https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        description: "Dynamic collaborative spaces for leading tech enterprises.",
-        fullDescription: "The Nexus Innovation Hub is designed to foster creativity and collaboration among Austin's leading tech enterprises. The architecture breaks away from traditional corporate norms, offering fluid, interconnected spaces that encourage spontaneous interaction.\n\nFeaturing an iconic central atrium, modular workspaces, and extensive outdoor terraces, Nexus provides a dynamic environment that adapts to the evolving needs of modern innovation teams.",
-        imageGallery: [
-           "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-        ]
-      },
-      {
-        id: 6,
-        name: "The Belvedere Residences",
-        location: "New York, NY",
-        category: "Residential",
-        year: "2024",
-        area: "120,000 sq ft",
-        client: "MH Development Group",
-        image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        description: "Ultra-luxury penthouses offering panoramic skyline views.",
-        fullDescription: "The Belvedere Residences represent the pinnacle of urban luxury living in Manhattan. This boutique residential tower offers 24 exclusive full-floor residences, each meticulously designed to maximize space, light, and privacy.\n\nResidents enjoy panoramic views of the iconic skyline, private elevator vestibules, custom Poliform kitchens, and a comprehensive suite of white-glove amenities designed to cater to the most discerning cosmopolitan lifestyle.",
-        imageGallery: [
-           "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-           "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+           "/projects/the-grove/Feature Image.webp",
+           "/projects/the-grove/Left image.webp",
+           "/projects/the-grove/Copy of Enscape_2026-06-08-14-00-34.webp",
+           "/projects/the-grove/Copy of Enscape_2026-06-08-14-07-47.webp",
+           "/projects/the-grove/Copy of IMG-20251008-WA0026.webp",
+           "/projects/the-grove/Copy of BED2.webp"
         ]
       }
     ]

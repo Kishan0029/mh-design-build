@@ -9,28 +9,34 @@ import { Button } from '@/components/ui/button';
 
 const ProjectDetail = () => {
   const { id } = useParams();
-  const projectId = parseInt(id, 10);
-  const project = siteContent.projects.list.find((p) => p.id === projectId);
+  
+  // Find project by ID (convert both to strings to support URL slugs like 'villa-79')
+  const project = siteContent.projects.list.find((p) => String(p.id) === String(id));
   
   // Find next project
-  const currentIndex = siteContent.projects.list.findIndex((p) => p.id === projectId);
+  const currentIndex = siteContent.projects.list.findIndex((p) => String(p.id) === String(id));
   const nextProject = siteContent.projects.list[(currentIndex + 1) % siteContent.projects.list.length];
 
   // Scroll to top on mount
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo(0, 0);
   }, [id]);
 
   if (!project) {
-    return <Navigate to="/projects" replace />;
+    return (
+      <div className="h-screen flex items-center justify-center bg-mh-white">
+        <h1 className="text-2xl font-serif">Project not found</h1>
+      </div>
+    );
   }
 
   return (
     <div className="min-h-screen bg-mh-white">
+      
       {/* 1. Full-Screen Parallax Hero */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center text-mh-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <ParallaxImage src={project.image} alt={project.name} className="w-full h-full absolute inset-0" />
+          <ParallaxImage src={project.image} alt={project.name} className="w-full h-full absolute inset-0" hideWatermark={true} disableParallax={true} />
           <div className="absolute inset-0 bg-mh-black/40"></div>
         </div>
         
@@ -45,16 +51,18 @@ const ProjectDetail = () => {
           <TextReveal text={project.name} tag="h1" delay={2} className="text-5xl md:text-8xl font-serif leading-tight justify-center" />
         </div>
         
-        <FadeUp delay={6} className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
-          <span className="text-[10px] uppercase tracking-[0.2em]">Scroll to Explore</span>
-          <div className="w-[1px] h-[60px] bg-white/30 relative overflow-hidden">
-            <motion.div 
-              className="absolute top-0 left-0 w-full h-full bg-white"
-              animate={{ y: ["-100%", "100%"] }}
-              transition={{ duration: 2, repeat: Infinity, ease: [0.77, 0, 0.175, 1] }}
-            />
-          </div>
-        </FadeUp>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <FadeUp delay={6} className="flex flex-col items-center gap-4">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-center whitespace-nowrap mr-[-0.2em]">Scroll to Explore</span>
+            <div className="w-[1px] h-[60px] bg-white/30 relative overflow-hidden">
+              <motion.div 
+                className="absolute top-0 left-0 w-full h-full bg-white"
+                animate={{ y: ["-100%", "100%"] }}
+                transition={{ duration: 2, repeat: Infinity, ease: [0.77, 0, 0.175, 1] }}
+              />
+            </div>
+          </FadeUp>
+        </div>
       </section>
 
       {/* 2. Metadata & Description */}
@@ -66,20 +74,26 @@ const ProjectDetail = () => {
             <div className="lg:col-span-4 grid grid-cols-2 gap-8 md:gap-12">
               <FadeUp delay={1} className="flex flex-col gap-2">
                 <span className="text-xs uppercase tracking-[0.2em] text-mh-black/50">Location</span>
-                <span className="text-sm font-medium">{project.location}</span>
+                {project.mapsLink ? (
+                  <a href={project.mapsLink} target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-mh-gold transition-colors underline decoration-1 underline-offset-4">{project.location}</a>
+                ) : (
+                  <span className="text-sm font-medium">{project.location}</span>
+                )}
               </FadeUp>
               <FadeUp delay={2} className="flex flex-col gap-2">
-                <span className="text-xs uppercase tracking-[0.2em] text-mh-black/50">Client</span>
-                <span className="text-sm font-medium">{project.client}</span>
+                <span className="text-xs uppercase tracking-[0.2em] text-mh-black/50">Type</span>
+                <span className="text-sm font-medium">{project.category}</span>
               </FadeUp>
               <FadeUp delay={3} className="flex flex-col gap-2">
                 <span className="text-xs uppercase tracking-[0.2em] text-mh-black/50">Area</span>
                 <span className="text-sm font-medium">{project.area}</span>
               </FadeUp>
-              <FadeUp delay={4} className="flex flex-col gap-2">
-                <span className="text-xs uppercase tracking-[0.2em] text-mh-black/50">Year</span>
-                <span className="text-sm font-medium">{project.year}</span>
-              </FadeUp>
+              {(project.status || project.year) && (
+                <FadeUp delay={4} className="flex flex-col gap-2">
+                  <span className="text-xs uppercase tracking-[0.2em] text-mh-black/50">{project.status ? "Status" : "Year"}</span>
+                  <span className="text-sm font-medium">{project.status || project.year}</span>
+                </FadeUp>
+              )}
             </div>
 
             {/* Description */}
@@ -101,11 +115,10 @@ const ProjectDetail = () => {
         <section className="py-24 md:py-32 px-4">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-              
               {/* Gallery Image 1 (Full width mostly) */}
               {project.imageGallery[0] && (
                 <FadeUp className="md:col-span-10 md:col-start-2 relative aspect-[16/9] w-full mb-12 md:mb-24">
-                  <ParallaxImage src={project.imageGallery[0]} alt={`${project.name} Detail 1`} className="w-full h-full absolute inset-0" />
+                  <ParallaxImage src={project.imageGallery[0]} alt={`${project.name} Detail 1`} className="w-full h-full absolute inset-0" disableParallax={true} />
                 </FadeUp>
               )}
 
@@ -116,7 +129,7 @@ const ProjectDetail = () => {
                 </FadeUp>
               )}
               {project.imageGallery[2] && (
-                <FadeUp delay={2} className="md:col-span-5 md:col-start-8 mt-12 md:mt-48 relative aspect-[4/3] w-full">
+                <FadeUp delay={2} className="md:col-span-5 md:col-start-8 mt-12 md:mt-48 relative aspect-[3/4] w-full">
                   <ParallaxImage src={project.imageGallery[2]} alt={`${project.name} Detail 3`} className="w-full h-full absolute inset-0" />
                 </FadeUp>
               )}
@@ -160,6 +173,24 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* 4. Full Gallery Grid */}
+      {project.imageGallery && project.imageGallery.length > 3 && (
+        <section className="py-24 md:py-32 px-4 bg-mh-off-white">
+          <div className="container mx-auto">
+            <FadeUp>
+              <h3 className="text-2xl md:text-4xl font-serif mb-16 text-center">Gallery</h3>
+            </FadeUp>
+            <div className="columns-1 md:columns-2 gap-8">
+              {project.imageGallery.slice(3).map((img, index) => (
+                <FadeUp key={`gallery-${index}`} delay={(index % 2) + 1} className="w-full break-inside-avoid mb-8">
+                  <ParallaxImage src={img} alt={`${project.name} Gallery ${index + 4}`} className="w-full h-auto" />
+                </FadeUp>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 4. Massive Next Project Footer */}
       {nextProject && (

@@ -27,14 +27,11 @@ const Footer = () => {
           <div className="lg:col-span-1 flex flex-col justify-between">
             <div>
                <Link to="/" className="flex flex-col items-start w-fit mb-4 group">
-                 <svg viewBox="0 0 186 100" className="w-24 h-auto overflow-hidden text-mh-white group-hover:text-mh-gold transition-colors" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10">
-                   <path d="M 6,100 L 6,0 L 50,85 L 94,0 L 94,100" />
-                   <path d="M 120,100 L 120,45 L 186,45" />
-                   <path d="M 180,100 L 180,0" />
-                 </svg>
-                 <span className="font-sans text-[9px] tracking-[0.35em] uppercase mt-2 text-white/70 group-hover:text-mh-gold transition-colors pl-[0.35em] font-light">
-                   DESIGN-BUILD
-                 </span>
+                 <img 
+                   src="/logo.png" 
+                   alt="MH Design-Build" 
+                   className="h-20 md:h-24 w-auto invert brightness-0 opacity-90 group-hover:opacity-100 transition-opacity"
+                 />
                </Link>
                <p className="text-white/50 text-sm max-w-[200px] leading-relaxed">Building Spaces That Define Tomorrow.</p>
             </div>
@@ -44,7 +41,7 @@ const Footer = () => {
           <div>
             <h4 className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/40 mb-8">Navigation</h4>
             <nav className="flex flex-col gap-4">
-              {['Home', 'About', 'Projects', 'Contact'].map((item) => (
+              {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => (
                 <Link key={item} to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="text-lg md:text-xl font-serif text-white hover:text-mh-gold transition-colors w-fit animated-underline">
                   {item}
                 </Link>

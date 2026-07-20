@@ -6,11 +6,10 @@ import { TextReveal, FadeUp } from '../components/TextReveal';
 import { ParallaxImage } from '../components/ParallaxImage';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, PenTool, Hammer, Home as HomeIcon, ArrowRight } from 'lucide-react';
+import { ArrowRight, Home as HomeIcon } from 'lucide-react';
 import MagneticButton from '../components/MagneticButton';
 import Marquee from '../components/Marquee';
-
-const processIcons = [Search, PenTool, Hammer, HomeIcon];
+import ApproachSection from '../components/ApproachSection';
 
 const Home = () => {
   const { home, projects } = siteContent;
@@ -47,16 +46,18 @@ const Home = () => {
           <TextReveal text={home.hero.headline} tag="h1" delay={2} className="text-4xl md:text-6xl lg:text-7xl justify-center font-serif leading-tight" />
         </div>
         
-        <FadeUp delay={8} className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10">
-          <span className="text-[10px] uppercase tracking-[0.2em]">Scroll</span>
-          <div className="w-[1px] h-[60px] bg-white/30 relative overflow-hidden">
-            <motion.div 
-              className="absolute top-0 left-0 w-full h-full bg-white"
-              animate={{ y: ["-100%", "100%"] }}
-              transition={{ duration: 2, repeat: Infinity, ease: [0.77, 0, 0.175, 1] }}
-            />
-          </div>
-        </FadeUp>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <FadeUp delay={8} className="flex flex-col items-center gap-4">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-center whitespace-nowrap mr-[-0.2em]">Scroll</span>
+            <div className="w-[1px] h-[60px] bg-white/30 relative overflow-hidden">
+              <motion.div 
+                className="absolute top-0 left-0 w-full h-full bg-white"
+                animate={{ y: ["-100%", "100%"] }}
+                transition={{ duration: 2, repeat: Infinity, ease: [0.77, 0, 0.175, 1] }}
+              />
+            </div>
+          </FadeUp>
+        </div>
       </section>
 
       {/* 2. Intro Statement */}
@@ -138,30 +139,7 @@ const Home = () => {
       </section>
 
       {/* 5. Our Process */}
-      <section className="py-24 md:py-32 bg-mh-black text-mh-white px-4">
-        <div className="container mx-auto">
-          <FadeUp>
-            <span className="text-sm uppercase tracking-widest text-mh-gold mb-12 block">Our Approach</span>
-          </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            {home.process.map((step, index) => {
-              const Icon = processIcons[index];
-              return (
-                <FadeUp key={step.id} delay={index * 2} className="border-t border-white/20 pt-8">
-                  <div className="flex justify-between items-start mb-6">
-                     <div className="font-serif text-4xl text-mh-gold">{step.id}</div>
-                  </div>
-                  <h3 className="text-xl mb-4 flex items-center gap-3">
-                     <Icon className="w-5 h-5 text-mh-gold stroke-1" />
-                     {step.title}
-                  </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
-                </FadeUp>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <ApproachSection />
 
       {/* 6. Stats Strip */}
       <section className="py-24 px-4">

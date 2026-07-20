@@ -5,10 +5,8 @@ import { TextReveal, FadeUp } from '../components/TextReveal';
 import { ParallaxImage } from '../components/ParallaxImage';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { Search, PenTool, Hammer, Home as HomeIcon } from 'lucide-react';
 import MagneticButton from '../components/MagneticButton';
-
-const processIcons = [Search, PenTool, Hammer, HomeIcon];
+import ApproachSection from '../components/ApproachSection';
 
 const About = () => {
   const { about, home } = siteContent;
@@ -33,7 +31,7 @@ const About = () => {
           <div className="absolute inset-0 bg-mh-black/40"></div>
         </div>
         <div className="container relative z-10 text-center px-4 mt-20">
-          <TextReveal text="About MH Design" tag="h1" className="text-4xl md:text-6xl font-serif justify-center" />
+          <TextReveal text="About Us" tag="h1" className="text-4xl md:text-6xl font-serif justify-center" />
         </div>
       </section>
 
@@ -96,46 +94,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* 3. Pillars */}
-      <section className="py-24 md:py-32 bg-mh-off-white px-4 relative overflow-hidden">
-        <div className="container mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            {about.pillars.map((pillar, index) => (
-              <FadeUp key={index} delay={index * 2} className="relative pt-8">
-                <div className="absolute top-0 left-0 w-10 h-[2px] bg-mh-gold"></div>
-                <h3 className="text-2xl font-serif mb-4">{pillar.title}</h3>
-                <p className="text-black/70 text-sm leading-relaxed">{pillar.description}</p>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* 4. Process (Reused structure) */}
-      <section className="py-24 md:py-32 bg-mh-black text-mh-white px-4">
-        <div className="container mx-auto">
-          <FadeUp>
-            <span className="text-sm uppercase tracking-widest text-mh-gold mb-12 block">Our Approach</span>
-          </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            {home.process.map((step, index) => {
-              const Icon = processIcons[index];
-              return (
-                <FadeUp key={step.id} delay={index * 2} className="border-t border-white/20 pt-8">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="font-serif text-4xl text-mh-gold">{step.id}</div>
-                  </div>
-                  <h3 className="text-xl mb-4 flex items-center gap-3">
-                    <Icon className="w-5 h-5 text-mh-gold stroke-1" />
-                    {step.title}
-                  </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">{step.description}</p>
-                </FadeUp>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+
+      {/* 4. Process */}
+      <ApproachSection />
+
 
       {/* 5. CTA */}
       <section className="py-24 md:py-40 px-4 bg-mh-white">

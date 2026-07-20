@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-export const ParallaxImage = ({ src, alt, className, imageClassName }) => {
+export const ParallaxImage = ({ src, alt, className, imageClassName, hideWatermark = false, disableParallax = false }) => {
   const ref = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const { scrollYProgress } = useScroll({
@@ -12,6 +12,9 @@ export const ParallaxImage = ({ src, alt, className, imageClassName }) => {
 
   // Moves the image significantly to create a dramatic parallax effect
   const y = useTransform(scrollYProgress, [0, 1], ["-25%", "25%"]);
+  
+  const finalScale = disableParallax ? 1 : 1.35;
+  const initialScale = disableParallax ? 1.1 : 1.5;
 
   return (
     <div 
@@ -31,26 +34,28 @@ export const ParallaxImage = ({ src, alt, className, imageClassName }) => {
         decoding="async"
         draggable="false"
         onLoad={() => setIsLoaded(true)}
-        initial={{ opacity: 0, scale: 1.5 }}
-        animate={{ opacity: isLoaded ? 1 : 0, scale: isLoaded ? 1.35 : 1.5 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        style={{ y }}
+        initial={{ opacity: 0, scale: initialScale }}
+        animate={{ opacity: isLoaded ? 1 : 0, scale: isLoaded ? finalScale : initialScale }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        style={disableParallax ? {} : { y }}
         className={cn("w-full h-full object-cover pointer-events-none", imageClassName)}
       />
       
       {/* Watermark Overlay */}
-      <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center opacity-[0.15] mix-blend-overlay">
-        <div className="flex flex-col items-center justify-center scale-[2] md:scale-[3] opacity-60">
-          <svg viewBox="0 0 186 100" className="w-20 h-auto overflow-hidden text-white" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10">
-            <path d="M 6,100 L 6,0 L 50,85 L 94,0 L 94,100" />
-            <path d="M 120,100 L 120,45 L 186,45" />
-            <path d="M 180,100 L 180,0" />
-          </svg>
-          <span className="font-sans text-[9px] tracking-[0.35em] uppercase mt-1.5 font-light text-white pl-[0.35em]">
-            DESIGN-BUILD
-          </span>
+      {!hideWatermark && (
+        <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center opacity-[0.15] mix-blend-overlay">
+          <div className="flex flex-col items-center justify-center scale-[2] md:scale-[3] opacity-60">
+            <svg viewBox="0 0 186 100" className="w-20 h-auto overflow-hidden text-white" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10">
+              <path d="M 6,100 L 6,0 L 50,85 L 94,0 L 94,100" />
+              <path d="M 120,100 L 120,45 L 186,45" />
+              <path d="M 180,100 L 180,0" />
+            </svg>
+            <span className="font-sans text-[9px] tracking-[0.35em] uppercase mt-1.5 font-light text-white pl-[0.35em]">
+              DESIGN-BUILD
+            </span>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Subtle overlay on hover */}
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 pointer-events-none" />
