@@ -67,27 +67,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2.5 Featured In Magazine Covers */}
-      <section className="py-24 md:py-32 bg-mh-off-white px-4 border-t border-black/10">
-        <div className="container mx-auto">
-          <FadeUp className="flex flex-col items-center mb-16">
-            <span className="text-sm uppercase tracking-[0.2em] text-mh-gold mb-2 block">Press</span>
-            <TextReveal text="Featured In" tag="h2" className="text-3xl md:text-5xl font-serif text-center" />
-          </FadeUp>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
-            {home.featuredIn.map((mag, i) => (
-              <FadeUp key={i} delay={i + 1} className="flex flex-col items-center gap-6 group cursor-pointer">
-                <div className="w-full aspect-[3/4] overflow-hidden relative">
-                   <img src={mag.cover} alt={mag.name} className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 hover:scale-105" />
-                </div>
-                <span className="font-serif text-base md:text-lg tracking-widest uppercase text-center">{mag.name}</span>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 3. Featured Projects */}
       <section className="py-24 md:py-32 bg-mh-off-white px-4">
         <div className="container mx-auto">
@@ -105,6 +84,56 @@ const Home = () => {
             {projects.list.slice(0, 4).map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3.5 Featured In Magazine Covers */}
+      <section className="py-24 md:py-32 bg-mh-off-white px-4 border-t border-black/10">
+        <div className="container mx-auto">
+          <FadeUp className="flex flex-col items-center mb-16">
+            <span className="text-sm uppercase tracking-[0.2em] text-mh-gold mb-2 block">Press</span>
+            <TextReveal text="Featured In" tag="h2" className="text-3xl md:text-5xl font-serif text-center" />
+          </FadeUp>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {home.featuredIn.map((mag, i) => {
+              const content = (
+                <div className="flex flex-col items-center justify-between h-full w-full bg-white p-8 md:p-12 border border-black/5 hover:border-black/10 transition-colors shadow-sm hover:shadow-md">
+                  <div className="w-full flex flex-col items-center">
+                    <div className="w-full h-24 md:h-28 flex items-center justify-center relative mb-8">
+                       <img src={mag.cover} alt={mag.name} className={`${mag.name === "Volume Zero" ? "max-w-[270px]" : "max-w-[400px]"} w-full h-full object-contain transition-all duration-500 group-hover:scale-105 transform ${mag.name === "The Architect's Diary" ? "translate-y-3" : ""}`} />
+                    </div>
+                    <div className="flex flex-col items-center gap-4">
+                      <span className="font-serif text-xl tracking-widest uppercase text-center text-mh-black">{mag.name}</span>
+                      {mag.description && (
+                        <p className="text-sm text-mh-black/60 text-center leading-relaxed font-sans">
+                          {mag.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {mag.link && (
+                    <div className="mt-10 flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-mh-gold group-hover:text-mh-black transition-colors font-semibold">
+                      Read Feature <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  )}
+                </div>
+              );
+
+              return (
+                <FadeUp key={i} delay={i + 1} className="flex flex-col group cursor-pointer w-full h-full">
+                  {mag.link ? (
+                    <a href={mag.link} target="_blank" rel="noopener noreferrer" className="flex flex-col h-full w-full">
+                      {content}
+                    </a>
+                  ) : (
+                    content
+                  )}
+                </FadeUp>
+              );
+            })}
           </div>
         </div>
       </section>

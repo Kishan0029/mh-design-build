@@ -14,10 +14,18 @@ export const siteContent = {
       text: "With over a decade of experience in premium real estate development, our multidisciplinary team brings a meticulous approach to every project, ensuring that every detail reflects our commitment to excellence.",
     },
     featuredIn: [
-      { name: "Architectural Digest", cover: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-      { name: "Elle Decor", cover: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-      { name: "Vogue Living", cover: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-      { name: "Dwell", cover: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
+      { 
+        name: "Volume Zero", 
+        cover: "/images/Volume-Zero.png", 
+        link: "https://volzero.com/articles/view/office-for-mh-design-build-by-mh-design-build",
+        description: "An international design magazine that exhibits worthwhile architectural and design work from numerous architects and designers across the globe."
+      },
+      { 
+        name: "The Architect's Diary", 
+        cover: "/images/Architects-Diary.png", 
+        link: "https://thearchitectsdiary.com/this-1bhk-penthouse-reimagines-thoughtful-home-office-interior-design-mh-design-build/",
+        description: "The most visited architecture website in India, committed to featuring the best of architecture and interior design projects to a global community."
+      }
     ],
     socialMedia: {
       title: "We're on\nSocial Media",
