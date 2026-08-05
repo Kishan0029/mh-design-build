@@ -13,6 +13,12 @@ const ProjectCard = ({ project, index = 0, animated = true }) => {
           alt={project.name} 
           className="w-full h-full absolute inset-0"
         />
+        {/* Built by MH Tag */}
+        {project.builtByMH && (
+          <div className="absolute top-4 right-4 z-20 bg-mh-gold text-mh-black text-[10px] font-medium uppercase tracking-[0.2em] px-3 py-1.5 shadow-sm">
+            BUILT BY MH
+          </div>
+        )}
         {/* Custom Overlay for cards */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       </div>

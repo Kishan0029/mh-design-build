@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Play, Sparkles } from 'lucide-react';
 import { siteContent } from '../content';
 import { TextReveal, FadeUp } from '../components/TextReveal';
 import { ParallaxImage } from '../components/ParallaxImage';
@@ -100,6 +100,15 @@ const ProjectDetail = () => {
                   <span className="text-sm font-medium">{project.scope}</span>
                 </FadeUp>
               )}
+              {project.builtByMH && (
+                <FadeUp delay={6} className="flex flex-col gap-2 col-span-2 mt-4 md:mt-0 md:col-span-1">
+                  <div className="inline-flex items-center justify-center gap-2 bg-mh-black text-mh-white text-[10px] font-medium uppercase tracking-[0.25em] px-4 py-2.5 rounded-sm w-fit border border-mh-gold/40 shadow-sm relative overflow-hidden group/badge cursor-default">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover/badge:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+                    <Sparkles size={12} className="text-mh-gold" strokeWidth={2.5} />
+                    Built by MH
+                  </div>
+                </FadeUp>
+              )}
             </div>
 
             {/* Description */}
@@ -153,28 +162,44 @@ const ProjectDetail = () => {
           </FadeUp>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
             <FadeUp delay={1} className="relative aspect-[9/16] w-full overflow-hidden cursor-pointer group bg-mh-black/5 rounded-sm" data-cursor="play">
-              <video 
-                src={project.videos?.[0] || "https://www.w3schools.com/html/mov_bbb.mp4"} 
-                autoPlay muted loop playsInline 
-                className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-all duration-500" 
-              />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20">
-                 <div className="w-20 h-20 rounded-full border border-white/50 backdrop-blur-md flex items-center justify-center bg-black/10">
-                    <Play className="w-8 h-8 text-white fill-white ml-1" />
-                 </div>
-              </div>
+              {project.videos?.[0] ? (
+                <>
+                  <video 
+                    src={project.videos[0]} 
+                    autoPlay muted loop playsInline 
+                    className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-all duration-500" 
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20">
+                     <div className="w-20 h-20 rounded-full border border-white/50 backdrop-blur-md flex items-center justify-center bg-black/10">
+                        <Play className="w-8 h-8 text-white fill-white ml-1" />
+                     </div>
+                  </div>
+                </>
+              ) : (
+                <div className="w-full h-full absolute inset-0 flex items-center justify-center transition-all duration-500">
+                  <span className="text-xs uppercase tracking-[0.3em] text-mh-black/30 font-medium">Video 01</span>
+                </div>
+              )}
             </FadeUp>
             <FadeUp delay={2} className="relative aspect-[9/16] w-full overflow-hidden mt-0 md:mt-32 cursor-pointer group bg-mh-black/5 rounded-sm" data-cursor="play">
-              <video 
-                src={project.videos?.[1] || "https://www.w3schools.com/html/mov_bbb.mp4"} 
-                autoPlay muted loop playsInline 
-                className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-all duration-500" 
-              />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20">
-                 <div className="w-20 h-20 rounded-full border border-white/50 backdrop-blur-md flex items-center justify-center bg-black/10">
-                    <Play className="w-8 h-8 text-white fill-white ml-1" />
-                 </div>
-              </div>
+              {project.videos?.[1] ? (
+                <>
+                  <video 
+                    src={project.videos[1]} 
+                    autoPlay muted loop playsInline 
+                    className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-all duration-500" 
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20">
+                     <div className="w-20 h-20 rounded-full border border-white/50 backdrop-blur-md flex items-center justify-center bg-black/10">
+                        <Play className="w-8 h-8 text-white fill-white ml-1" />
+                     </div>
+                  </div>
+                </>
+              ) : (
+                <div className="w-full h-full absolute inset-0 flex items-center justify-center transition-all duration-500">
+                  <span className="text-xs uppercase tracking-[0.3em] text-mh-black/30 font-medium">Video 02</span>
+                </div>
+              )}
             </FadeUp>
           </div>
         </div>

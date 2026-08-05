@@ -101,12 +101,12 @@ export const siteContent = {
   },
   about: {
     heroImage: "/projects/mh-design-studio/Copy of 4.webp",
-    story: "We design homes with intention, and build them with accountability. At MH Design Build, we bridge the gap between architecture and execution by offering an integrated design & build experience.",
+    story: "Founded on three decades of construction expertise and reimagined for the way people build today, we are a Belagavi-based design build firm led by an architect. We believe good design and good building shouldn’t be separate journeys handled by separate people — so we brought them under one roof.\n\nWe work with clients who care about how spaces look, feel, and function, and who want a partner that takes ownership of the outcome, not just a portion of the process. The result is architecture that’s thoughtfully designed and precisely built, delivered through one accountable team.",
     founder: {
-      name: "Umme Hanny",
+      name: "Umme Hanny Ilkalwale",
       role: "Founder & Principal Architect",
       image: "/images/founder.jpeg",
-      bio: "With a background deeply rooted in both fine arts and structural engineering, Umme Hanny founded MH Design to bridge the gap between aesthetic beauty and functional longevity.\n\nHer philosophy is simple: space should not merely contain life, it should elevate it. Every project under her direction is approached as a unique dialogue between the environment, the materials, and the people who will eventually call it home."
+      bio: "A graduate of the Royal College of Art, she returned home with a clear vision: to transform her family’s 30-year-old construction legacy into a design-led practice — one where architecture and execution move together, not in silos.\n\nFocused, ambitious, and unapologetically obsessed with design, Umme Hanny built the firm around a simple belief: that great buildings come from great control over every detail, from concept to construction. Her work bridges rigorous design thinking with deep, hands-on construction knowledge — a rare combination that lets her push creative boundaries while staying grounded in buildability.\n\nUnder her leadership, the firm has grown into a trusted design build practice in Belagavi, known for spaces that are as considered as they are well-built."
     },
 
     team: [
@@ -187,6 +187,7 @@ export const siteContent = {
       {
         id: "villa-79",
         name: "Villa 79",
+        builtByMH: true,
         location: "Vidyanagar, Belgaum.",
         mapsLink: "https://maps.app.goo.gl/nuH6Kq6Brsp6ex587",
         category: "Residential",
@@ -217,6 +218,7 @@ export const siteContent = {
       {
         id: "mh-design-studio",
         name: "MH Design Studio",
+        builtByMH: true,
         location: "Belgaum",
         category: "Commercial",
         status: "Completed",
