@@ -59,7 +59,7 @@ const Preloader = () => {
           className="fixed inset-0 z-[99999] bg-mh-black flex flex-col items-center justify-center overflow-hidden"
         >
           {/* SVG Line Drawn Logo using Client's Paths */}
-          <div className="w-36 md:w-48 mb-8 px-4">
+          <div className="w-40 md:w-56 mb-8 px-4">
             <motion.svg 
               viewBox="0 0 872 652" 
               className="w-full h-auto overflow-hidden"
