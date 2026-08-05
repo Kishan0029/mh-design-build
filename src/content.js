@@ -3,7 +3,7 @@ export const siteContent = {
     hero: {
       headline: "Building Spaces That Define Tomorrow",
       eyebrow: "MH DESIGN — REAL ESTATE & DEVELOPMENT",
-      videoPlaceholder: "/images/home-hero.jpg",
+      videoPlaceholder: "/images/home-hero.webp",
     },
     intro: {
       text: "We believe that exceptional design has the power to transform how we live and work. MH Design is dedicated to crafting timeless spaces that blend uncompromising quality with understated elegance.",

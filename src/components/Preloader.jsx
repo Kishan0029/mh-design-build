@@ -21,17 +21,28 @@ const logoPaths = [
 
 const Preloader = () => {
   const [isLoading, setIsLoading] = useState(() => {
-    return true;
+    // Only show preloader once per session
+    const hasSeen = sessionStorage.getItem('hasSeenPreloader');
+    return !hasSeen;
   });
 
   useEffect(() => {
-    if (!isLoading) return;
+    if (!isLoading) {
+      document.body.style.overflow = 'auto';
+      return;
+    }
+    
+    document.body.style.overflow = 'hidden';
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3400); // Wait long enough for draw + fill animations to finish
+      sessionStorage.setItem('hasSeenPreloader', 'true');
+    }, 2000); // Sped up from 3400ms
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = 'auto';
+    };
   }, [isLoading]);
 
   const pathVariants = {
@@ -41,9 +52,9 @@ const Preloader = () => {
       fill: "rgba(242, 235, 229, 1)", 
       opacity: 1,
       transition: { 
-        pathLength: { duration: 1.8, ease: "easeInOut" },
+        pathLength: { duration: 1.2, ease: "easeInOut" },
         opacity: { duration: 0.1 },
-        fill: { duration: 0.8, ease: "easeIn", delay: 1.6 } // Fill happens just as drawing ends
+        fill: { duration: 0.6, ease: "easeIn", delay: 1.0 } // Fill happens just as drawing ends
       } 
     }
   };
@@ -88,13 +99,13 @@ const Preloader = () => {
             <motion.div 
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 3.1, ease: "easeInOut" }}
+              transition={{ duration: 1.8, ease: "easeInOut" }}
               className="w-full h-full bg-mh-white/20 origin-left relative"
             >
               <motion.div 
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 2.9, ease: "easeInOut", delay: 0.2 }}
+                transition={{ duration: 1.6, ease: "easeInOut", delay: 0.1 }}
                 className="absolute top-0 left-0 w-full h-full bg-mh-gold origin-left"
               />
             </motion.div>
