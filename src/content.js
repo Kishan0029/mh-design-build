@@ -3,8 +3,7 @@ export const siteContent = {
     hero: {
       headline: "Building Spaces That Define Tomorrow",
       eyebrow: "MH DESIGN — REAL ESTATE & DEVELOPMENT",
-      // Using a high-quality architecture image from Unsplash as placeholder for video/hero background
-      videoPlaceholder: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80",
+      videoPlaceholder: "/images/home-hero.jpg",
     },
     intro: {
       text: "We believe that exceptional design has the power to transform how we live and work. MH Design is dedicated to crafting timeless spaces that blend uncompromising quality with understated elegance.",
@@ -29,20 +28,18 @@ export const siteContent = {
     ],
     socialMedia: {
       title: "We're on\nSocial Media",
-      images: [
-        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      posts: [
+        { images: ["/images/social/1.jpg", "/images/Studio.png"], url: "https://www.instagram.com/p/DQMYSADkkEi/" },
+        { images: ["/images/social/2.jpg"], url: "https://www.instagram.com/p/DXd70M1kg52/" },
+        { images: ["/images/social/3.jpg"], url: "https://www.instagram.com/reel/DZKjXS_JUDS/" },
+        { images: ["/images/social/4.jpg"], url: "https://www.instagram.com/reel/DW_6NONSDtL/" }
       ]
     },
     process: [
-      { id: "01", title: "Discovery", description: "Understand needs, budget, lifestyle." },
-      { id: "02", title: "Design", description: "Concept, drawings, approvals." },
-      { id: "03", title: "Cost Planning", description: "Transparent scope + budgeting." },
-      { id: "04", title: "Build", description: "Managed execution with updates." },
-      { id: "05", title: "Handover", description: "Finished home, ready to live in." },
+      { id: "01", title: "Discovery", description: "Understanding Your Needs, Budget & Lifestyle." },
+      { id: "02", title: "Design", description: "Concept Development, Technical Drawings & Approval Assistance" },
+      { id: "03", title: "Build", description: "End-to-End Project Execution" },
+      { id: "04", title: "Handover", description: "Quality-Assured Handover" }
     ],
     stats: [
       { value: "150+", label: "Projects Delivered" },
@@ -51,48 +48,65 @@ export const siteContent = {
     ],
     testimonials: [
       {
-        quote: "Working with MH Design was a revelation. Their attention to detail and commitment to quality is simply unmatched.",
-        name: "Sarah Jenkins",
+        quote: "The team completely transformed our home — on time, spotless, and beyond our expectations. The colours, tiles, finishes, and space planning are simply brilliant. Our house looks brand new! We couldn't be happier. Highly recommended.",
+        name: "Damannavar Family",
         role: "Homeowner"
-      },
-      {
-        quote: "They didn't just build a house; they created a sanctuary. The process was seamless from start to finish.",
-        name: "David Chen",
-        role: "Commercial Client"
-      },
-      {
-        quote: "An extraordinary team that delivers on their promises. The craftsmanship in our new office space speaks for itself.",
-        name: "Elena Rodriguez",
-        role: "CEO, TechNova"
-      },
-      {
-        quote: "The level of sophistication and modern elegance they brought to our coastal property is beyond words. True visionaries.",
-        name: "Michael & Clara",
-        role: "Private Clients"
-      },
-      {
-        quote: "From initial concept to the final handover, every step was handled with profound professionalism and creative brilliance.",
-        name: "Jonathan Reyes",
-        role: "Real Estate Developer"
-      },
-      {
-        quote: "They transformed a rigid corporate brief into a breathing, dynamic workspace. Our employees have never been happier.",
-        name: "Amanda Foster",
-        role: "VP of Operations"
       }
     ],
     cta: {
       text: "Ready to start your next project?",
-    }
+    },
+    faqs: [
+      {
+        question: "What services do you offer?",
+        answer: "We provide end-to-end design and construction services, including consultation, architectural design, interior design, approvals, project management, construction, and turnkey handover."
+      },
+      {
+        question: "What is the advantage of choosing a design and construction firm?",
+        answer: "A single team manages the entire project, ensuring better coordination, faster execution, cost efficiency, and a seamless experience from concept to completion."
+      },
+      {
+        question: "How does the design process begin?",
+        answer: "We start with a detailed consultation to understand your requirements, budget, lifestyle, and vision before developing concepts tailored to your needs."
+      },
+      {
+        question: "Can I customize the design according to my preferences?",
+        answer: "Absolutely. Every project is designed specifically for the client, with multiple discussions and revisions to ensure the final design aligns with your vision."
+      },
+      {
+        question: "How long does a typical project take?",
+        answer: "Timelines vary depending on the project’s size and complexity. After the design is finalized, we provide a detailed project schedule with estimated completion dates."
+      },
+      {
+        question: "How is the project cost determined?",
+        answer: "The cost depends on factors such as project size, design complexity, materials, finishes, and site conditions. A detailed quotation is provided once the scope is finalized."
+      },
+      {
+        question: "Will I receive updates during construction?",
+        answer: "Yes. We provide regular progress updates, site photographs, and milestone reviews to keep you informed throughout the execution process."
+      },
+      {
+        question: "Do you offer post-completion support?",
+        answer: "Yes. We remain available after project handover to address any concerns, provide guidance, and support you as needed."
+      },
+      {
+        question: "Can you work within my budget?",
+        answer: "We design and plan every project around your budget, helping you make informed decisions on materials, finishes, and construction methods without compromising quality."
+      },
+      {
+        question: "Do I need to hire separate architects, interior designers, or contractors?",
+        answer: "No. Our integrated team handles architecture, interior design, engineering, project management, and construction under one roof, ensuring a streamlined process and single point of contact."
+      }
+    ]
   },
   about: {
     heroImage: "/projects/mh-design-studio/Copy of 4.webp",
     story: "We design homes with intention, and build them with accountability. At MH Design Build, we bridge the gap between architecture and execution by offering an integrated design & build experience.",
     founder: {
-      name: "Marcus Hayes",
+      name: "Umme Hanny",
       role: "Founder & Principal Architect",
-      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      bio: "With a background deeply rooted in both fine arts and structural engineering, Marcus founded MH Design to bridge the gap between aesthetic beauty and functional longevity.\n\nHis philosophy is simple: space should not merely contain life, it should elevate it. Every project under his direction is approached as a unique dialogue between the environment, the materials, and the people who will eventually call it home."
+      image: "/images/founder.jpeg",
+      bio: "With a background deeply rooted in both fine arts and structural engineering, Umme Hanny founded MH Design to bridge the gap between aesthetic beauty and functional longevity.\n\nHer philosophy is simple: space should not merely contain life, it should elevate it. Every project under her direction is approached as a unique dialogue between the environment, the materials, and the people who will eventually call it home."
     },
 
     team: [
@@ -122,23 +136,35 @@ export const siteContent = {
     heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
     packages: [
       {
-        id: "design",
-        title: "Design",
-        description: "For clients who want expert planning and design while managing execution independently.",
+        id: "architecture",
+        title: "ARCHITECTURE",
+        description: "For clients who want expert architectural planning and structural design.",
         image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
         features: [
           "Client consultation & Site study",
           "Spatial planning",
           "Concept development",
           "3D visualisations",
-          "2d working drawings (Civil, electrical and plumbing + structural drawings)",
-          "Interior detailing (If applicable)",
+          "2D working drawings",
           "Material guidance"
         ]
       },
       {
+        id: "interior",
+        title: "INTERIOR",
+        description: "For clients looking to transform their spaces with bespoke interior design.",
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+        features: [
+          "Interior space planning",
+          "Custom furniture design",
+          "Lighting and material selection",
+          "3D interior visualisations",
+          "Execution drawings"
+        ]
+      },
+      {
         id: "design-construction",
-        title: "Design & Construction",
+        title: "DESIGN + CONSTRUCTION",
         description: "For clients seeking complete delivery from concept to completion.",
         image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
         includesDesign: true,
@@ -156,7 +182,7 @@ export const siteContent = {
     ]
   },
   projects: {
-    categories: ["All", "Residential", "Commercial"],
+    categories: ["All", "Ongoing", "Completed", "For Sale"],
     list: [
       {
         id: "villa-79",
@@ -167,6 +193,7 @@ export const siteContent = {
         status: "Completed",
         area: "4400 sqft",
         client: "Private",
+        scope: "Architecture & Interior Design",
         image: "/projects/villa-79/Hero.png",
         description: "A luxury residential villa designed for modern living.",
         fullDescription: "Villa 79 is a testament to modern luxury and sophisticated design, located in the serene neighborhood of Vidyanagar, Belgaum. Spanning 4,400 sqft, the completed residence features elegant interiors and meticulous attention to detail.",
@@ -195,6 +222,7 @@ export const siteContent = {
         status: "Completed",
         area: "1500 sqft",
         client: "MH Design-Build",
+        scope: "Design & Build",
         image: "/projects/mh-design-studio/Copy of 17.webp",
         description: "Our own creative headquarters, designed to inspire and showcase our design-build philosophy.",
         fullDescription: "The MH Design Studio serves as both our creative sanctuary and the ultimate showcase of our architectural capabilities. Every detail, from the material selection to the spatial flow, was meticulously planned to foster innovation and reflect our commitment to excellence.",
@@ -232,6 +260,7 @@ export const siteContent = {
         status: "Completed",
         area: "N/A",
         client: "SHS",
+        scope: "Interior Design",
         image: "/projects/shs-clinic/6.webp",
         description: "A modern commercial clinic space designed for both patient comfort and operational efficiency.",
         fullDescription: "The SHS Clinic in Ayodhya nagar was designed with a focus on creating a calming, healing environment. The layout maximizes natural light while ensuring privacy and efficient circulation for both staff and patients.",
@@ -257,6 +286,7 @@ export const siteContent = {
         status: "Completed",
         area: "11103 sqft",
         client: "Private",
+        scope: "Architecture",
         image: "/projects/the-grove/Hero.webp",
         description: "A contemporary apartment development that celebrates clean architectural geometry, thoughtful planning, and a distinctive visual identity.",
         fullDescription: "The Grove is a contemporary apartment development that celebrates clean architectural geometry, thoughtful planning, and a distinctive visual identity. Designed on a compact 40' × 60' site, the project explores the relationship between bold massing and functional living, creating a composition that is both dynamic and balanced.\n\nThe architectural language is defined by projecting balcony volumes that break down the overall mass into a series of articulated forms, giving the building depth, rhythm, and a strong street presence. A carefully curated material and color palette of warm terracotta and sophisticated grey creates a timeless yet contemporary character. The terracotta frames add warmth and vibrancy, while the grey surfaces provide a refined contrast that enhances the building's sculptural expression.\n\nThe typical floor plan accommodates a spacious three-bedroom apartment organized around a centrally positioned lift and staircase core, ensuring efficient circulation and a clear distinction between public and private spaces. Large openings and generous balconies extend the living areas outward, creating bright, open interiors while strengthening the connection between indoor and outdoor spaces.\n\nDesigned with an emphasis on simplicity, proportion, and enduring aesthetics, The Grove is a residential project where expressive massing, a harmonious color palette, and intelligent planning come together to create a refined and memorable urban living experience.",
@@ -275,15 +305,14 @@ export const siteContent = {
     address: "5th floor, Golf Vista apartment,\nDouble Rd, Jadhav Nagar, Sadashiv Nagar,\nBelagavi, Karnataka 590019",
     mapsLink: "https://www.google.com/maps/place/MH+Design-Build/@15.8735271,74.5033787,954m/data=!3m1!1e3!4m12!1m5!3m4!2zMTXCsDUyJzI0LjEiTiA3NMKwMzAnMDkuNCJF!8m2!3d15.8733611!4d74.5026111!3m5!1s0x3bbf675996d910dd:0xa70a2ff81c3bdc91!8m2!3d15.8731525!4d74.5025846!16s%2Fg%2F11lynkc1lp?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D",
     email: "ummehanny@mhdesignbuild.in",
-    phone: "+1 (555) 123-4567",
+    phone: "+91 96326 78828",
     timings: [
       "Mon to Sat: 10:30 AM - 6:30 PM",
       "Sunday: Closed"
     ],
     socials: {
       instagram: "https://www.instagram.com/mhdesignbuild.in/",
-      linkedin: "#",
-      twitter: "#"
+      linkedin: "https://www.linkedin.com/company/mh-design-build/posts/?feedView=all"
     }
   }
 };

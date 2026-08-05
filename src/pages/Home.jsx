@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { siteContent } from '../content';
 import ProjectCard from '../components/ProjectCard';
@@ -6,10 +6,74 @@ import { TextReveal, FadeUp } from '../components/TextReveal';
 import { ParallaxImage } from '../components/ParallaxImage';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Home as HomeIcon } from 'lucide-react';
+import { ArrowRight, Home as HomeIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import MagneticButton from '../components/MagneticButton';
 import Marquee from '../components/Marquee';
 import ApproachSection from '../components/ApproachSection';
+import FaqSection from '../components/FaqSection';
+
+// Helper component for Social Posts
+const SocialPost = ({ post }) => {
+  const isCarousel = post.images.length > 1;
+  const scrollRef = useRef(null);
+
+  const scrollLeft = (e) => {
+    e.preventDefault();
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -scrollRef.current.clientWidth, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = (e) => {
+    e.preventDefault();
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: scrollRef.current.clientWidth, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="relative w-full group overflow-hidden rounded-sm bg-mh-black/5">
+      {isCarousel ? (
+        <>
+          <div ref={scrollRef} className="flex w-full overflow-x-auto snap-x snap-mandatory scrollbar-none" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            {post.images.map((img, idx) => (
+              <div key={idx} className="w-full flex-shrink-0 snap-center relative">
+                <img src={img} alt={`Social ${idx + 1}`} className="w-full h-auto" />
+              </div>
+            ))}
+          </div>
+          {/* Navigation Buttons */}
+          <button onClick={scrollLeft} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all text-white pointer-events-auto shadow-sm">
+            <ChevronLeft size={16} />
+          </button>
+          <button onClick={scrollRight} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all text-white pointer-events-auto shadow-sm">
+            <ChevronRight size={16} />
+          </button>
+        </>
+      ) : (
+        <img src={post.images[0]} alt="Social" className="w-full h-auto" />
+      )}
+      
+      {/* Instagram Link Overlay / Icon */}
+      {isCarousel ? (
+        <a href={post.url} target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4 z-10 w-8 h-8 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" aria-label="View on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-white"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+      ) : (
+        <a href={post.url} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10 cursor-pointer" aria-label="View on Instagram" />
+      )}
+      
+      {/* Carousel Dots indicator */}
+      {isCarousel && (
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5 z-10 pointer-events-none">
+          {post.images.map((_, idx) => (
+            <div key={idx} className="w-1.5 h-1.5 rounded-full bg-white/50 backdrop-blur-sm shadow-sm" />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Home = () => {
   const { home, projects } = siteContent;
@@ -138,51 +202,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 4. About Teaser (Using unDraw SVG & Parallax) */}
-      <section className="py-24 md:py-32 px-4">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-24">
-          <div className="w-full md:w-1/2 aspect-[4/3] relative">
-            <ParallaxImage src={home.aboutTeaser.image} alt="Studio" className="w-full h-full absolute inset-0" />
-          </div>
-          <div className="w-full md:w-1/2 flex flex-col items-start">
-            <FadeUp>
-              <span className="text-sm uppercase tracking-widest text-mh-gold mb-4 block">The Studio</span>
-            </FadeUp>
-            <TextReveal text="Crafting Legacy" tag="h2" className="text-4xl md:text-5xl font-serif mb-6" />
-            
-            {/* Adding unDraw illustration for extra modern flair as requested */}
-            <FadeUp delay={2} className="w-16 h-16 mb-8 text-mh-gold/50">
-               <HomeIcon className="w-full h-full stroke-1" />
-            </FadeUp>
 
-            <FadeUp delay={4}>
-              <p className="text-lg text-black/80 mb-8 leading-relaxed">{home.aboutTeaser.text}</p>
-              <MagneticButton>
-                <Button className="rounded-none uppercase tracking-[0.2em] text-xs px-10 py-7 bg-mh-black text-mh-white hover:bg-mh-gold transition-colors duration-300" asChild>
-                  <Link to="/about">Know More</Link>
-                </Button>
-              </MagneticButton>
-            </FadeUp>
-          </div>
-        </div>
-      </section>
 
       {/* 5. Our Process */}
       <ApproachSection />
 
-      {/* 6. Stats Strip */}
-      <section className="py-24 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            {home.stats.map((stat, index) => (
-              <FadeUp key={index} delay={index * 2} className="flex flex-col items-center">
-                <div className="font-serif text-5xl md:text-7xl text-mh-gold mb-2">{stat.value}</div>
-                <div className="uppercase tracking-widest text-sm text-black/60">{stat.label}</div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* 7. Testimonials (Ultra Minimal Crossfade) */}
       <section className="py-32 md:py-48 bg-mh-off-white overflow-hidden relative border-y border-black/10">
@@ -241,20 +266,21 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 items-start">
             
+
             {/* Col 1 */}
             <div className="flex flex-col gap-4 md:gap-8 mt-12 md:mt-24">
-              <FadeUp delay={1} className="relative aspect-[4/5] w-full">
-                <ParallaxImage src={home.socialMedia.images[0]} alt="Social 1" className="w-full h-full absolute inset-0" />
+              <FadeUp delay={1}>
+                <SocialPost post={home.socialMedia.posts[0]} />
               </FadeUp>
             </div>
             
             {/* Col 2 */}
             <div className="flex flex-col gap-4 md:gap-8">
-              <FadeUp delay={2} className="relative aspect-[4/3] w-full">
-                <ParallaxImage src={home.socialMedia.images[1]} alt="Social 2" className="w-full h-full absolute inset-0" />
+              <FadeUp delay={2}>
+                <SocialPost post={home.socialMedia.posts[1]} />
               </FadeUp>
               <FadeUp delay={3} className="pt-4 md:pt-12 px-2">
-                 <a href={siteContent.contact.socials.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-mh-gold uppercase tracking-[0.2em] text-xs hover:text-mh-black transition-colors">
+                 <a href={siteContent.contact.socials.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-mh-gold uppercase tracking-[0.2em] text-xs hover:text-mh-black transition-colors cursor-pointer">
                     Follow us on Instagram <ArrowRight size={14} />
                  </a>
               </FadeUp>
@@ -265,18 +291,15 @@ const Home = () => {
               <FadeUp delay={4} className="pb-4 md:pb-12">
                  <h2 className="text-3xl md:text-5xl font-serif whitespace-pre-line leading-tight">{home.socialMedia.title}</h2>
               </FadeUp>
-              <FadeUp delay={5} className="relative aspect-square w-full">
-                <ParallaxImage src={home.socialMedia.images[2]} alt="Social 3" className="w-full h-full absolute inset-0" />
+              <FadeUp delay={5}>
+                <SocialPost post={home.socialMedia.posts[2]} />
               </FadeUp>
             </div>
             
             {/* Col 4 */}
             <div className="flex flex-col gap-4 md:gap-8 mt-12 md:mt-32">
-              <FadeUp delay={6} className="relative aspect-[4/3] w-full">
-                <ParallaxImage src={home.socialMedia.images[3]} alt="Social 4" className="w-full h-full absolute inset-0" />
-              </FadeUp>
-              <FadeUp delay={7} className="relative aspect-[4/5] w-full">
-                <ParallaxImage src={home.socialMedia.images[4]} alt="Social 5" className="w-full h-full absolute inset-0" />
+              <FadeUp delay={6}>
+                <SocialPost post={home.socialMedia.posts[3]} />
               </FadeUp>
             </div>
 
@@ -284,8 +307,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 8.5 Marquee */}
-      <Marquee text="MH DESIGN • ARCHITECTURE • INTERIORS • REAL ESTATE • " speed={40} className="border-y border-white/10" />
+      {/* 8.5 FAQ Section */}
+      <FaqSection faqs={home.faqs} />
+
+      {/* 8.6 Marquee */}
+      <Marquee text="ARCHITECTURE • INTERIOR • DESIGN • CONSTRUCTION • " speed={40} className="border-y border-white/10" />
 
       {/* 9. CTA */}
       <section className="py-24 md:py-40 bg-mh-white px-4 border-t border-black/10">

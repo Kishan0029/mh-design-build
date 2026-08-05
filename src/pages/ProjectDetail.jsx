@@ -94,6 +94,12 @@ const ProjectDetail = () => {
                   <span className="text-sm font-medium">{project.status || project.year}</span>
                 </FadeUp>
               )}
+              {project.scope && (
+                <FadeUp delay={5} className="flex flex-col gap-2">
+                  <span className="text-xs uppercase tracking-[0.2em] text-mh-black/50">Scope</span>
+                  <span className="text-sm font-medium">{project.scope}</span>
+                </FadeUp>
+              )}
             </div>
 
             {/* Description */}

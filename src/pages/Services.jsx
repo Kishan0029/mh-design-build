@@ -38,16 +38,16 @@ const Services = () => {
       {/* 2. Services Packages */}
       <section className="py-24 md:py-32 px-4 bg-mh-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
             
-            {/* Design Package */}
+            {/* Architecture Package */}
             <FadeUp delay={1} className="flex flex-col border border-black/10 hover:border-mh-gold/50 transition-colors duration-500 bg-mh-off-white group">
-              <div className="h-[300px] overflow-hidden relative">
+              <div className="h-[250px] overflow-hidden relative">
                 <img src={services.packages[0].image} alt={services.packages[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
               </div>
-              <div className="p-8 md:p-12 flex flex-col flex-grow">
-                <h2 className="text-3xl font-serif mb-4 text-mh-black">{services.packages[0].title}</h2>
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <h2 className="text-2xl font-serif mb-4 text-mh-black">{services.packages[0].title}</h2>
                 <p className="text-mh-black/70 mb-8 min-h-[60px] leading-relaxed">
                   {services.packages[0].description}
                 </p>
@@ -71,26 +71,57 @@ const Services = () => {
               </div>
             </FadeUp>
 
-            {/* Design & Construction Package */}
-            <FadeUp delay={2} className="flex flex-col border border-black/10 hover:border-mh-gold/50 transition-colors duration-500 bg-mh-black text-mh-white group shadow-2xl relative lg:-translate-y-4">
-              <div className="absolute top-4 right-4 bg-mh-gold text-mh-black text-[10px] uppercase tracking-[0.2em] px-4 py-2 font-medium z-10 shadow-lg">Most Popular</div>
-              <div className="h-[300px] overflow-hidden relative">
+            {/* Interior Package */}
+            <FadeUp delay={2} className="flex flex-col border border-black/10 hover:border-mh-gold/50 transition-colors duration-500 bg-mh-off-white group">
+              <div className="h-[250px] overflow-hidden relative">
                 <img src={services.packages[1].image} alt={services.packages[1].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              </div>
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <h2 className="text-2xl font-serif mb-4 text-mh-black">{services.packages[1].title}</h2>
+                <p className="text-mh-black/70 mb-8 min-h-[60px] leading-relaxed">
+                  {services.packages[1].description}
+                </p>
+                <div className="h-[1px] w-full bg-black/10 mb-8"></div>
+                
+                <h4 className="text-xs uppercase tracking-widest text-mh-gold mb-6 font-medium">Includes</h4>
+                <ul className="flex flex-col gap-4 flex-grow mb-12">
+                  {services.packages[1].features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-4 text-mh-black/80">
+                      <Check className="w-5 h-5 text-mh-gold shrink-0 mt-0.5" />
+                      <span className="leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <MagneticButton className="mt-auto">
+                  <Button className="w-full rounded-none uppercase tracking-[0.2em] text-xs py-7 border border-mh-black bg-transparent text-mh-black hover:bg-mh-black hover:text-mh-white transition-all duration-300" asChild>
+                    <Link to="/contact">Enquire Now</Link>
+                  </Button>
+                </MagneticButton>
+              </div>
+            </FadeUp>
+
+            {/* Design & Construction Package */}
+            <FadeUp delay={3} className="flex flex-col border border-black/10 hover:border-mh-gold/50 transition-colors duration-500 bg-mh-black text-mh-white group shadow-2xl relative lg:-translate-y-4">
+              <div className="absolute top-4 right-4 bg-mh-gold text-mh-black text-[10px] uppercase tracking-[0.2em] px-4 py-2 font-medium z-10 shadow-lg">Most Popular</div>
+              <div className="h-[250px] overflow-hidden relative">
+                <img src={services.packages[2].image} alt={services.packages[2].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
               </div>
-              <div className="p-8 md:p-12 flex flex-col flex-grow">
-                <h2 className="text-3xl font-serif mb-4">{services.packages[1].title}</h2>
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <h2 className="text-2xl font-serif mb-4">{services.packages[2].title}</h2>
                 <p className="text-white/70 mb-8 min-h-[60px] leading-relaxed">
-                  {services.packages[1].description}
+                  {services.packages[2].description}
                 </p>
                 <div className="h-[1px] w-full bg-white/10 mb-8"></div>
                 
                 <h4 className="text-xs uppercase tracking-widest text-mh-gold mb-6 font-medium flex items-center gap-2">
-                  <span>Includes everything in Design</span>
+                  <span>Comprehensive Suite</span>
                   <Plus className="w-4 h-4" />
                 </h4>
                 <ul className="flex flex-col gap-4 flex-grow mb-12">
-                  {services.packages[1].features.map((feature, idx) => (
+                  {services.packages[2].features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-4 text-white/80">
                       <Check className="w-5 h-5 text-mh-gold shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{feature}</span>

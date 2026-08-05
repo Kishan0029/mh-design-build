@@ -12,7 +12,7 @@ const Projects = () => {
 
   const filteredProjects = activeCategory === 'All' 
     ? projects.list 
-    : projects.list.filter(p => p.category === activeCategory);
+    : projects.list.filter(p => p.status === activeCategory);
 
   useEffect(() => {
     window.scrollTo(0, 0);

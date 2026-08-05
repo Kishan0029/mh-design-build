@@ -48,10 +48,16 @@ const About = () => {
       {/* 2.5 Founder Section */}
       <section className="py-24 md:py-32 px-4 border-t border-black/10">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+          <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
             <div className="w-full md:w-5/12">
-              <FadeUp delay={1} className="relative aspect-[3/4] w-full overflow-hidden">
-                <ParallaxImage src={about.founder.image} alt={about.founder.name} className="w-full h-full absolute inset-0 grayscale hover:grayscale-0 transition-all duration-500" />
+              <FadeUp delay={1} className="w-full">
+                <ParallaxImage 
+                  src={about.founder.image} 
+                  alt={about.founder.name} 
+                  className="w-full grayscale-0 hover:grayscale transition-all duration-500" 
+                  disableParallax={true}
+                  hideWatermark={true}
+                />
               </FadeUp>
             </div>
             <div className="w-full md:w-7/12 flex flex-col items-start">
@@ -68,31 +74,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* 2.75 Leadership Section */}
-      <section className="py-24 md:py-32 px-4 border-t border-black/10">
-        <div className="container mx-auto">
-          <FadeUp>
-            <span className="text-sm uppercase tracking-widest text-mh-gold mb-12 block">Leadership</span>
-          </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {about.team.map((member, index) => (
-              <FadeUp key={index} delay={index * 2} className="flex flex-col group cursor-pointer" data-cursor="view">
-                <div className="relative aspect-[3/4] w-full overflow-hidden mb-6">
-                  <ParallaxImage 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out" 
-                  />
-                  {/* Subtle overlay for better text contrast if we had any, but here just for premium feel */}
-                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                </div>
-                <h3 className="text-xl font-serif mb-1">{member.name}</h3>
-                <span className="text-xs uppercase tracking-widest text-mh-black/60">{member.role}</span>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
 
 
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { siteContent } from '../content';
 import { FadeUp } from './TextReveal';
-import { Search, PenTool, Hammer, Home as HomeIcon, Calculator } from 'lucide-react';
+import { Search, PenTool, Hammer, Home as HomeIcon } from 'lucide-react';
 
-const processIcons = [Search, PenTool, Calculator, Hammer, HomeIcon];
+const processIcons = [Search, PenTool, Hammer, HomeIcon];
 
 const ApproachSection = () => {
   const { home } = siteContent;
@@ -19,7 +19,7 @@ const ApproachSection = () => {
            {/* Desktop Connecting Line */}
            <div className="hidden lg:block absolute top-[4.5rem] left-0 w-full h-[1px] bg-white/10" />
            
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
              {home.process.map((step, index) => {
                const Icon = processIcons[index];
                return (
