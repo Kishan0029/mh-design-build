@@ -3,6 +3,7 @@ export const siteContent = {
     hero: {
       headline: "Building Spaces That Define Tomorrow",
       eyebrow: "MH DESIGN — ARCHITECTURAL DESIGN & REAL ESTATE DEVELOPMENT",
+      videoUrl: "/videos/hero-video.mp4",
       videoPlaceholder: "/images/home-hero.webp",
     },
     intro: {

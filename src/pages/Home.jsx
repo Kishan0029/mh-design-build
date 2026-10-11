@@ -93,14 +93,26 @@ const Home = () => {
       {/* 1. Hero Section */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center text-mh-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <motion.img 
-            src={home.hero.videoPlaceholder} 
-            alt="Hero Background" 
-            className="w-full h-full object-cover"
-            animate={{ scale: [1, 1.05] }}
-            transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-          />
-          <div className="absolute inset-0 bg-mh-black/40"></div>
+          {home.hero.videoUrl ? (
+            <video 
+              src={home.hero.videoUrl} 
+              poster={home.hero.videoPlaceholder}
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <motion.img 
+              src={home.hero.videoPlaceholder} 
+              alt="Hero Background" 
+              className="w-full h-full object-cover"
+              animate={{ scale: [1, 1.05] }}
+              transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+            />
+          )}
+          <div className="absolute inset-0 bg-mh-black/45"></div>
         </div>
         
         <div className="container relative z-10 text-center max-w-4xl px-4 mt-20">
