@@ -17,6 +17,7 @@ import Preloader from './components/Preloader';
 import PageTransition from './components/PageTransition';
 import NoiseOverlay from './components/NoiseOverlay';
 import SmoothScroll from './components/SmoothScroll';
+import WhatsAppButton from './components/WhatsAppButton';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 // Scroll to top on route change
@@ -64,6 +65,7 @@ function App() {
         <NoiseOverlay />
         <CustomCursor />
         <ScrollToTop />
+        <WhatsAppButton />
         
         {/* Global Scroll Progress Bar */}
         <motion.div 

@@ -1,20 +1,33 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Play, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Play, Sparkles, ExternalLink } from 'lucide-react';
 import { siteContent } from '../content';
 import { TextReveal, FadeUp } from '../components/TextReveal';
 import { ParallaxImage } from '../components/ParallaxImage';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+const InstagramIcon = ({ className = "w-4 h-4" }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
 
 const ProjectDetail = () => {
   const { id } = useParams();
   
   // Find project by ID (convert both to strings to support URL slugs like 'villa-79')
-  const project = siteContent.projects.list.find((p) => String(p.id) === String(id));
+  const project = siteContent.projects.list.find((p) => 
+    String(p.id) === String(id) || 
+    (String(id) === 'shs-clinic' && p.id === 'skin-and-hair-solutions') ||
+    (String(id) === 'the-grove' && p.id === 'the-grove-apartments')
+  );
   
   // Find next project
-  const currentIndex = siteContent.projects.list.findIndex((p) => String(p.id) === String(id));
+  const currentIndex = siteContent.projects.list.findIndex((p) => p === project);
   const nextProject = siteContent.projects.list[(currentIndex + 1) % siteContent.projects.list.length];
 
   // Scroll to top on mount
@@ -102,7 +115,7 @@ const ProjectDetail = () => {
               )}
               {project.builtByMH && (
                 <FadeUp delay={6} className="flex flex-col gap-2 col-span-2 mt-4 md:mt-0 md:col-span-1">
-                  <div className="inline-flex items-center justify-center gap-2 bg-mh-black text-mh-white text-[10px] font-medium uppercase tracking-[0.25em] px-4 py-2.5 rounded-sm w-fit border border-mh-gold/40 shadow-sm relative overflow-hidden group/badge cursor-default">
+                  <div className="inline-flex items-center justify-center gap-2 bg-mh-black text-mh-gold text-[10px] font-medium uppercase tracking-[0.25em] px-4 py-2.5 rounded-sm w-fit border border-mh-gold/40 shadow-sm relative overflow-hidden group/badge cursor-default">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover/badge:translate-x-full transition-transform duration-1000 ease-in-out"></div>
                     <Sparkles size={12} className="text-mh-gold" strokeWidth={2.5} />
                     Built by MH
@@ -154,56 +167,125 @@ const ProjectDetail = () => {
         </section>
       )}
 
-      {/* 3.5 Video Gallery (2 Vertical Videos) */}
-      <section className="py-24 md:py-32 px-4 bg-mh-white border-t border-black/10">
-        <div className="container mx-auto max-w-5xl">
-          <FadeUp>
-            <h3 className="text-2xl md:text-4xl font-serif mb-16 text-center">Video Tour</h3>
-          </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-            <FadeUp delay={1} className="relative aspect-[9/16] w-full overflow-hidden cursor-pointer group bg-mh-black/5 rounded-sm" data-cursor="play">
-              {project.videos?.[0] ? (
-                <>
-                  <video 
-                    src={project.videos[0]} 
-                    autoPlay muted loop playsInline 
-                    className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-all duration-500" 
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20">
-                     <div className="w-20 h-20 rounded-full border border-white/50 backdrop-blur-md flex items-center justify-center bg-black/10">
-                        <Play className="w-8 h-8 text-white fill-white ml-1" />
-                     </div>
-                  </div>
-                </>
-              ) : (
-                <div className="w-full h-full absolute inset-0 flex items-center justify-center transition-all duration-500">
-                  <span className="text-xs uppercase tracking-[0.3em] text-mh-black/30 font-medium">Video 01</span>
-                </div>
+      {/* 3.5 Project Media & Instagram Reels (Matching Reference Design) */}
+      {((project.media && project.media.length > 0) || (project.videos && project.videos.length > 0)) && (
+        <section className="py-24 md:py-36 px-4 bg-mh-white border-t border-black/10 overflow-hidden">
+          <div className="container mx-auto max-w-7xl">
+            {/* Header with Title and Follow link */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <FadeUp>
+                <span className="text-xs uppercase tracking-[0.25em] text-mh-gold mb-3 block font-medium">Reels & Media</span>
+                <h2 className="text-4xl md:text-6xl font-serif text-mh-black leading-tight">Media</h2>
+              </FadeUp>
+              <FadeUp delay={2}>
+                <a 
+                  href={siteContent.contact.socials.instagram} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-mh-gold hover:text-mh-black transition-colors font-medium group cursor-pointer"
+                >
+                  Follow us on Instagram <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+                </a>
+              </FadeUp>
+            </div>
+
+            {/* Media Grid */}
+            <div className={cn(
+              "grid gap-8 items-start",
+              project.media?.length === 1 && !project.published && "grid-cols-1 max-w-md mx-auto",
+              project.media?.length === 1 && project.published && "grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto",
+              project.media?.length === 2 && "grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto",
+              project.media?.length >= 3 && "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+            )}>
+              {project.media?.map((item, mIdx) => (
+                <FadeUp 
+                  key={mIdx} 
+                  delay={mIdx + 1}
+                  className={cn(
+                    "flex flex-col gap-4",
+                    project.media.length === 2 && mIdx === 1 ? "md:mt-16" : "",
+                    project.media.length >= 3 && (mIdx % 2 === 1) ? "md:mt-12" : ""
+                  )}
+                >
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-[9/16] w-full overflow-hidden rounded-sm bg-mh-black/5 block shadow-sm border border-black/5"
+                    aria-label={item.title || "Watch Reel on Instagram"}
+                  >
+                    {/* Thumbnail Image */}
+                    <img 
+                      src={item.thumbnail} 
+                      alt={item.title || `${project.name} Media`} 
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+                      loading="lazy"
+                    />
+
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 group-hover:from-black/90 transition-colors duration-500" />
+
+                    {/* Instagram badge top right */}
+                    <div className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/90 group-hover:text-white group-hover:bg-black/60 transition-all">
+                      <InstagramIcon className="w-4 h-4 text-white" />
+                    </div>
+
+                    {/* Play button in center */}
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/25 backdrop-blur-md border border-white/50 flex items-center justify-center text-white shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:bg-white/40">
+                        <Play className="w-6 h-6 md:w-7 md:h-7 text-white fill-white ml-1" />
+                      </div>
+                    </div>
+
+                    {/* Bottom Label / Caption */}
+                    <div className="absolute bottom-0 inset-x-0 p-5 z-10 text-white flex flex-col gap-1">
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-mh-gold font-medium">
+                        {item.type === 'reel' ? 'Instagram Reel' : 'Instagram Post'}
+                      </span>
+                      <h4 className="text-base font-serif font-medium leading-snug text-white/95 group-hover:text-white transition-colors">
+                        {item.title}
+                      </h4>
+                      {item.subtitle && (
+                        <p className="text-xs text-white/70 line-clamp-1">{item.subtitle}</p>
+                      )}
+                    </div>
+                  </a>
+                </FadeUp>
+              ))}
+
+              {/* If it's MH Design Studio and has a publication, show Volume Zero card */}
+              {project.published && (
+                <FadeUp delay={3} className="flex flex-col gap-4 md:mt-16">
+                  <a
+                    href={project.published.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-[9/16] w-full overflow-hidden rounded-sm bg-mh-black text-white p-8 flex flex-col justify-between shadow-sm border border-mh-gold/30 block"
+                  >
+                    <div className="flex justify-between items-start">
+                      <span className="text-[10px] uppercase tracking-[0.25em] text-mh-gold font-medium border border-mh-gold/40 px-3 py-1">Featured Press</span>
+                      <ExternalLink size={16} className="text-mh-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                    </div>
+
+                    <div className="flex flex-col gap-3">
+                      <span className="text-xs uppercase tracking-widest text-white/60">{project.published.source}</span>
+                      <h4 className="text-2xl font-serif text-white group-hover:text-mh-gold transition-colors leading-snug">
+                        {project.published.title}
+                      </h4>
+                      <p className="text-xs text-white/70 leading-relaxed mt-2">
+                        Published internationally showcasing the studio's Scandinavian simplicity and Indian craftsmanship.
+                      </p>
+                      <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-mh-gold mt-4 font-medium underline underline-offset-4">
+                        Read Article <ArrowRight size={12} />
+                      </span>
+                    </div>
+                  </a>
+                </FadeUp>
               )}
-            </FadeUp>
-            <FadeUp delay={2} className="relative aspect-[9/16] w-full overflow-hidden mt-0 md:mt-32 cursor-pointer group bg-mh-black/5 rounded-sm" data-cursor="play">
-              {project.videos?.[1] ? (
-                <>
-                  <video 
-                    src={project.videos[1]} 
-                    autoPlay muted loop playsInline 
-                    className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-all duration-500" 
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20">
-                     <div className="w-20 h-20 rounded-full border border-white/50 backdrop-blur-md flex items-center justify-center bg-black/10">
-                        <Play className="w-8 h-8 text-white fill-white ml-1" />
-                     </div>
-                  </div>
-                </>
-              ) : (
-                <div className="w-full h-full absolute inset-0 flex items-center justify-center transition-all duration-500">
-                  <span className="text-xs uppercase tracking-[0.3em] text-mh-black/30 font-medium">Video 02</span>
-                </div>
-              )}
-            </FadeUp>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* 4. Full Gallery Grid */}
       {project.imageGallery && project.imageGallery.length > 3 && (

@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw documentation and scratch scripts
+Website Information/
+*.cjs

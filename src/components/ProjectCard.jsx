@@ -15,7 +15,7 @@ const ProjectCard = ({ project, index = 0, animated = true }) => {
         />
         {/* Built by MH Tag */}
         {project.builtByMH && (
-          <div className="absolute top-4 right-4 z-20 bg-mh-gold text-mh-black text-[10px] font-medium uppercase tracking-[0.2em] px-3 py-1.5 shadow-sm">
+          <div className="absolute top-4 right-4 z-20 bg-mh-black text-mh-gold border border-mh-gold/30 text-[10px] font-medium uppercase tracking-[0.2em] px-3 py-1.5 shadow-sm">
             BUILT BY MH
           </div>
         )}
