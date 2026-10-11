@@ -260,24 +260,40 @@ const ProjectDetail = () => {
                     href={project.published.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative aspect-[9/16] w-full overflow-hidden rounded-sm bg-mh-black text-white p-8 flex flex-col justify-between shadow-sm border border-mh-gold/30 block"
+                    className="group relative aspect-[9/16] w-full overflow-hidden rounded-sm bg-white text-mh-black p-8 md:p-10 flex flex-col justify-between items-center text-center shadow-sm hover:shadow-xl border border-black/10 transition-all duration-500 block"
                   >
-                    <div className="flex justify-between items-start">
-                      <span className="text-[10px] uppercase tracking-[0.25em] text-mh-gold font-medium border border-mh-gold/40 px-3 py-1">Featured Press</span>
-                      <ExternalLink size={16} className="text-mh-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                    {/* Top Tag & External Link */}
+                    <div className="w-full flex justify-between items-center">
+                      <span className="text-[10px] uppercase tracking-[0.25em] text-mh-gold font-medium border border-mh-gold/40 px-3 py-1 bg-white">
+                        Featured Press
+                      </span>
+                      <ExternalLink size={16} className="text-black/40 group-hover:text-mh-gold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                     </div>
 
-                    <div className="flex flex-col gap-3">
-                      <span className="text-xs uppercase tracking-widest text-white/60">{project.published.source}</span>
-                      <h4 className="text-2xl font-serif text-white group-hover:text-mh-gold transition-colors leading-snug">
-                        {project.published.title}
+                    {/* Centered Logo & Details */}
+                    <div className="w-full flex flex-col items-center my-auto py-4">
+                      {project.published.logo && (
+                        <div className="w-full max-h-24 md:max-h-28 flex items-center justify-center mb-6">
+                          <img 
+                            src={project.published.logo} 
+                            alt={project.published.source} 
+                            className="max-w-[220px] max-h-20 w-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+                          />
+                        </div>
+                      )}
+                      <h4 className="font-serif text-xl md:text-2xl tracking-widest uppercase text-mh-black mb-4 group-hover:text-mh-gold transition-colors">
+                        {project.published.source}
                       </h4>
-                      <p className="text-xs text-white/70 leading-relaxed mt-2">
-                        Published internationally showcasing the studio's Scandinavian simplicity and Indian craftsmanship.
-                      </p>
-                      <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-mh-gold mt-4 font-medium underline underline-offset-4">
-                        Read Article <ArrowRight size={12} />
-                      </span>
+                      {project.published.description && (
+                        <p className="text-xs md:text-sm text-mh-black/70 leading-relaxed font-sans max-w-xs">
+                          {project.published.description}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Bottom Action */}
+                    <div className="w-full flex items-center justify-center gap-2 text-xs uppercase tracking-[0.2em] text-mh-gold group-hover:text-mh-black transition-colors font-semibold pt-4 border-t border-black/5">
+                      Read Feature <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
                     </div>
                   </a>
                 </FadeUp>

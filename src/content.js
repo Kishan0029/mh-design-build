@@ -228,7 +228,9 @@ export const siteContent = {
         published: {
           title: "Office for MH Design Build by MH Design Build",
           source: "Volume Zero",
-          url: "https://volzero.com/articles/view/office-for-mh-design-build-by-mh-design-build"
+          logo: "/images/Volume-Zero.png",
+          url: "https://volzero.com/articles/view/office-for-mh-design-build-by-mh-design-build",
+          description: "An international design magazine that exhibits worthwhile architectural and design work from numerous architects and designers across the globe."
         },
         media: [
           {
