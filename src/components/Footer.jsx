@@ -79,9 +79,12 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section - Legal */}
+        {/* Bottom Section - Legal & Credits */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row gap-6 items-center justify-between text-[10px] uppercase tracking-[0.2em] text-white/40 mb-8 md:mb-16">
           <p>&copy; {new Date().getFullYear()} MH Design. All rights reserved.</p>
+          <p className="hover:text-white/80 transition-colors">
+            Developed by <span className="text-white/70 font-medium tracking-[0.25em]">Nextverse</span>
+          </p>
           <div className="flex gap-8">
             <Link to="/privacy" className="hover:text-white transition-colors animated-underline">Privacy</Link>
             <Link to="/terms" className="hover:text-white transition-colors animated-underline">Terms</Link>
