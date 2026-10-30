@@ -6,7 +6,7 @@ import { TextReveal, FadeUp } from '../components/TextReveal';
 import { ParallaxImage } from '../components/ParallaxImage';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import MagneticButton from '../components/MagneticButton';
 import Marquee from '../components/Marquee';
 import ApproachSection from '../components/ApproachSection';
@@ -137,26 +137,6 @@ const Home = () => {
           <TextReveal text={home.hero.headline} tag="h1" delay={2} className="text-4xl md:text-6xl lg:text-7xl justify-center font-serif leading-tight" />
         </div>
 
-        {/* Prev / Next Minimal Navigation (Desktop) */}
-        {slides.length > 1 && (
-          <div className="absolute bottom-8 left-6 md:left-12 z-20 hidden md:flex items-center gap-3">
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-              className="w-10 h-10 rounded-full border border-white/20 hover:border-mh-gold flex items-center justify-center text-white/70 hover:text-mh-gold hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-              className="w-10 h-10 rounded-full border border-white/20 hover:border-mh-gold flex items-center justify-center text-white/70 hover:text-mh-gold hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        )}
-
         {/* Center Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <FadeUp delay={8} className="flex flex-col items-center gap-4">
@@ -171,39 +151,6 @@ const Home = () => {
           </FadeUp>
         </div>
 
-        {/* Slide Counter & Progress Bars & Project Tag (Right) */}
-        {slides.length > 1 && (
-          <div className="absolute bottom-8 right-6 md:right-12 z-20 flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <span className="text-mh-gold font-serif text-sm tracking-widest">
-                {String(currentSlide + 1).padStart(2, '0')}
-              </span>
-              <span className="text-white/40 text-xs">/</span>
-              <span className="text-white/50 font-serif text-xs tracking-widest">
-                {String(slides.length).padStart(2, '0')}
-              </span>
-            </div>
-
-            <div className="hidden sm:flex items-center gap-1.5">
-              {slides.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`h-1 transition-all duration-500 rounded-full ${
-                    idx === currentSlide ? 'w-8 bg-mh-gold' : 'w-2 bg-white/30 hover:bg-white/60'
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-
-            {slides[currentSlide]?.title && (
-              <span className="hidden lg:inline-block text-white/80 text-xs uppercase tracking-widest pl-3 border-l border-white/20">
-                {slides[currentSlide].title}
-              </span>
-            )}
-          </div>
-        )}
       </section>
 
       {/* 2. Intro Statement */}
@@ -284,12 +231,8 @@ const Home = () => {
         </div>
       </section>
 
-
-
       {/* 5. Our Process */}
       <ApproachSection />
-
-
 
       {/* 7. Testimonials (Ultra Minimal Crossfade) */}
       <section className="py-32 md:py-48 bg-mh-off-white overflow-hidden relative border-y border-black/10">
