@@ -212,403 +212,403 @@ export const siteContent = {
     categories: ["All", "Ongoing", "Completed", "For Sale"],
     list: [
       {
-        id: "villa-79",
-        name: "Villa 79",
-        builtByMH: true,
-        location: "Vidyanagar, Belgaum",
-        category: "Residential",
-        status: "Completed",
-        area: "4400 sqft",
-        client: "Private",
-        scope: "Architectural design, MH Built",
-        image: "/projects/villa-79/Cover.webp",
-        description: "A contemporary residence planned as a cohesive composition of generous living spaces and thoughtfully positioned balconies.",
-        fullDescription: "This contemporary residence is planned as a cohesive composition of generous living spaces, private bedrooms, and thoughtfully positioned balconies that strengthen the connection between indoors and outdoors. The ground floor brings together the foyer, living, dining, kitchen, and puja spaces in a fluid arrangement, while the first floor accommodates a family lounge and three bedrooms, creating a private zone. The interiors combine warm wood, natural stone, muted neutrals, and bronze accents, complemented by expansive glazing and daylight. A sculptural staircase, double-height volume, and layered lighting add depth and character, creating a refined home where functionality, materiality, and light work harmoniously.",
-        video: {
-          url: "/projects/villa-79/villa-79-walkthrough.mp4",
-          title: "Villa 79 On-Site Walkthrough",
-          subtitle: "Architectural Flow & Light"
-        },
-        floorPlans: [
-          { name: "First Floor Plan", image: "/projects/villa-79/first-floor-plan.webp" },
-          { name: "Second Floor Plan", image: "/projects/villa-79/second-floor-plan.webp" }
-        ],
-        media: [
-          {
-            type: "reel",
-            title: "Villa 79 Architecture & Living Spaces",
-            subtitle: "Fluid Layout & Double-Height Volume",
-            url: "https://www.instagram.com/reel/DW_6NONSDtL/",
-            thumbnail: "/projects/villa-79/Cover.webp"
-          },
-          {
-            type: "reel",
-            title: "Villa 79 Spatial Walkthrough",
-            subtitle: "Balconies & Natural Light",
-            url: "https://www.instagram.com/reel/DWbnYUmyflL/",
-            thumbnail: "/projects/villa-79/IMG_0291.webp"
-          },
-          {
-            type: "reel",
-            title: "Villa 79 Craftsmanship & Materials",
-            subtitle: "Warm Wood & Stone Accents",
-            url: "https://www.instagram.com/reel/DW1JQw3SLw3/",
-            thumbnail: "/projects/villa-79/IMG_1973.webp"
-          }
-        ],
-        imageGallery: [
-          "/projects/villa-79/Cover.webp",
-          "/projects/villa-79/IMG_0291.webp",
-          "/projects/villa-79/IMG_1973.webp",
-          "/projects/villa-79/IMG_2004.webp",
-          "/projects/villa-79/IMG_0754.webp",
-          "/projects/villa-79/IMG_0792.webp",
-          "/projects/villa-79/IMG_0814.webp",
-          "/projects/villa-79/IMG_0959.webp",
-          "/projects/villa-79/IMG_1006.webp",
-          "/projects/villa-79/IMG_1032.webp",
-          "/projects/villa-79/7.webp",
-          "/projects/villa-79/10.webp",
-          "/projects/villa-79/8.webp",
-          "/projects/villa-79/12.webp"
-        ]
-      },
+      id: "mh-design-studio",
+              name: "MH Design-Build Office",
+              builtByMH: true,
+              location: "Jadhav Nagar, Belgaum.",
+              category: "Commercial",
+              status: "Completed",
+              area: "1500 sqft",
+              client: "MH Design-Build",
+              scope: "Interior design",
+              image: "/projects/mh-design-studio/Copy of 4.webp",
+              description: "Once a penthouse apartment, our studio now occupies the fifth floor with sweeping golf-course views — Scandinavian simplicity meets warm Indian materiality.",
+              fullDescription: "Once a penthouse apartment, our studio now occupies the fifth floor with sweeping golf-course views — a space we reimagined as a refined, contemporary home for our practice. Here, Scandinavian simplicity meets warm Indian materiality, and across 1,500 sq. ft., open collaboration finds its balance with quiet focus.\n\nGenerous openings and thoughtfully planned partitions draw natural light deep into the plan, shaping a workplace that feels bright, connected, and quietly inspiring — a space that reflects not just how we design, but how we work.",
+              published: {
+                title: "Office for MH Design Build by MH Design Build",
+                source: "Volume Zero",
+                logo: "/images/Volume-Zero.png",
+                url: "https://volzero.com/articles/view/office-for-mh-design-build-by-mh-design-build",
+                description: "An international design magazine that exhibits worthwhile architectural and design work from numerous architects and designers across the globe."
+              },
+              media: [
+                {
+                  type: "reel",
+                  title: "Studio Design Walkthrough",
+                  subtitle: "Jadhav Nagar Studio",
+                  url: "https://www.instagram.com/p/DGscXiuPuOa/",
+                  thumbnail: "/projects/mh-design-studio/Copy of 17.webp"
+                }
+              ],
+              imageGallery: [
+                "/projects/mh-design-studio/Copy of 4.webp",
+                "/projects/mh-design-studio/Copy of 1-1.webp",
+                "/projects/mh-design-studio/Copy of 2-1.webp",
+                "/projects/mh-design-studio/Copy of 3-1.webp",
+                "/projects/mh-design-studio/Copy of 6.webp",
+                "/projects/mh-design-studio/Copy of 8.webp",
+                "/projects/mh-design-studio/Copy of 10.webp",
+                "/projects/mh-design-studio/Copy of 11.webp",
+                "/projects/mh-design-studio/Copy of 12.webp",
+                "/projects/mh-design-studio/Copy of 13.webp",
+                "/projects/mh-design-studio/Copy of 14.webp",
+                "/projects/mh-design-studio/Copy of 16.webp",
+                "/projects/mh-design-studio/Copy of 17.webp",
+                "/projects/mh-design-studio/Copy of 19.webp"
+              ]
+            },
       {
-        id: "mh-design-studio",
-        name: "MH Design Build Studio",
-        builtByMH: true,
-        location: "Jadhav Nagar, Belgaum.",
-        category: "Commercial",
-        status: "Completed",
-        area: "1500 sqft",
-        client: "MH Design-Build",
-        scope: "Interior design",
-        image: "/projects/mh-design-studio/Copy of 4.webp",
-        description: "Once a penthouse apartment, our studio now occupies the fifth floor with sweeping golf-course views — Scandinavian simplicity meets warm Indian materiality.",
-        fullDescription: "Once a penthouse apartment, our studio now occupies the fifth floor with sweeping golf-course views — a space we reimagined as a refined, contemporary home for our practice. Here, Scandinavian simplicity meets warm Indian materiality, and across 1,500 sq. ft., open collaboration finds its balance with quiet focus.\n\nGenerous openings and thoughtfully planned partitions draw natural light deep into the plan, shaping a workplace that feels bright, connected, and quietly inspiring — a space that reflects not just how we design, but how we work.",
-        published: {
-          title: "Office for MH Design Build by MH Design Build",
-          source: "Volume Zero",
-          logo: "/images/Volume-Zero.png",
-          url: "https://volzero.com/articles/view/office-for-mh-design-build-by-mh-design-build",
-          description: "An international design magazine that exhibits worthwhile architectural and design work from numerous architects and designers across the globe."
-        },
-        media: [
-          {
-            type: "reel",
-            title: "Studio Design Walkthrough",
-            subtitle: "Jadhav Nagar Studio",
-            url: "https://www.instagram.com/p/DGscXiuPuOa/",
-            thumbnail: "/projects/mh-design-studio/Copy of 17.webp"
-          }
-        ],
-        imageGallery: [
-          "/projects/mh-design-studio/Copy of 4.webp",
-          "/projects/mh-design-studio/Copy of 1-1.webp",
-          "/projects/mh-design-studio/Copy of 2-1.webp",
-          "/projects/mh-design-studio/Copy of 3-1.webp",
-          "/projects/mh-design-studio/Copy of 6.webp",
-          "/projects/mh-design-studio/Copy of 8.webp",
-          "/projects/mh-design-studio/Copy of 10.webp",
-          "/projects/mh-design-studio/Copy of 11.webp",
-          "/projects/mh-design-studio/Copy of 12.webp",
-          "/projects/mh-design-studio/Copy of 13.webp",
-          "/projects/mh-design-studio/Copy of 14.webp",
-          "/projects/mh-design-studio/Copy of 16.webp",
-          "/projects/mh-design-studio/Copy of 17.webp",
-          "/projects/mh-design-studio/Copy of 19.webp"
-        ]
-      },
+      id: "skin-and-hair-solutions",
+              name: "Skin and Hair Solutions",
+              location: "Ayodhya nagar, Belgaum.",
+              category: "Commercial",
+              status: "Completed",
+              area: "1200 sqft",
+              client: "Skin and Hair Solutions",
+              scope: "Interior design",
+              image: "/projects/shs-clinic/PROJECT COVER.webp",
+              description: "A modern clinic extension designed with a sculptural wave ceiling, terracotta seating, and a calming palette of warm neutrals.",
+              fullDescription: "Designed as an extension to an established dermatological clinic, this project expands capacity for procedures and consultations within a tight footprint. A sculptural, wave-like ceiling flows from reception through the central corridor, giving the compact layout a sense of movement rather than confinement.\n\nCurved terracotta and blush seating wraps the reception columns, paired with a minimal palette of warm neutrals and cream plaster. Wooden paneling, brass pendants, and marble sconces add texture and warmth, while treatment rooms shift to a calmer register with skylight coves and floating shelving — softened throughout by planting.",
+              media: [
+                {
+                  type: "reel",
+                  title: "Clinic Interior Showcase",
+                  subtitle: "Reception & Sculptural Ceiling",
+                  url: "https://www.instagram.com/p/Dc6i14WEtqi/?stkn=MTh3aGVjbWw1Y3F6Zg==",
+                  thumbnail: "/projects/shs-clinic/MH Design Build_Clinic-1.webp"
+                },
+                {
+                  type: "reel",
+                  title: "Spatial Flow & Details",
+                  subtitle: "Consultation & Procedure Suites",
+                  url: "https://www.instagram.com/reel/DcyaGzpNryR/?stkn=MXA1NmFtbDNtaTZpeA==",
+                  thumbnail: "/projects/shs-clinic/MH Design Build_Clinic-3.webp"
+                },
+                {
+                  type: "post",
+                  title: "Treatment Suite & Lighting",
+                  subtitle: "Calming Material Palette",
+                  url: "https://www.instagram.com/p/DaQJIYjJHWY/",
+                  thumbnail: "/projects/shs-clinic/MH Design Build_Clinic-6.webp"
+                },
+                {
+                  type: "post",
+                  title: "Warm Neutrals & Craftsmanship",
+                  subtitle: "Custom Furniture & Millwork",
+                  url: "https://www.instagram.com/p/DaacN6stCMY/",
+                  thumbnail: "/projects/shs-clinic/MH Design Build_Clinic-8.webp"
+                }
+              ],
+              imageGallery: [
+                "/projects/shs-clinic/PROJECT COVER.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-1.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-2.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-3.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-5.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-6.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-7.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-8.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-9.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-10.webp",
+                "/projects/shs-clinic/MH Design Build_Clinic-11.webp"
+              ]
+            },
       {
-        id: "skin-and-hair-solutions",
-        name: "Skin and Hair Solutions",
-        location: "Ayodhya nagar, Belgaum.",
-        category: "Commercial",
-        status: "Completed",
-        area: "1200 sqft",
-        client: "Skin and Hair Solutions",
-        scope: "Interior design",
-        image: "/projects/shs-clinic/PROJECT COVER.webp",
-        description: "A modern clinic extension designed with a sculptural wave ceiling, terracotta seating, and a calming palette of warm neutrals.",
-        fullDescription: "Designed as an extension to an established dermatological clinic, this project expands capacity for procedures and consultations within a tight footprint. A sculptural, wave-like ceiling flows from reception through the central corridor, giving the compact layout a sense of movement rather than confinement.\n\nCurved terracotta and blush seating wraps the reception columns, paired with a minimal palette of warm neutrals and cream plaster. Wooden paneling, brass pendants, and marble sconces add texture and warmth, while treatment rooms shift to a calmer register with skylight coves and floating shelving — softened throughout by planting.",
-        media: [
-          {
-            type: "reel",
-            title: "Clinic Interior Showcase",
-            subtitle: "Reception & Sculptural Ceiling",
-            url: "https://www.instagram.com/p/Dc6i14WEtqi/?stkn=MTh3aGVjbWw1Y3F6Zg==",
-            thumbnail: "/projects/shs-clinic/MH Design Build_Clinic-1.webp"
-          },
-          {
-            type: "reel",
-            title: "Spatial Flow & Details",
-            subtitle: "Consultation & Procedure Suites",
-            url: "https://www.instagram.com/reel/DcyaGzpNryR/?stkn=MXA1NmFtbDNtaTZpeA==",
-            thumbnail: "/projects/shs-clinic/MH Design Build_Clinic-3.webp"
-          },
-          {
-            type: "post",
-            title: "Treatment Suite & Lighting",
-            subtitle: "Calming Material Palette",
-            url: "https://www.instagram.com/p/DaQJIYjJHWY/",
-            thumbnail: "/projects/shs-clinic/MH Design Build_Clinic-6.webp"
-          },
-          {
-            type: "post",
-            title: "Warm Neutrals & Craftsmanship",
-            subtitle: "Custom Furniture & Millwork",
-            url: "https://www.instagram.com/p/DaacN6stCMY/",
-            thumbnail: "/projects/shs-clinic/MH Design Build_Clinic-8.webp"
-          }
-        ],
-        imageGallery: [
-          "/projects/shs-clinic/PROJECT COVER.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-1.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-2.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-3.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-5.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-6.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-7.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-8.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-9.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-10.webp",
-          "/projects/shs-clinic/MH Design Build_Clinic-11.webp"
-        ]
-      },
+      id: "villa-79",
+              name: "Villa 79",
+              builtByMH: true,
+              location: "Vidyanagar, Belgaum",
+              category: "Residential",
+              status: "Completed",
+              area: "4400 sqft",
+              client: "Private",
+              scope: "Architectural design, MH Built",
+              image: "/projects/villa-79/Cover.webp",
+              description: "A contemporary residence planned as a cohesive composition of generous living spaces and thoughtfully positioned balconies.",
+              fullDescription: "This contemporary residence is planned as a cohesive composition of generous living spaces, private bedrooms, and thoughtfully positioned balconies that strengthen the connection between indoors and outdoors. The ground floor brings together the foyer, living, dining, kitchen, and puja spaces in a fluid arrangement, while the first floor accommodates a family lounge and three bedrooms, creating a private zone. The interiors combine warm wood, natural stone, muted neutrals, and bronze accents, complemented by expansive glazing and daylight. A sculptural staircase, double-height volume, and layered lighting add depth and character, creating a refined home where functionality, materiality, and light work harmoniously.",
+              video: {
+                url: "/projects/villa-79/villa-79-walkthrough.mp4",
+                title: "Villa 79 On-Site Walkthrough",
+                subtitle: "Architectural Flow & Light"
+              },
+              floorPlans: [
+                { name: "First Floor Plan", image: "/projects/villa-79/first-floor-plan.webp" },
+                { name: "Second Floor Plan", image: "/projects/villa-79/second-floor-plan.webp" }
+              ],
+              media: [
+                {
+                  type: "reel",
+                  title: "Villa 79 Architecture & Living Spaces",
+                  subtitle: "Fluid Layout & Double-Height Volume",
+                  url: "https://www.instagram.com/reel/DW_6NONSDtL/",
+                  thumbnail: "/projects/villa-79/Cover.webp"
+                },
+                {
+                  type: "reel",
+                  title: "Villa 79 Spatial Walkthrough",
+                  subtitle: "Balconies & Natural Light",
+                  url: "https://www.instagram.com/reel/DWbnYUmyflL/",
+                  thumbnail: "/projects/villa-79/IMG_0291.webp"
+                },
+                {
+                  type: "reel",
+                  title: "Villa 79 Craftsmanship & Materials",
+                  subtitle: "Warm Wood & Stone Accents",
+                  url: "https://www.instagram.com/reel/DW1JQw3SLw3/",
+                  thumbnail: "/projects/villa-79/IMG_1973.webp"
+                }
+              ],
+              imageGallery: [
+                "/projects/villa-79/Cover.webp",
+                "/projects/villa-79/IMG_0291.webp",
+                "/projects/villa-79/IMG_1973.webp",
+                "/projects/villa-79/IMG_2004.webp",
+                "/projects/villa-79/IMG_0754.webp",
+                "/projects/villa-79/IMG_0792.webp",
+                "/projects/villa-79/IMG_0814.webp",
+                "/projects/villa-79/IMG_0959.webp",
+                "/projects/villa-79/IMG_1006.webp",
+                "/projects/villa-79/IMG_1032.webp",
+                "/projects/villa-79/7.webp",
+                "/projects/villa-79/10.webp",
+                "/projects/villa-79/8.webp",
+                "/projects/villa-79/12.webp"
+              ]
+            },
       {
-        id: "the-grove-apartments",
-        name: "The Grove Apartments",
-        builtByMH: true,
-        location: "Mahantesh nagar, Belgaum",
-        category: "Residential",
-        status: "Completed",
-        area: "11103 sqft",
-        client: "Private",
-        scope: "Architectural design, MH Built",
-        image: "/projects/the-grove/Copy of GROVE REVISED1.webp",
-        description: "A contemporary apartment development defined by bold, articulated massing and clean architectural geometry on a 40' × 60' site.",
-        fullDescription: "Set on a compact 40' × 60' site, The Grove is a contemporary apartment development defined by bold, articulated massing and clean architectural geometry. Projecting balcony volumes break the façade into a rhythmic composition, framed by a warm terracotta and grey palette that gives the building a sculptural, street-facing presence.\n\nThe typical floor plan houses a spacious three-bedroom apartment around a central lift and stair core, with large openings and generous balconies extending living spaces outward. The result is a refined, memorable expression of simplicity and proportion.",
-        floorPlans: [
-          { name: "First Floor Plan", image: "/projects/the-grove/first-floor-plan.webp" }
-        ],
-        media: [
-          {
-            type: "reel",
-            title: "The Grove Architecture & Facade",
-            subtitle: "Completed Architecture Walkthrough",
-            url: "https://www.instagram.com/p/DdEg6W3u4ne/",
-            thumbnail: "/projects/the-grove/Copy of GROVE REVISED1.webp"
-          },
-          {
-            type: "reel",
-            title: "On-Site Construction & Structure",
-            subtitle: "Ground Execution & Craftsmanship",
-            url: "https://www.instagram.com/p/DXwbfMwyn2u/",
-            thumbnail: "/projects/the-grove/IMG_6360.webp"
-          }
-        ],
-        imageGallery: [
-          "/projects/the-grove/Copy of GROVE REVISED1.webp",
-          "/projects/the-grove/IMG_6407.webp",
-          "/projects/the-grove/Copy of BED2.webp",
-          "/projects/the-grove/IMG_6388.webp",
-          "/projects/the-grove/Copy of Enscape_2026-06-03-16-29-26.webp",
-          "/projects/the-grove/Copy of Enscape_2026-06-08-14-00-34.webp",
-          "/projects/the-grove/Copy of Enscape_2026-06-08-14-07-47.webp",
-          "/projects/the-grove/Copy of IMG-20251008-WA0026.webp",
-          "/projects/the-grove/Copy of IMG-20251008-WA0029.webp",
-          "/projects/the-grove/IMG_3257.webp",
-          "/projects/the-grove/IMG_4131.webp",
-          "/projects/the-grove/IMG_4133.webp",
-          "/projects/the-grove/IMG_6360.webp",
-          "/projects/the-grove/IMG_6362.webp",
-          "/projects/the-grove/IMG_6364.webp",
-          "/projects/the-grove/IMG_6370.webp",
-          "/projects/the-grove/IMG_6371.webp",
-          "/projects/the-grove/IMG_6399.webp"
-        ]
-      },
+      id: "the-grove-apartments",
+              name: "The Grove Apartments",
+              builtByMH: true,
+              location: "Mahantesh nagar, Belgaum",
+              category: "Residential",
+              status: "Completed",
+              area: "11103 sqft",
+              client: "Private",
+              scope: "Architectural design, MH Built",
+              image: "/projects/the-grove/Copy of GROVE REVISED1.webp",
+              description: "A contemporary apartment development defined by bold, articulated massing and clean architectural geometry on a 40' × 60' site.",
+              fullDescription: "Set on a compact 40' × 60' site, The Grove is a contemporary apartment development defined by bold, articulated massing and clean architectural geometry. Projecting balcony volumes break the façade into a rhythmic composition, framed by a warm terracotta and grey palette that gives the building a sculptural, street-facing presence.\n\nThe typical floor plan houses a spacious three-bedroom apartment around a central lift and stair core, with large openings and generous balconies extending living spaces outward. The result is a refined, memorable expression of simplicity and proportion.",
+              floorPlans: [
+                { name: "First Floor Plan", image: "/projects/the-grove/first-floor-plan.webp" }
+              ],
+              media: [
+                {
+                  type: "reel",
+                  title: "The Grove Architecture & Facade",
+                  subtitle: "Completed Architecture Walkthrough",
+                  url: "https://www.instagram.com/p/DdEg6W3u4ne/",
+                  thumbnail: "/projects/the-grove/Copy of GROVE REVISED1.webp"
+                },
+                {
+                  type: "reel",
+                  title: "On-Site Construction & Structure",
+                  subtitle: "Ground Execution & Craftsmanship",
+                  url: "https://www.instagram.com/p/DXwbfMwyn2u/",
+                  thumbnail: "/projects/the-grove/IMG_6360.webp"
+                }
+              ],
+              imageGallery: [
+                "/projects/the-grove/Copy of GROVE REVISED1.webp",
+                "/projects/the-grove/IMG_6407.webp",
+                "/projects/the-grove/Copy of BED2.webp",
+                "/projects/the-grove/IMG_6388.webp",
+                "/projects/the-grove/Copy of Enscape_2026-06-03-16-29-26.webp",
+                "/projects/the-grove/Copy of Enscape_2026-06-08-14-00-34.webp",
+                "/projects/the-grove/Copy of Enscape_2026-06-08-14-07-47.webp",
+                "/projects/the-grove/Copy of IMG-20251008-WA0026.webp",
+                "/projects/the-grove/Copy of IMG-20251008-WA0029.webp",
+                "/projects/the-grove/IMG_3257.webp",
+                "/projects/the-grove/IMG_4131.webp",
+                "/projects/the-grove/IMG_4133.webp",
+                "/projects/the-grove/IMG_6360.webp",
+                "/projects/the-grove/IMG_6362.webp",
+                "/projects/the-grove/IMG_6364.webp",
+                "/projects/the-grove/IMG_6370.webp",
+                "/projects/the-grove/IMG_6371.webp",
+                "/projects/the-grove/IMG_6399.webp"
+              ]
+            },
       {
-        id: "renovation",
-        name: "An ode to Teakwood",
-        location: "Belgaum",
-        category: "Residential",
-        status: "Completed",
-        area: "2500 sqft",
-        client: "Private",
-        scope: "Interior design",
-        image: "/projects/renovation/Hero.webp",
-        description: "A harmonious balance between contemporary living and the richness of traditional craftsmanship.",
-        fullDescription: "This residential project explores a harmonious balance between contemporary living and the richness of traditional craftsmanship. The design is unified through a warm material palette of natural timber, soft neutral surfaces, elegant detailing and carefully integrated lighting. Custom-designed architectural elements, furniture and storage solutions create a cohesive visual language while ensuring that every space remains functional and purposeful. Traditional forms and handcrafted details are reinterpreted with clean lines and contemporary simplicity, giving the interiors a sense of warmth, character and timelessness. The result is a refined home where architecture, interior design and craftsmanship come together to create a calm, elegant and distinctly personal living environment.",
-        media: [
-          {
-            type: "reel",
-            title: "An Ode to Teakwood Walkthrough",
-            subtitle: "Interior Craftsmanship & Details",
-            url: "https://www.instagram.com/reel/DKv8uWgNb3A/",
-            thumbnail: "/projects/renovation/Hero.webp"
-          }
-        ],
-        imageGallery: [
-          "/projects/renovation/Hero.webp",
-          "/projects/renovation/MM-02.webp",
-          "/projects/renovation/MM-03.webp",
-          "/projects/renovation/MM-07.webp",
-          "/projects/renovation/MM-14.webp",
-          "/projects/renovation/MM-16.webp",
-          "/projects/renovation/MM_05662.webp",
-          "/projects/renovation/MM_05709.webp",
-          "/projects/renovation/IMG_6193.webp",
-          "/projects/renovation/IMG_6240.webp"
-        ]
-      },
+      id: "renovation",
+              name: "The Teakwood Residence",
+              location: "Belgaum",
+              category: "Residential",
+              status: "Completed",
+              area: "2500 sqft",
+              client: "Private",
+              scope: "Interior design",
+              image: "/projects/renovation/Hero.webp",
+              description: "A harmonious balance between contemporary living and the richness of traditional craftsmanship.",
+              fullDescription: "This residential project explores a harmonious balance between contemporary living and the richness of traditional craftsmanship. The design is unified through a warm material palette of natural timber, soft neutral surfaces, elegant detailing and carefully integrated lighting. Custom-designed architectural elements, furniture and storage solutions create a cohesive visual language while ensuring that every space remains functional and purposeful. Traditional forms and handcrafted details are reinterpreted with clean lines and contemporary simplicity, giving the interiors a sense of warmth, character and timelessness. The result is a refined home where architecture, interior design and craftsmanship come together to create a calm, elegant and distinctly personal living environment.",
+              media: [
+                {
+                  type: "reel",
+                  title: "An Ode to Teakwood Walkthrough",
+                  subtitle: "Interior Craftsmanship & Details",
+                  url: "https://www.instagram.com/reel/DKv8uWgNb3A/",
+                  thumbnail: "/projects/renovation/Hero.webp"
+                }
+              ],
+              imageGallery: [
+                "/projects/renovation/Hero.webp",
+                "/projects/renovation/MM-02.webp",
+                "/projects/renovation/MM-03.webp",
+                "/projects/renovation/MM-07.webp",
+                "/projects/renovation/MM-14.webp",
+                "/projects/renovation/MM-16.webp",
+                "/projects/renovation/MM_05662.webp",
+                "/projects/renovation/MM_05709.webp",
+                "/projects/renovation/IMG_6193.webp",
+                "/projects/renovation/IMG_6240.webp"
+              ]
+            },
       {
-        id: "villa-145",
-        name: "Villa 145",
-        builtByMH: true,
-        location: "Ramtheerth, Belgaum",
-        category: "Residential",
-        status: "Ongoing",
-        area: "3600 sqft",
-        client: "Private",
-        scope: "Architectural design, MH Built",
-        image: "/projects/villa-145/Hero.webp",
-        description: "A composition of bold geometric volumes, balanced through exposed brick and natural finishes.",
-        fullDescription: "This contemporary residential project is conceived as a composition of bold geometric volumes, balanced through the warmth and texture of exposed brick, natural-toned finishes and deep grey accent surfaces. The planning follows a clear functional organization, integrating living, dining, kitchen, puja and private spaces with an emphasis on efficient circulation and a strong connection to the outdoor areas. Large openings, recessed balconies and landscaped pockets introduce natural light, ventilation and greenery into the built form. The façade uses projecting masses, framed windows and layered materials to create depth, shadow and a distinctive architectural identity. Together, the architecture and interior planning create a modern home that is expressive, functional and grounded in a refined palette of natural materials.",
-        floorPlans: [
-          { name: "First Floor Plan", image: "/projects/villa-145/first-floor-plan.webp" },
-          { name: "Second Floor Plan", image: "/projects/villa-145/second-floor-plan.webp" }
-        ],
-        imageGallery: [
-          "/projects/villa-145/Hero.webp",
-          "/projects/villa-145/render-1.webp",
-          "/projects/villa-145/render-2.webp",
-          "/projects/villa-145/render-3.webp",
-          "/projects/villa-145/render-4.webp",
-          "/projects/villa-145/render-5.webp",
-          "/projects/villa-145/render-6.webp",
-          "/projects/villa-145/render-7.webp"
-        ]
-      },
+      id: "villa-145",
+              name: "Villa 145",
+              builtByMH: true,
+              location: "Ramtheerth, Belgaum",
+              category: "Residential",
+              status: "Ongoing",
+              area: "3600 sqft",
+              client: "Private",
+              scope: "Architectural design, MH Built",
+              image: "/projects/villa-145/Hero.webp",
+              description: "A composition of bold geometric volumes, balanced through exposed brick and natural finishes.",
+              fullDescription: "This contemporary residential project is conceived as a composition of bold geometric volumes, balanced through the warmth and texture of exposed brick, natural-toned finishes and deep grey accent surfaces. The planning follows a clear functional organization, integrating living, dining, kitchen, puja and private spaces with an emphasis on efficient circulation and a strong connection to the outdoor areas. Large openings, recessed balconies and landscaped pockets introduce natural light, ventilation and greenery into the built form. The façade uses projecting masses, framed windows and layered materials to create depth, shadow and a distinctive architectural identity. Together, the architecture and interior planning create a modern home that is expressive, functional and grounded in a refined palette of natural materials.",
+              floorPlans: [
+                { name: "First Floor Plan", image: "/projects/villa-145/first-floor-plan.webp" },
+                { name: "Second Floor Plan", image: "/projects/villa-145/second-floor-plan.webp" }
+              ],
+              imageGallery: [
+                "/projects/villa-145/Hero.webp",
+                "/projects/villa-145/render-1.webp",
+                "/projects/villa-145/render-2.webp",
+                "/projects/villa-145/render-3.webp",
+                "/projects/villa-145/render-4.webp",
+                "/projects/villa-145/render-5.webp",
+                "/projects/villa-145/render-6.webp",
+                "/projects/villa-145/render-7.webp"
+              ]
+            },
       {
-        id: "villa-17",
-        name: "Villa 17",
-        builtByMH: true,
-        location: "Vidyanagar, Belgaum",
-        category: "Residential",
-        status: "Ongoing",
-        area: "6000 sqft",
-        client: "Private",
-        scope: "Architectural design, MH Built",
-        image: "/projects/villa-17/Hero.webp",
-        description: "A contemporary residence composed of bold, clean-lined volumes shaping a strong, refined façade.",
-        fullDescription: "This contemporary residence is composed of bold, clean-lined volumes, with projecting frames, recessed surfaces, and vertical elements shaping a strong, refined façade. A restrained palette of crisp white planes, textured grey surfaces, and dark metal screens creates contrast while maintaining a calm, timeless character. Integrated planters and landscaped edges soften the geometric form, connecting the home with its surroundings.\n\nInternally, the plan is organized around an open living and dining core, with the kitchen and utility positioned for efficiency, while the master bedroom forms a private zone. A closed courtyard, staircase, puja room, and entrance porch bring light, openness, and spatial variety.",
-        floorPlans: [
-          { name: "First Floor Plan", image: "/projects/villa-17/first-floor-plan.webp" },
-          { name: "Second Floor Plan", image: "/projects/villa-17/second-floor-plan.webp" }
-        ],
-        imageGallery: [
-          "/projects/villa-17/Hero.webp",
-          "/projects/villa-17/2.webp"
-        ]
-      },
+      id: "villa-7199",
+              name: "Villa 7199",
+              builtByMH: true,
+              location: "Anjaneya nagar, Belgaum",
+              category: "Residential",
+              status: "Ongoing",
+              area: "3160 sqft",
+              client: "Private",
+              scope: "Architectural design, MH Built",
+              image: "/projects/villa-7199/Hero.webp",
+              description: "A slender vertical residence where bold geometric forms and open green spaces come together.",
+              fullDescription: "Villa 7199 is conceived as a slender vertical residence where bold geometric forms and open green spaces come together to create a contemporary home. Clean white volumes are layered with recessed balconies, projecting frames, timber screens and textured surfaces, giving the façade depth and character.\n\nGreenery is woven throughout through landscaped pockets, cascading planters and open decks, bringing nature into the heart of the home.\n\nThe ground floor opens into a generous living area connected to a landscaped court and deck, while the upper floors organize bedrooms, dining, kitchen and study spaces around the central stair and open void. Large openings bring light, air and openness throughout.",
+              floorPlans: [
+                { name: "Ground Floor Plan", image: "/projects/villa-7199/ground-floor-plan.webp" },
+                { name: "First Floor Plan", image: "/projects/villa-7199/first-floor-plan.webp" },
+                { name: "Second Floor Plan", image: "/projects/villa-7199/second-floor-plan.webp" }
+              ],
+              imageGallery: [
+                "/projects/villa-7199/Hero.webp",
+                "/projects/villa-7199/render-1.webp",
+                "/projects/villa-7199/render-b12.webp",
+                "/projects/villa-7199/render-bedroom33.webp",
+                "/projects/villa-7199/render-d4.webp",
+                "/projects/villa-7199/render-d6.webp",
+                "/projects/villa-7199/render-l11.webp",
+                "/projects/villa-7199/render-l5.webp",
+                "/projects/villa-7199/render-warm-bedroom.webp"
+              ]
+            },
       {
-        id: "villa-563",
-        name: "Villa 563",
-        builtByMH: true,
-        location: "Hanuman nagar, Belgaum.",
-        category: "Residential",
-        status: "Ongoing",
-        area: "3037 sqft",
-        client: "Private",
-        scope: "Architectural design, MH Built",
-        image: "/projects/villa-563/Hero.webp",
-        description: "A 30' × 40' contemporary villa defined by intersecting planes and a distinctive softened curved corner.",
-        fullDescription: "This 30’ x 40’ contemporary residential villa is defined by intersecting planes, recessed volumes, and a distinctive softened corner that adds sculptural character to the rectilinear form. The curved edge creates a gentle visual transition, balancing the building’s geometric precision.\n\nInternally, the plan is efficiently designed with clear circulation and vertical movement, while neutral tones, natural textures, and contemporary detailing contribute to the internal ambience of the villa.",
-        video: {
-          url: "/projects/villa-563/villa-563-walkthrough.mp4",
-          title: "Villa 563 3D Walkthrough",
-          subtitle: "Volumetric Design & Curved Facade"
-        },
-        floorPlans: [
-          { name: "First Floor Plan", image: "/projects/villa-563/first-floor-plan.webp" },
-          { name: "Second Floor Plan", image: "/projects/villa-563/second-floor-plan.webp" }
-        ],
-        imageGallery: [
-          "/projects/villa-563/Hero.webp",
-          "/projects/villa-563/render-bd2.webp",
-          "/projects/villa-563/render-bd3.webp",
-          "/projects/villa-563/render-liv1.webp",
-          "/projects/villa-563/render-liv4.webp",
-          "/projects/villa-563/render-liv2.webp"
-        ]
-      },
+      id: "villa-7200",
+              name: "Villa 7200",
+              builtByMH: true,
+              location: "Belgaum",
+              category: "Residential",
+              status: "Ongoing",
+              area: "5800 sqft",
+              client: "Private",
+              scope: "Architectural design, MH Built",
+              image: "/projects/villa-7200/Hero.webp",
+              description: "A 40' × 60' contemporary residence with clean geometric volumes and projecting horizontal planes.",
+              fullDescription: "This 40’ x 60’ contemporary residence is conceived as a composition of clean geometric volumes, projecting horizontal planes, and strong vertical elements, creating a bold yet balanced architectural identity. The façade features deep timber-clad overhangs, textured surfaces, screens, and carefully framed openings, establishing depth, rhythm, and a dynamic play of light and shadow. Landscaped balconies and integrated planters soften the geometry while strengthening the connection with nature.\n\nInternally, living, dining, kitchen, bedroom, and courtyard spaces are seamlessly connected through generous open areas and a dramatic double-height volume. Warm wood, neutral finishes, natural textures, and expansive glazing create a modern, fluid, warm, and timeless home.",
+              media: [
+                {
+                  type: "reel",
+                  title: "Villa 7200 Architectural Concept",
+                  subtitle: "Geometric Volumes & Landscaped Balconies",
+                  url: "https://www.instagram.com/reel/DZKjXS_JUDS/",
+                  thumbnail: "/projects/villa-7200/Hero.webp"
+                }
+              ],
+              floorPlans: [
+                { name: "First Floor Plan", image: "/projects/villa-7200/first-floor-plan.webp" },
+                { name: "Second Floor Plan", image: "/projects/villa-7200/second-floor-plan.webp" }
+              ],
+              imageGallery: [
+                "/projects/villa-7200/Hero.webp",
+                "/projects/villa-7200/render-2.webp",
+                "/projects/villa-7200/render-3.webp",
+                "/projects/villa-7200/render-4.webp",
+                "/projects/villa-7200/render-6.webp",
+                "/projects/villa-7200/render-7.webp",
+                "/projects/villa-7200/render-8.webp"
+              ]
+            },
       {
-        id: "villa-7199",
-        name: "Villa 7199",
-        builtByMH: true,
-        location: "Anjaneya nagar, Belgaum",
-        category: "Residential",
-        status: "Ongoing",
-        area: "3160 sqft",
-        client: "Private",
-        scope: "Architectural design, MH Built",
-        image: "/projects/villa-7199/Hero.webp",
-        description: "A slender vertical residence where bold geometric forms and open green spaces come together.",
-        fullDescription: "Villa 7199 is conceived as a slender vertical residence where bold geometric forms and open green spaces come together to create a contemporary home. Clean white volumes are layered with recessed balconies, projecting frames, timber screens and textured surfaces, giving the façade depth and character.\n\nGreenery is woven throughout through landscaped pockets, cascading planters and open decks, bringing nature into the heart of the home.\n\nThe ground floor opens into a generous living area connected to a landscaped court and deck, while the upper floors organize bedrooms, dining, kitchen and study spaces around the central stair and open void. Large openings bring light, air and openness throughout.",
-        floorPlans: [
-          { name: "Ground Floor Plan", image: "/projects/villa-7199/ground-floor-plan.webp" },
-          { name: "First Floor Plan", image: "/projects/villa-7199/first-floor-plan.webp" },
-          { name: "Second Floor Plan", image: "/projects/villa-7199/second-floor-plan.webp" }
-        ],
-        imageGallery: [
-          "/projects/villa-7199/Hero.webp",
-          "/projects/villa-7199/render-1.webp",
-          "/projects/villa-7199/render-b12.webp",
-          "/projects/villa-7199/render-bedroom33.webp",
-          "/projects/villa-7199/render-d4.webp",
-          "/projects/villa-7199/render-d6.webp",
-          "/projects/villa-7199/render-l11.webp",
-          "/projects/villa-7199/render-l5.webp",
-          "/projects/villa-7199/render-warm-bedroom.webp"
-        ]
-      },
+      id: "villa-563",
+              name: "Villa 563",
+              builtByMH: true,
+              location: "Hanuman nagar, Belgaum.",
+              category: "Residential",
+              status: "Ongoing",
+              area: "3037 sqft",
+              client: "Private",
+              scope: "Architectural design, MH Built",
+              image: "/projects/villa-563/Hero.webp",
+              description: "A 30' × 40' contemporary villa defined by intersecting planes and a distinctive softened curved corner.",
+              fullDescription: "This 30’ x 40’ contemporary residential villa is defined by intersecting planes, recessed volumes, and a distinctive softened corner that adds sculptural character to the rectilinear form. The curved edge creates a gentle visual transition, balancing the building’s geometric precision.\n\nInternally, the plan is efficiently designed with clear circulation and vertical movement, while neutral tones, natural textures, and contemporary detailing contribute to the internal ambience of the villa.",
+              video: {
+                url: "/projects/villa-563/villa-563-walkthrough.mp4",
+                title: "Villa 563 3D Walkthrough",
+                subtitle: "Volumetric Design & Curved Facade"
+              },
+              floorPlans: [
+                { name: "First Floor Plan", image: "/projects/villa-563/first-floor-plan.webp" },
+                { name: "Second Floor Plan", image: "/projects/villa-563/second-floor-plan.webp" }
+              ],
+              imageGallery: [
+                "/projects/villa-563/Hero.webp",
+                "/projects/villa-563/render-bd2.webp",
+                "/projects/villa-563/render-bd3.webp",
+                "/projects/villa-563/render-liv1.webp",
+                "/projects/villa-563/render-liv4.webp",
+                "/projects/villa-563/render-liv2.webp"
+              ]
+            },
       {
-        id: "villa-7200",
-        name: "Villa 7200",
-        builtByMH: true,
-        location: "Belgaum",
-        category: "Residential",
-        status: "Ongoing",
-        area: "5800 sqft",
-        client: "Private",
-        scope: "Architectural design, MH Built",
-        image: "/projects/villa-7200/Hero.webp",
-        description: "A 40' × 60' contemporary residence with clean geometric volumes and projecting horizontal planes.",
-        fullDescription: "This 40’ x 60’ contemporary residence is conceived as a composition of clean geometric volumes, projecting horizontal planes, and strong vertical elements, creating a bold yet balanced architectural identity. The façade features deep timber-clad overhangs, textured surfaces, screens, and carefully framed openings, establishing depth, rhythm, and a dynamic play of light and shadow. Landscaped balconies and integrated planters soften the geometry while strengthening the connection with nature.\n\nInternally, living, dining, kitchen, bedroom, and courtyard spaces are seamlessly connected through generous open areas and a dramatic double-height volume. Warm wood, neutral finishes, natural textures, and expansive glazing create a modern, fluid, warm, and timeless home.",
-        media: [
-          {
-            type: "reel",
-            title: "Villa 7200 Architectural Concept",
-            subtitle: "Geometric Volumes & Landscaped Balconies",
-            url: "https://www.instagram.com/reel/DZKjXS_JUDS/",
-            thumbnail: "/projects/villa-7200/Hero.webp"
-          }
-        ],
-        floorPlans: [
-          { name: "First Floor Plan", image: "/projects/villa-7200/first-floor-plan.webp" },
-          { name: "Second Floor Plan", image: "/projects/villa-7200/second-floor-plan.webp" }
-        ],
-        imageGallery: [
-          "/projects/villa-7200/Hero.webp",
-          "/projects/villa-7200/render-2.webp",
-          "/projects/villa-7200/render-3.webp",
-          "/projects/villa-7200/render-4.webp",
-          "/projects/villa-7200/render-6.webp",
-          "/projects/villa-7200/render-7.webp",
-          "/projects/villa-7200/render-8.webp"
-        ]
-      }
+      id: "villa-17",
+              name: "Villa 17",
+              builtByMH: true,
+              location: "Vidyanagar, Belgaum",
+              category: "Residential",
+              status: "Ongoing",
+              area: "6000 sqft",
+              client: "Private",
+              scope: "Architectural design, MH Built",
+              image: "/projects/villa-17/Hero.webp",
+              description: "A contemporary residence composed of bold, clean-lined volumes shaping a strong, refined façade.",
+              fullDescription: "This contemporary residence is composed of bold, clean-lined volumes, with projecting frames, recessed surfaces, and vertical elements shaping a strong, refined façade. A restrained palette of crisp white planes, textured grey surfaces, and dark metal screens creates contrast while maintaining a calm, timeless character. Integrated planters and landscaped edges soften the geometric form, connecting the home with its surroundings.\n\nInternally, the plan is organized around an open living and dining core, with the kitchen and utility positioned for efficiency, while the master bedroom forms a private zone. A closed courtyard, staircase, puja room, and entrance porch bring light, openness, and spatial variety.",
+              floorPlans: [
+                { name: "First Floor Plan", image: "/projects/villa-17/first-floor-plan.webp" },
+                { name: "Second Floor Plan", image: "/projects/villa-17/second-floor-plan.webp" }
+              ],
+              imageGallery: [
+                "/projects/villa-17/Hero.webp",
+                "/projects/villa-17/2.webp"
+              ]
+            }
     ]
   },
   contact: {
