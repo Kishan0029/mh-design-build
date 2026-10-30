@@ -23,7 +23,8 @@ const ProjectDetail = () => {
   const project = siteContent.projects.list.find((p) => 
     String(p.id) === String(id) || 
     (String(id) === 'shs-clinic' && p.id === 'skin-and-hair-solutions') ||
-    (String(id) === 'the-grove' && p.id === 'the-grove-apartments')
+    (String(id) === 'the-grove' && p.id === 'the-grove-apartments') ||
+    (String(id) === 'an-ode-to-teakwood' && p.id === 'renovation')
   );
   
   // Find next project
@@ -137,6 +138,40 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* 2.5 Dedicated Property Walkthrough Video */}
+      {project.video && (
+        <section className="py-20 md:py-32 px-4 bg-mh-black text-mh-white border-y border-white/10">
+          <div className="container mx-auto max-w-5xl">
+            <div className="flex flex-col items-center text-center mb-10 md:mb-16">
+              <FadeUp>
+                <span className="text-xs uppercase tracking-[0.25em] text-mh-gold mb-3 block font-medium">
+                  Cinematic Walkthrough
+                </span>
+                <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-3">
+                  {project.video.title || "Project Walkthrough"}
+                </h2>
+                {project.video.subtitle && (
+                  <p className="text-sm md:text-base text-white/70 max-w-xl font-light">
+                    {project.video.subtitle}
+                  </p>
+                )}
+              </FadeUp>
+            </div>
+
+            <FadeUp delay={2} className="relative w-full rounded-sm overflow-hidden bg-black/60 shadow-2xl border border-white/10 flex justify-center">
+              <video
+                src={project.video.url}
+                controls
+                playsInline
+                preload="metadata"
+                poster={project.image}
+                className="w-full max-h-[75vh] object-contain mx-auto"
+              />
+            </FadeUp>
+          </div>
+        </section>
+      )}
 
       {/* 3. Image Gallery */}
       {project.imageGallery && project.imageGallery.length > 0 && (
@@ -314,6 +349,63 @@ const ProjectDetail = () => {
               {project.imageGallery.slice(3).map((img, index) => (
                 <FadeUp key={`gallery-${index}`} delay={(index % 2) + 1} className="w-full break-inside-avoid mb-8">
                   <ParallaxImage src={img} alt={`${project.name} Gallery ${index + 4}`} className="w-full h-auto" />
+                </FadeUp>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 3.8 Architectural Drawings & Floor Plans */}
+      {project.floorPlans && project.floorPlans.length > 0 && (
+        <section className="py-24 md:py-36 px-4 bg-mh-off-white border-t border-black/10">
+          <div className="container mx-auto max-w-6xl">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <FadeUp>
+                <span className="text-xs uppercase tracking-[0.25em] text-mh-gold mb-3 block font-medium">
+                  Architectural Drawings
+                </span>
+                <h2 className="text-4xl md:text-6xl font-serif text-mh-black leading-tight">
+                  Floor Plans
+                </h2>
+              </FadeUp>
+              <FadeUp delay={2}>
+                <span className="text-xs uppercase tracking-[0.2em] text-mh-black/60">
+                  Spatial Layout & Circulation
+                </span>
+              </FadeUp>
+            </div>
+
+            <div className={cn(
+              "grid gap-8 items-stretch",
+              project.floorPlans.length === 1 && "grid-cols-1 max-w-3xl mx-auto",
+              project.floorPlans.length === 2 && "grid-cols-1 md:grid-cols-2",
+              project.floorPlans.length >= 3 && "grid-cols-1 md:grid-cols-3"
+            )}>
+              {project.floorPlans.map((plan, pIdx) => (
+                <FadeUp key={pIdx} delay={pIdx + 1} className="flex flex-col bg-white border border-black/10 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <div className="p-4 md:p-6 border-b border-black/5 bg-mh-white flex items-center justify-between">
+                    <h4 className="text-sm uppercase tracking-widest font-serif font-medium text-mh-black">
+                      {plan.name}
+                    </h4>
+                    <span className="text-[10px] uppercase tracking-wider text-mh-gold border border-mh-gold/30 px-2 py-0.5 rounded-xs">
+                      Level {pIdx + 1}
+                    </span>
+                  </div>
+                  <div className="p-6 md:p-8 flex items-center justify-center flex-grow bg-white">
+                    <img
+                      src={plan.image}
+                      alt={`${project.name} - ${plan.name}`}
+                      className="w-full h-auto max-h-[500px] object-contain hover:scale-105 transition-transform duration-500 cursor-zoom-in"
+                      onClick={() => window.open(plan.image, '_blank')}
+                      title="Click to view full plan"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="px-6 py-3 bg-black/[0.02] border-t border-black/5 flex items-center justify-between text-[11px] text-mh-black/60">
+                    <span>Click plan to view high-resolution</span>
+                    <ExternalLink size={12} className="text-mh-gold" />
+                  </div>
                 </FadeUp>
               ))}
             </div>

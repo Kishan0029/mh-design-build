@@ -2,16 +2,16 @@ export const siteContent = {
   home: {
     hero: {
       headline: "Building Spaces That Define Tomorrow",
-      eyebrow: "MH DESIGN — ARCHITECTURAL DESIGN & REAL ESTATE DEVELOPMENT",
+      eyebrow: "MH DESIGN BUILD — ARCHITECTURAL DESIGN & CONSTRUCTION",
       videoUrl: "/videos/hero-video.mp4",
       videoPlaceholder: "/images/home-hero.webp",
     },
     intro: {
-      text: "We believe that exceptional design has the power to transform how we live and work. MH Design is dedicated to crafting timeless spaces that blend uncompromising quality with understated elegance.",
+      text: "We believe good design and good building shouldn't be separate journeys handled by separate people — so we brought them under one roof. The result is architecture that's thoughtfully designed and precisely built, delivered through one accountable team.",
     },
     aboutTeaser: {
       image: "/images/Studio.png",
-      text: "With over a decade of experience in premium real estate development, our multidisciplinary team brings a meticulous approach to every project, ensuring that every detail reflects our commitment to excellence.",
+      text: "Founded on three decades of construction expertise and reimagined for the way people build today, we are a Belagavi-based design build practice led by an architect. We work with clients who care about how spaces look, feel, and function, taking ownership of the outcome from concept to completion.",
     },
     featuredIn: [
       { 
@@ -29,11 +29,13 @@ export const siteContent = {
     ],
     socialMedia: {
       title: "We're on\nSocial Media",
+      subtitle: "@mhdesignbuild.in",
       posts: [
-        { images: ["/images/social/1.jpg", "/images/Studio.png"], url: "https://www.instagram.com/p/DQMYSADkkEi/" },
-        { images: ["/images/social/2.jpg"], url: "https://www.instagram.com/p/DXd70M1kg52/" },
-        { images: ["/images/social/3.jpg"], url: "https://www.instagram.com/reel/DZKjXS_JUDS/" },
-        { images: ["/images/social/4.jpg"], url: "https://www.instagram.com/reel/DW_6NONSDtL/" }
+        { image: "/images/social/1.jpg", images: ["/images/social/1.jpg"], url: "https://www.instagram.com/p/DQMYSADkkEi/", type: "post", title: "Residential Architecture" },
+        { image: "/images/social/2.jpg", images: ["/images/social/2.jpg"], url: "https://www.instagram.com/p/DXd70M1kg52/", type: "post", title: "Spatial Detailing" },
+        { image: "/images/social/3.jpg", images: ["/images/social/3.jpg"], url: "https://www.instagram.com/reel/DZKjXS_JUDS/", type: "reel", title: "Villa 7200 Concept" },
+        { image: "/images/social/4.jpg", images: ["/images/social/4.jpg"], url: "https://www.instagram.com/reel/DW_6NONSDtL/", type: "reel", title: "Villa 79 Architecture" },
+        { image: "/images/social/5.jpg", images: ["/images/social/5.jpg"], url: "https://www.instagram.com/p/DTQL4nVEr4O/", type: "post", title: "Materiality & Finish" }
       ]
     },
     process: [
@@ -43,8 +45,8 @@ export const siteContent = {
       { id: "04", title: "Handover", description: "Quality-Assured Handover" }
     ],
     stats: [
+      { value: "30+", label: "Years Construction Legacy" },
       { value: "150+", label: "Projects Delivered" },
-      { value: "12", label: "Years of Excellence" },
       { value: "2M+", label: "Sq Ft Developed" },
     ],
     testimonials: [
@@ -57,6 +59,11 @@ export const siteContent = {
         quote: "MH Design turned our apartment into a beautiful, highly functional space — modern design, flawless execution, and outstanding craftsmanship. Five stars!",
         name: "Vijaykumar Jigajinni",
         role: "Software Engineering Delivery Manager"
+      },
+      {
+        quote: "MH Design Build seamlessly blends modern construction with timeless reliability. Their ability to understand your vision, even when it’s not fully defined, sets them apart. Truly one of the finest firms in the city and beyond.",
+        name: "Amaan Sait",
+        role: "Partner, Sait Transport Corporation"
       }
     ],
     cta: {
@@ -68,7 +75,7 @@ export const siteContent = {
         answer: "We provide end-to-end design and construction services, including consultation, architectural design, interior design, approvals, project management, construction, and turnkey handover."
       },
       {
-        question: "What is the advantage of choosing a design and construction firm?",
+        question: "What is the advantage of choosing a design and construction firm over a traditional architecture firm?",
         answer: "A single team manages the entire project, ensuring better coordination, faster execution, cost efficiency, and a seamless experience from concept to completion."
       },
       {
@@ -97,7 +104,7 @@ export const siteContent = {
       },
       {
         question: "Can you work within my budget?",
-        answer: "We design and plan every project around your budget, helping you make informed decisions on materials, finishes, and construction methods without compromising quality."
+        answer: "We design and plan every project around your budget, helping you make informed decisions on materials, finishes, and construction methods."
       },
       {
         question: "Do I need to hire separate architects, interior designers, or contractors?",
@@ -114,7 +121,6 @@ export const siteContent = {
       image: "/images/founder.jpeg",
       bio: "Umme Hanny Ilkalwale is the Principal Architect and founder of the firm. A graduate of the Royal College of Art, London, she returned home with a clear vision: to transform her family’s 30-year-old construction legacy into a design-led practice — one where architecture and execution move together, not in silos.\n\nFocused, ambitious, and unapologetically obsessed with design, Umme Hanny built the firm around a simple belief: that great buildings come from great control over every detail, from concept to construction. Her work bridges rigorous design thinking with deep, hands-on construction knowledge — a rare combination that lets her push creative boundaries while staying grounded in buildability.\n\nUnder her leadership, the firm has grown into a trusted design build practice in Belagavi, known for spaces that are as considered as they are well-built."
     },
-
     team: [
       {
         name: "Elena Rostova",
@@ -143,46 +149,50 @@ export const siteContent = {
     packages: [
       {
         id: "architecture",
-        title: "ARCHITECTURE",
-        description: "For clients who want expert architectural planning and structural design.",
-        image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+        title: "ARCHITECTURE CONSULTATION",
+        subtitle: "Standalone Architectural Guidance",
+        description: "For clients who want expert architectural design, spatial planning, and structural consultation without full execution.",
+        image: "/projects/the-grove/Copy of GROVE REVISED1.webp",
         features: [
-          "Client consultation & Site study",
-          "Spatial planning",
-          "Concept development",
-          "3D visualisations",
-          "2D working drawings",
-          "Material guidance"
+          "Architectural design & planning",
+          "Site study & spatial planning",
+          "Concept development & 3D visualization",
+          "Material, finish & fixture guidance",
+          "Structural & layout consultation",
+          "Design documentation & drawings for execution"
         ]
       },
       {
         id: "interior",
-        title: "INTERIOR",
-        description: "For clients looking to transform their spaces with bespoke interior design.",
-        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+        title: "INTERIOR DESIGN",
+        subtitle: "Bespoke Spatial Transformation",
+        description: "For clients looking to transform their spaces with tailored interior planning, custom millwork, and refined material curation.",
+        image: "/projects/renovation/Hero.webp",
         features: [
-          "Interior space planning",
-          "Custom furniture design",
-          "Lighting and material selection",
+          "Interior space planning & layout design",
+          "Custom furniture & millwork design",
+          "Lighting, hardware & fixture curation",
+          "Material, finish & texture selection",
           "3D interior visualisations",
-          "Execution drawings"
+          "Detailed execution & construction drawings"
         ]
       },
       {
         id: "design-construction",
-        title: "DESIGN + CONSTRUCTION",
-        description: "For clients seeking complete delivery from concept to completion.",
-        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+        title: "DESIGN + BUILD",
+        subtitle: "Full-Service Turnkey Delivery",
+        description: "For clients who want one accountable team to design, manage, and precisely build the entire project from concept to handover.",
+        image: "/projects/villa-79/Cover.webp",
         includesDesign: true,
         features: [
-          "Civil construction",
-          "Electrical & plumbing execution",
-          "Flooring",
-          "Carpentry",
-          "Site supervision",
-          "Timeline management",
-          "Quality checks",
-          "Final handover"
+          "Architectural design & interior detailing",
+          "Project costing & comprehensive budgeting",
+          "Civil construction & site execution",
+          "Electrical, plumbing & HVAC coordination",
+          "Vendor, material & craftsperson supervision",
+          "Rigorous quality control & site management",
+          "Milestone & timeline tracking",
+          "Turnkey handover with quality assurance"
         ]
       }
     ]
@@ -199,17 +209,57 @@ export const siteContent = {
         status: "Completed",
         area: "4400 sqft",
         client: "Private",
-        scope: "Interior design, architecture and construction",
-        image: "/projects/villa-79/7.webp",
+        scope: "Architectural design, MH Built",
+        image: "/projects/villa-79/Cover.webp",
         description: "A contemporary residence planned as a cohesive composition of generous living spaces and thoughtfully positioned balconies.",
         fullDescription: "This contemporary residence is planned as a cohesive composition of generous living spaces, private bedrooms, and thoughtfully positioned balconies that strengthen the connection between indoors and outdoors. The ground floor brings together the foyer, living, dining, kitchen, and puja spaces in a fluid arrangement, while the first floor accommodates a family lounge and three bedrooms, creating a private zone. The interiors combine warm wood, natural stone, muted neutrals, and bronze accents, complemented by expansive glazing and daylight. A sculptural staircase, double-height volume, and layered lighting add depth and character, creating a refined home where functionality, materiality, and light work harmoniously.",
+        video: {
+          url: "/projects/villa-79/villa-79-walkthrough.mp4",
+          title: "Villa 79 On-Site Walkthrough",
+          subtitle: "Architectural Flow & Light"
+        },
+        floorPlans: [
+          { name: "First Floor Plan", image: "/projects/villa-79/first-floor-plan.webp" },
+          { name: "Second Floor Plan", image: "/projects/villa-79/second-floor-plan.webp" }
+        ],
+        media: [
+          {
+            type: "reel",
+            title: "Villa 79 Architecture & Living Spaces",
+            subtitle: "Fluid Layout & Double-Height Volume",
+            url: "https://www.instagram.com/reel/DW_6NONSDtL/",
+            thumbnail: "/projects/villa-79/Cover.webp"
+          },
+          {
+            type: "reel",
+            title: "Villa 79 Spatial Walkthrough",
+            subtitle: "Balconies & Natural Light",
+            url: "https://www.instagram.com/reel/DWbnYUmyflL/",
+            thumbnail: "/projects/villa-79/IMG_0291.webp"
+          },
+          {
+            type: "reel",
+            title: "Villa 79 Craftsmanship & Materials",
+            subtitle: "Warm Wood & Stone Accents",
+            url: "https://www.instagram.com/reel/DW1JQw3SLw3/",
+            thumbnail: "/projects/villa-79/IMG_1973.webp"
+          }
+        ],
         imageGallery: [
+          "/projects/villa-79/Cover.webp",
+          "/projects/villa-79/IMG_0291.webp",
+          "/projects/villa-79/IMG_1973.webp",
+          "/projects/villa-79/IMG_2004.webp",
+          "/projects/villa-79/IMG_0754.webp",
+          "/projects/villa-79/IMG_0792.webp",
+          "/projects/villa-79/IMG_0814.webp",
+          "/projects/villa-79/IMG_0959.webp",
+          "/projects/villa-79/IMG_1006.webp",
+          "/projects/villa-79/IMG_1032.webp",
           "/projects/villa-79/7.webp",
-          "/projects/villa-79/8.webp",
           "/projects/villa-79/10.webp",
-          "/projects/villa-79/12.webp",
-          "/projects/villa-79/first-floor-plan.webp",
-          "/projects/villa-79/second-floor-plan.webp"
+          "/projects/villa-79/8.webp",
+          "/projects/villa-79/12.webp"
         ]
       },
       {
@@ -323,10 +373,13 @@ export const siteContent = {
         status: "Completed",
         area: "11103 sqft",
         client: "Private",
-        scope: "Interior design, architecture and construction",
+        scope: "Architectural design, MH Built",
         image: "/projects/the-grove/Copy of GROVE REVISED1.webp",
         description: "A contemporary apartment development defined by bold, articulated massing and clean architectural geometry on a 40' × 60' site.",
         fullDescription: "Set on a compact 40' × 60' site, The Grove is a contemporary apartment development defined by bold, articulated massing and clean architectural geometry. Projecting balcony volumes break the façade into a rhythmic composition, framed by a warm terracotta and grey palette that gives the building a sculptural, street-facing presence.\n\nThe typical floor plan houses a spacious three-bedroom apartment around a central lift and stair core, with large openings and generous balconies extending living spaces outward. The result is a refined, memorable expression of simplicity and proportion.",
+        floorPlans: [
+          { name: "First Floor Plan", image: "/projects/the-grove/first-floor-plan.webp" }
+        ],
         media: [
           {
             type: "reel",
@@ -361,13 +414,12 @@ export const siteContent = {
           "/projects/the-grove/IMG_6364.webp",
           "/projects/the-grove/IMG_6370.webp",
           "/projects/the-grove/IMG_6371.webp",
-          "/projects/the-grove/IMG_6399.webp",
-          "/projects/the-grove/first-floor-plan.webp"
+          "/projects/the-grove/IMG_6399.webp"
         ]
       },
       {
         id: "renovation",
-        name: "Renovation",
+        name: "An ode to Teakwood",
         location: "Belgaum",
         category: "Residential",
         status: "Completed",
@@ -377,9 +429,26 @@ export const siteContent = {
         image: "/projects/renovation/Hero.webp",
         description: "A harmonious balance between contemporary living and the richness of traditional craftsmanship.",
         fullDescription: "This residential project explores a harmonious balance between contemporary living and the richness of traditional craftsmanship. The design is unified through a warm material palette of natural timber, soft neutral surfaces, elegant detailing and carefully integrated lighting. Custom-designed architectural elements, furniture and storage solutions create a cohesive visual language while ensuring that every space remains functional and purposeful. Traditional forms and handcrafted details are reinterpreted with clean lines and contemporary simplicity, giving the interiors a sense of warmth, character and timelessness. The result is a refined home where architecture, interior design and craftsmanship come together to create a calm, elegant and distinctly personal living environment.",
+        media: [
+          {
+            type: "reel",
+            title: "An Ode to Teakwood Walkthrough",
+            subtitle: "Interior Craftsmanship & Details",
+            url: "https://www.instagram.com/reel/DKv8uWgNb3A/",
+            thumbnail: "/projects/renovation/Hero.webp"
+          }
+        ],
         imageGallery: [
           "/projects/renovation/Hero.webp",
-          "/projects/renovation/2.webp"
+          "/projects/renovation/MM-02.webp",
+          "/projects/renovation/MM-03.webp",
+          "/projects/renovation/MM-07.webp",
+          "/projects/renovation/MM-14.webp",
+          "/projects/renovation/MM-16.webp",
+          "/projects/renovation/MM_05662.webp",
+          "/projects/renovation/MM_05709.webp",
+          "/projects/renovation/IMG_6193.webp",
+          "/projects/renovation/IMG_6240.webp"
         ]
       },
       {
@@ -391,13 +460,23 @@ export const siteContent = {
         status: "Ongoing",
         area: "3600 sqft",
         client: "Private",
-        scope: "Architectural Design",
+        scope: "Architectural design, MH Built",
         image: "/projects/villa-145/Hero.webp",
         description: "A composition of bold geometric volumes, balanced through exposed brick and natural finishes.",
         fullDescription: "This contemporary residential project is conceived as a composition of bold geometric volumes, balanced through the warmth and texture of exposed brick, natural-toned finishes and deep grey accent surfaces. The planning follows a clear functional organization, integrating living, dining, kitchen, puja and private spaces with an emphasis on efficient circulation and a strong connection to the outdoor areas. Large openings, recessed balconies and landscaped pockets introduce natural light, ventilation and greenery into the built form. The façade uses projecting masses, framed windows and layered materials to create depth, shadow and a distinctive architectural identity. Together, the architecture and interior planning create a modern home that is expressive, functional and grounded in a refined palette of natural materials.",
+        floorPlans: [
+          { name: "First Floor Plan", image: "/projects/villa-145/first-floor-plan.webp" },
+          { name: "Second Floor Plan", image: "/projects/villa-145/second-floor-plan.webp" }
+        ],
         imageGallery: [
           "/projects/villa-145/Hero.webp",
-          "/projects/villa-145/2.webp"
+          "/projects/villa-145/render-1.webp",
+          "/projects/villa-145/render-2.webp",
+          "/projects/villa-145/render-3.webp",
+          "/projects/villa-145/render-4.webp",
+          "/projects/villa-145/render-5.webp",
+          "/projects/villa-145/render-6.webp",
+          "/projects/villa-145/render-7.webp"
         ]
       },
       {
@@ -409,10 +488,14 @@ export const siteContent = {
         status: "Ongoing",
         area: "6000 sqft",
         client: "Private",
-        scope: "Architectural Design",
+        scope: "Architectural design, MH Built",
         image: "/projects/villa-17/Hero.webp",
         description: "A contemporary residence composed of bold, clean-lined volumes shaping a strong, refined façade.",
         fullDescription: "This contemporary residence is composed of bold, clean-lined volumes, with projecting frames, recessed surfaces, and vertical elements shaping a strong, refined façade. A restrained palette of crisp white planes, textured grey surfaces, and dark metal screens creates contrast while maintaining a calm, timeless character. Integrated planters and landscaped edges soften the geometric form, connecting the home with its surroundings.\n\nInternally, the plan is organized around an open living and dining core, with the kitchen and utility positioned for efficiency, while the master bedroom forms a private zone. A closed courtyard, staircase, puja room, and entrance porch bring light, openness, and spatial variety.",
+        floorPlans: [
+          { name: "First Floor Plan", image: "/projects/villa-17/first-floor-plan.webp" },
+          { name: "Second Floor Plan", image: "/projects/villa-17/second-floor-plan.webp" }
+        ],
         imageGallery: [
           "/projects/villa-17/Hero.webp",
           "/projects/villa-17/2.webp"
@@ -422,22 +505,31 @@ export const siteContent = {
         id: "villa-563",
         name: "Villa 563",
         builtByMH: true,
-        location: "Hanuman nagar, Belgaum",
+        location: "Hanuman nagar, Belgaum.",
         category: "Residential",
         status: "Ongoing",
         area: "3037 sqft",
         client: "Private",
-        scope: "Architectural Design",
+        scope: "Architectural design, MH Built",
         image: "/projects/villa-563/Hero.webp",
         description: "A 30' × 40' contemporary villa defined by intersecting planes and a distinctive softened curved corner.",
         fullDescription: "This 30’ x 40’ contemporary residential villa is defined by intersecting planes, recessed volumes, and a distinctive softened corner that adds sculptural character to the rectilinear form. The curved edge creates a gentle visual transition, balancing the building’s geometric precision.\n\nInternally, the plan is efficiently designed with clear circulation and vertical movement, while neutral tones, natural textures, and contemporary detailing contribute to the internal ambience of the villa.",
+        video: {
+          url: "/projects/villa-563/villa-563-walkthrough.mp4",
+          title: "Villa 563 3D Walkthrough",
+          subtitle: "Volumetric Design & Curved Facade"
+        },
+        floorPlans: [
+          { name: "First Floor Plan", image: "/projects/villa-563/first-floor-plan.webp" },
+          { name: "Second Floor Plan", image: "/projects/villa-563/second-floor-plan.webp" }
+        ],
         imageGallery: [
           "/projects/villa-563/Hero.webp",
-          "/projects/villa-563/2.webp",
-          "/projects/villa-563/3.webp",
-          "/projects/villa-563/4.webp",
-          "/projects/villa-563/5.webp",
-          "/projects/villa-563/6.webp"
+          "/projects/villa-563/render-bd2.webp",
+          "/projects/villa-563/render-bd3.webp",
+          "/projects/villa-563/render-liv1.webp",
+          "/projects/villa-563/render-liv4.webp",
+          "/projects/villa-563/render-liv2.webp"
         ]
       },
       {
@@ -449,13 +541,25 @@ export const siteContent = {
         status: "Ongoing",
         area: "3160 sqft",
         client: "Private",
-        scope: "Architectural Design",
+        scope: "Architectural design, MH Built",
         image: "/projects/villa-7199/Hero.webp",
         description: "A slender vertical residence where bold geometric forms and open green spaces come together.",
         fullDescription: "Villa 7199 is conceived as a slender vertical residence where bold geometric forms and open green spaces come together to create a contemporary home. Clean white volumes are layered with recessed balconies, projecting frames, timber screens and textured surfaces, giving the façade depth and character.\n\nGreenery is woven throughout through landscaped pockets, cascading planters and open decks, bringing nature into the heart of the home.\n\nThe ground floor opens into a generous living area connected to a landscaped court and deck, while the upper floors organize bedrooms, dining, kitchen and study spaces around the central stair and open void. Large openings bring light, air and openness throughout.",
+        floorPlans: [
+          { name: "Ground Floor Plan", image: "/projects/villa-7199/ground-floor-plan.webp" },
+          { name: "First Floor Plan", image: "/projects/villa-7199/first-floor-plan.webp" },
+          { name: "Second Floor Plan", image: "/projects/villa-7199/second-floor-plan.webp" }
+        ],
         imageGallery: [
           "/projects/villa-7199/Hero.webp",
-          "/projects/villa-7199/2.webp"
+          "/projects/villa-7199/render-1.webp",
+          "/projects/villa-7199/render-b12.webp",
+          "/projects/villa-7199/render-bedroom33.webp",
+          "/projects/villa-7199/render-d4.webp",
+          "/projects/villa-7199/render-d6.webp",
+          "/projects/villa-7199/render-l11.webp",
+          "/projects/villa-7199/render-l5.webp",
+          "/projects/villa-7199/render-warm-bedroom.webp"
         ]
       },
       {
@@ -467,19 +571,31 @@ export const siteContent = {
         status: "Ongoing",
         area: "5800 sqft",
         client: "Private",
-        scope: "Architectural Design",
+        scope: "Architectural design, MH Built",
         image: "/projects/villa-7200/Hero.webp",
         description: "A 40' × 60' contemporary residence with clean geometric volumes and projecting horizontal planes.",
         fullDescription: "This 40’ x 60’ contemporary residence is conceived as a composition of clean geometric volumes, projecting horizontal planes, and strong vertical elements, creating a bold yet balanced architectural identity. The façade features deep timber-clad overhangs, textured surfaces, screens, and carefully framed openings, establishing depth, rhythm, and a dynamic play of light and shadow. Landscaped balconies and integrated planters soften the geometry while strengthening the connection with nature.\n\nInternally, living, dining, kitchen, bedroom, and courtyard spaces are seamlessly connected through generous open areas and a dramatic double-height volume. Warm wood, neutral finishes, natural textures, and expansive glazing create a modern, fluid, warm, and timeless home.",
+        media: [
+          {
+            type: "reel",
+            title: "Villa 7200 Architectural Concept",
+            subtitle: "Geometric Volumes & Landscaped Balconies",
+            url: "https://www.instagram.com/reel/DZKjXS_JUDS/",
+            thumbnail: "/projects/villa-7200/Hero.webp"
+          }
+        ],
+        floorPlans: [
+          { name: "First Floor Plan", image: "/projects/villa-7200/first-floor-plan.webp" },
+          { name: "Second Floor Plan", image: "/projects/villa-7200/second-floor-plan.webp" }
+        ],
         imageGallery: [
           "/projects/villa-7200/Hero.webp",
-          "/projects/villa-7200/2.webp",
-          "/projects/villa-7200/3.webp",
-          "/projects/villa-7200/4.webp",
-          "/projects/villa-7200/5.webp",
-          "/projects/villa-7200/6.webp",
-          "/projects/villa-7200/7.webp",
-          "/projects/villa-7200/8.webp"
+          "/projects/villa-7200/render-2.webp",
+          "/projects/villa-7200/render-3.webp",
+          "/projects/villa-7200/render-4.webp",
+          "/projects/villa-7200/render-6.webp",
+          "/projects/villa-7200/render-7.webp",
+          "/projects/villa-7200/render-8.webp"
         ]
       }
     ]
@@ -495,7 +611,7 @@ export const siteContent = {
     ],
     socials: {
       instagram: "https://www.instagram.com/mhdesignbuild.in/",
-      linkedin: "https://www.linkedin.com/company/mh-design-build/posts/?feedView=all"
+      linkedin: "https://www.linkedin.com/company/138554650/"
     }
   }
 };
