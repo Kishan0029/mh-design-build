@@ -6,7 +6,7 @@ import { TextReveal, FadeUp } from '../components/TextReveal';
 import { ParallaxImage } from '../components/ParallaxImage';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import MagneticButton from '../components/MagneticButton';
 import Marquee from '../components/Marquee';
 import ApproachSection from '../components/ApproachSection';
@@ -81,6 +81,20 @@ const Home = () => {
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
+  // Slideshow for hero
+  const slides = home.hero.slideshow && home.hero.slideshow.length > 0
+    ? home.hero.slideshow
+    : [{ image: home.hero.videoPlaceholder, title: "MH Design Build" }];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (slides.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   // Auto-play for testimonials
   useEffect(() => {
     const timer = setInterval(() => {
@@ -91,29 +105,29 @@ const Home = () => {
 
   return (
     <div className="bg-mh-white min-h-screen">
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section - Horizontal Architectural Showcase Slideshow */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center text-mh-white overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          {home.hero.videoUrl ? (
-            <video
-              src={home.hero.videoUrl}
-              poster={home.hero.videoPlaceholder}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <motion.img
-              src={home.hero.videoPlaceholder}
-              alt="Hero Background"
-              className="w-full h-full object-cover"
-              animate={{ scale: [1, 1.05] }}
-              transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-            />
-          )}
-          <div className="absolute inset-0 bg-mh-black/45"></div>
+        <div className="absolute inset-0 z-0 bg-mh-black">
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, scale: 1.08 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{
+                opacity: { duration: 1.4, ease: "easeInOut" },
+                scale: { duration: 7, ease: "easeOut" }
+              }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <img
+                src={slides[currentSlide].image}
+                alt={slides[currentSlide].title || "MH Design Build Hero"}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
+          <div className="absolute inset-0 bg-gradient-to-t from-mh-black/85 via-mh-black/45 to-mh-black/60 pointer-events-none"></div>
         </div>
 
         <div className="container relative z-10 text-center max-w-4xl px-4 mt-20">
@@ -123,6 +137,27 @@ const Home = () => {
           <TextReveal text={home.hero.headline} tag="h1" delay={2} className="text-4xl md:text-6xl lg:text-7xl justify-center font-serif leading-tight" />
         </div>
 
+        {/* Prev / Next Minimal Navigation (Desktop) */}
+        {slides.length > 1 && (
+          <div className="absolute bottom-8 left-6 md:left-12 z-20 hidden md:flex items-center gap-3">
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+              className="w-10 h-10 rounded-full border border-white/20 hover:border-mh-gold flex items-center justify-center text-white/70 hover:text-mh-gold hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+              className="w-10 h-10 rounded-full border border-white/20 hover:border-mh-gold flex items-center justify-center text-white/70 hover:text-mh-gold hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
+        {/* Center Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <FadeUp delay={8} className="flex flex-col items-center gap-4">
             <span className="text-[10px] uppercase tracking-[0.2em] text-center whitespace-nowrap mr-[-0.2em]">Scroll</span>
@@ -135,6 +170,40 @@ const Home = () => {
             </div>
           </FadeUp>
         </div>
+
+        {/* Slide Counter & Progress Bars & Project Tag (Right) */}
+        {slides.length > 1 && (
+          <div className="absolute bottom-8 right-6 md:right-12 z-20 flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-mh-gold font-serif text-sm tracking-widest">
+                {String(currentSlide + 1).padStart(2, '0')}
+              </span>
+              <span className="text-white/40 text-xs">/</span>
+              <span className="text-white/50 font-serif text-xs tracking-widest">
+                {String(slides.length).padStart(2, '0')}
+              </span>
+            </div>
+
+            <div className="hidden sm:flex items-center gap-1.5">
+              {slides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`h-1 transition-all duration-500 rounded-full ${
+                    idx === currentSlide ? 'w-8 bg-mh-gold' : 'w-2 bg-white/30 hover:bg-white/60'
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            {slides[currentSlide]?.title && (
+              <span className="hidden lg:inline-block text-white/80 text-xs uppercase tracking-widest pl-3 border-l border-white/20">
+                {slides[currentSlide].title}
+              </span>
+            )}
+          </div>
+        )}
       </section>
 
       {/* 2. Intro Statement */}

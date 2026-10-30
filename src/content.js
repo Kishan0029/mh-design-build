@@ -3,6 +3,17 @@ export const siteContent = {
     hero: {
       headline: "Building Spaces That Define Tomorrow",
       eyebrow: "MH DESIGN BUILD — ARCHITECTURAL DESIGN & CONSTRUCTION",
+      slideshow: [
+        { image: "/images/hero-slideshow/slide-1.webp", title: "MH Design Studio", location: "Belagavi" },
+        { image: "/images/hero-slideshow/slide-2.webp", title: "Villa 79", location: "Vidyanagar, Belgaum" },
+        { image: "/images/hero-slideshow/slide-3.webp", title: "Villa 79 Living", location: "Vidyanagar, Belgaum" },
+        { image: "/images/hero-slideshow/slide-4.webp", title: "Villa 145", location: "Belagavi" },
+        { image: "/images/hero-slideshow/slide-5.webp", title: "The Grove", location: "Angol, Belgaum" },
+        { image: "/images/hero-slideshow/slide-6.webp", title: "Villa 563", location: "Belagavi" },
+        { image: "/images/hero-slideshow/slide-7.webp", title: "Villa 7199", location: "Belagavi" },
+        { image: "/images/hero-slideshow/slide-8.webp", title: "Villa 7200", location: "Belagavi" },
+        { image: "/images/hero-slideshow/slide-9.webp", title: "The Teakwood Residence", location: "Tilakwadi, Belgaum" }
+      ],
       videoUrl: "/videos/hero-video.mp4",
       videoPlaceholder: "/images/home-hero.webp",
     },
