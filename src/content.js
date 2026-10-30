@@ -152,7 +152,7 @@ export const siteContent = {
         title: "ARCHITECTURE CONSULTATION",
         subtitle: "Standalone Architectural Guidance",
         description: "For clients who want expert architectural design, spatial planning, and structural consultation without full execution.",
-        image: "/projects/the-grove/Copy of GROVE REVISED1.webp",
+        image: "/images/services/architecture.webp",
         features: [
           "Architectural design & planning",
           "Site study & spatial planning",
@@ -167,7 +167,7 @@ export const siteContent = {
         title: "INTERIOR DESIGN",
         subtitle: "Bespoke Spatial Transformation",
         description: "For clients looking to transform their spaces with tailored interior planning, custom millwork, and refined material curation.",
-        image: "/projects/renovation/Hero.webp",
+        image: "/images/services/interior.webp",
         features: [
           "Interior space planning & layout design",
           "Custom furniture & millwork design",
