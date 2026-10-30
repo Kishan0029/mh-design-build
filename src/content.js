@@ -209,7 +209,7 @@ export const siteContent = {
     ]
   },
   projects: {
-    categories: ["All", "Ongoing", "Completed", "For Sale"],
+    categories: ["All", "For Sale"],
     list: [
       {
       id: "mh-design-studio",
@@ -464,6 +464,7 @@ export const siteContent = {
             },
       {
       id: "villa-145",
+              forSale: true,
               name: "Villa 145",
               builtByMH: true,
               location: "Ramtheerth, Belgaum",
@@ -492,6 +493,7 @@ export const siteContent = {
             },
       {
       id: "villa-7199",
+              forSale: true,
               name: "Villa 7199",
               builtByMH: true,
               location: "Anjaneya nagar, Belgaum",
@@ -522,6 +524,7 @@ export const siteContent = {
             },
       {
       id: "villa-7200",
+              forSale: true,
               name: "Villa 7200",
               builtByMH: true,
               location: "Belgaum",
@@ -558,6 +561,7 @@ export const siteContent = {
             },
       {
       id: "villa-563",
+              forSale: true,
               name: "Villa 563",
               builtByMH: true,
               location: "Hanuman nagar, Belgaum.",
@@ -589,6 +593,7 @@ export const siteContent = {
             },
       {
       id: "villa-17",
+              forSale: true,
               name: "Villa 17",
               builtByMH: true,
               location: "Vidyanagar, Belgaum",

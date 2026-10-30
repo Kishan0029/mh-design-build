@@ -11,10 +11,10 @@ export const ParallaxImage = ({ src, alt, className, imageClassName, hideWaterma
   });
 
   // Moves the image significantly to create a dramatic parallax effect
-  const y = useTransform(scrollYProgress, [0, 1], ["-25%", "25%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
   
-  const finalScale = disableParallax ? 1 : 1.35;
-  const initialScale = disableParallax ? 1.1 : 1.5;
+  const finalScale = disableParallax ? 1 : 1.08;
+  const initialScale = disableParallax ? 1.02 : 1.12;
 
   return (
     <div 

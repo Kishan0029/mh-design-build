@@ -127,10 +127,10 @@ const Home = () => {
               />
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-t from-mh-black/85 via-mh-black/45 to-mh-black/60 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-mh-black/60 via-mh-black/25 to-mh-black/35 pointer-events-none"></div>
         </div>
 
-        <div className="container relative z-10 text-center max-w-4xl px-4 mt-20">
+        <div className="container relative z-10 text-center max-w-4xl px-4">
           <FadeUp delay={0}>
             <span className="text-white/80 text-xs uppercase tracking-widest block mb-4">{home.hero.eyebrow}</span>
           </FadeUp>
