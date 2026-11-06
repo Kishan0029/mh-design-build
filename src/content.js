@@ -158,51 +158,39 @@ export const siteContent = {
     heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
     packages: [
       {
-        id: "architecture",
-        title: "ARCHITECTURE CONSULTATION",
-        subtitle: "Standalone Architectural Guidance",
-        description: "For clients who want expert architectural design, spatial planning, and structural consultation without full execution.",
+        id: "design-consultation",
+        number: "01",
+        title: "DESIGN CONSULTATION",
+        subtitle: "Architecture + Interior, standalone",
+        description: "For clients who want expert design guidance without full execution.",
         image: "/images/services/architecture.webp",
         features: [
           "Architectural design & planning",
-          "Site study & spatial planning",
+          "Interior space planning & design",
           "Concept development & 3D visualization",
-          "Material, finish & fixture guidance",
+          "Material, finish & fixture selection",
           "Structural & layout consultation",
-          "Design documentation & drawings for execution"
+          "Design documentation & drawings for execution by your own team"
         ]
       },
       {
-        id: "interior",
-        title: "INTERIOR DESIGN",
-        subtitle: "Bespoke Spatial Transformation",
-        description: "For clients looking to transform their spaces with tailored interior planning, custom millwork, and refined material curation.",
-        image: "/images/services/interior.webp",
-        features: [
-          "Interior space planning & layout design",
-          "Custom furniture & millwork design",
-          "Lighting, hardware & fixture curation",
-          "Material, finish & texture selection",
-          "3D interior visualisations",
-          "Detailed execution & construction drawings"
-        ]
-      },
-      {
-        id: "design-construction",
+        id: "design-build",
+        number: "02",
         title: "DESIGN + BUILD",
-        subtitle: "Full-Service Turnkey Delivery",
-        description: "For clients who want one accountable team to design, manage, and precisely build the entire project from concept to handover.",
-        image: "/projects/villa-79/Cover.webp",
-        includesDesign: true,
+        subtitle: "Full-service, end-to-end",
+        description: "For clients who want one team to design and deliver the entire project.",
+        image: "/images/services/interior.webp",
+        isPopular: true,
+        badge: "Turnkey Delivery",
         features: [
-          "Architectural design & interior detailing",
-          "Project costing & comprehensive budgeting",
-          "Civil construction & site execution",
-          "Electrical, plumbing & HVAC coordination",
-          "Vendor, material & craftsperson supervision",
-          "Rigorous quality control & site management",
-          "Milestone & timeline tracking",
-          "Turnkey handover with quality assurance"
+          "Architectural design & planning",
+          "Interior design & detailing",
+          "Project costing & budgeting",
+          "Site execution & construction management",
+          "Vendor, material & labour coordination",
+          "Quality control & site supervision",
+          "Timeline & milestone management",
+          "Handover & finishing touches"
         ]
       }
     ]
