@@ -11,11 +11,24 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const name = form.name?.value || '';
+    const email = form.email?.value || '';
+    const phone = form.phone?.value || '';
+    const message = form.message?.value || '';
+
+    const text = `Hello MH Design-Build,\n\nI'm contacting you through your website contact form:\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Message:* ${message}`;
+    const whatsappUrl = `https://wa.me/919632678828?text=${encodeURIComponent(text)}`;
+
     setIsSubmitted(true);
-    e.target.reset(); // clear form
+    form.reset();
+
+    // Redirect to WhatsApp with info on +91 96326 78828
+    window.open(whatsappUrl, '_blank');
+
     setTimeout(() => {
       setIsSubmitted(false);
-    }, 4000);
+    }, 5000);
   };
 
   useEffect(() => {
@@ -34,25 +47,25 @@ const ContactUs = () => {
           <FadeUp delay={2} className="flex flex-col">
             <form className="flex flex-col gap-10" onSubmit={handleSubmit}>
               <div className="relative group">
-                <input type="text" id="name" placeholder=" " required className="w-full bg-transparent border-b border-black/20 py-2 text-mh-black focus:outline-none peer" />
+                <input type="text" id="name" name="name" placeholder=" " required className="w-full bg-transparent border-b border-black/20 py-2 text-mh-black focus:outline-none peer" />
                 <label htmlFor="name" className="absolute top-2 left-0 text-black/50 pointer-events-none transition-all duration-500 peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-mh-black peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-mh-black">Name</label>
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-mh-gold scale-x-0 origin-left transition-transform duration-500 peer-focus:scale-x-100"></div>
               </div>
               
               <div className="relative group">
-                <input type="email" id="email" placeholder=" " required className="w-full bg-transparent border-b border-black/20 py-2 text-mh-black focus:outline-none peer" />
+                <input type="email" id="email" name="email" placeholder=" " required className="w-full bg-transparent border-b border-black/20 py-2 text-mh-black focus:outline-none peer" />
                 <label htmlFor="email" className="absolute top-2 left-0 text-black/50 pointer-events-none transition-all duration-500 peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-mh-black peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-mh-black">Email</label>
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-mh-gold scale-x-0 origin-left transition-transform duration-500 peer-focus:scale-x-100"></div>
               </div>
               
               <div className="relative group">
-                <input type="tel" id="phone" placeholder=" " required className="w-full bg-transparent border-b border-black/20 py-2 text-mh-black focus:outline-none peer" />
+                <input type="tel" id="phone" name="phone" placeholder=" " required className="w-full bg-transparent border-b border-black/20 py-2 text-mh-black focus:outline-none peer" />
                 <label htmlFor="phone" className="absolute top-2 left-0 text-black/50 pointer-events-none transition-all duration-500 peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-mh-black peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-mh-black">Phone</label>
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-mh-gold scale-x-0 origin-left transition-transform duration-500 peer-focus:scale-x-100"></div>
               </div>
               
               <div className="relative group">
-                <textarea id="message" rows="4" placeholder=" " required className="w-full bg-transparent border-b border-black/20 py-2 text-mh-black focus:outline-none peer resize-y min-h-[100px]"></textarea>
+                <textarea id="message" name="message" rows="4" placeholder=" " required className="w-full bg-transparent border-b border-black/20 py-2 text-mh-black focus:outline-none peer resize-y min-h-[100px]"></textarea>
                 <label htmlFor="message" className="absolute top-2 left-0 text-black/50 pointer-events-none transition-all duration-500 peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-mh-black peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-widest peer-[:not(:placeholder-shown)]:text-mh-black">Message</label>
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-mh-gold scale-x-0 origin-left transition-transform duration-500 peer-focus:scale-x-100"></div>
               </div>

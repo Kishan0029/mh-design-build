@@ -41,10 +41,10 @@ export const siteContent = {
       title: "We're on\nSocial Media",
       subtitle: "@mhdesignbuild.in",
       posts: [
-        { image: "/images/social/1.jpg", images: ["/images/social/1.jpg"], url: "https://www.instagram.com/p/DQMYSADkkEi/", type: "reel", title: "Interior Craftsmanship" },
-        { image: "/images/social/2.jpg", images: ["/images/social/2.jpg"], url: "https://www.instagram.com/reel/DW_6NONSDtL/", type: "reel", title: "On Site — Villa 79" },
-        { image: "/images/social/3.jpg", images: ["/images/social/3.jpg"], url: "https://www.instagram.com/p/DXd70M1kg52/", type: "reel", title: "Our Services" },
-        { image: "/images/social/4.jpg", images: ["/images/social/4.jpg"], url: "https://www.instagram.com/reel/DZKjXS_JUDS/", type: "reel", title: "Materials & Finishes" },
+        { image: "/images/social/1.jpg", images: ["/images/social/1.jpg"], url: "https://www.instagram.com/p/DXd70M1kg52/", type: "reel", title: "Our Services" },
+        { image: "/images/social/2.jpg", images: ["/images/social/2.jpg"], url: "https://www.instagram.com/p/DQMYSADkkEi/", type: "post", title: "Spatial Detailing" },
+        { image: "/images/social/3.jpg", images: ["/images/social/3.jpg"], url: "https://www.instagram.com/reel/DW_6NONSDtL/", type: "reel", title: "On Site with MH" },
+        { image: "/images/social/4.jpg", images: ["/images/social/4.jpg"], url: "https://www.instagram.com/reel/DZKjXS_JUDS/", type: "reel", title: "Residential Architecture" },
         { image: "/images/social/5.jpg", images: ["/images/social/5.jpg"], url: "https://www.instagram.com/p/DTQL4nVEr4O/", type: "post", title: "100+ Site Days" }
       ]
     },
@@ -372,7 +372,7 @@ export const siteContent = {
               area: "11103 sqft",
               client: "Private",
               scope: "Architectural design, MH Built",
-              image: "/projects/the-grove/Copy of GROVE REVISED1.webp",
+              image: "/projects/the-grove/Cover.webp",
               description: "A contemporary apartment development defined by bold, articulated massing and clean architectural geometry on a 40' × 60' site.",
               fullDescription: "Set on a compact 40' × 60' site, The Grove is a contemporary apartment development defined by bold, articulated massing and clean architectural geometry. Projecting balcony volumes break the façade into a rhythmic composition, framed by a warm terracotta and grey palette that gives the building a sculptural, street-facing presence.\n\nThe typical floor plan houses a spacious three-bedroom apartment around a central lift and stair core, with large openings and generous balconies extending living spaces outward. The result is a refined, memorable expression of simplicity and proportion.",
               floorPlans: [
@@ -395,22 +395,19 @@ export const siteContent = {
                 }
               ],
               imageGallery: [
+                "/projects/the-grove/Cover.webp",
                 "/projects/the-grove/Copy of GROVE REVISED1.webp",
-                "/projects/the-grove/IMG_6407.webp",
+                "/projects/the-grove/1.webp",
+                "/projects/the-grove/2.webp",
                 "/projects/the-grove/Copy of BED2.webp",
-                "/projects/the-grove/IMG_6388.webp",
                 "/projects/the-grove/Copy of Enscape_2026-06-03-16-29-26.webp",
                 "/projects/the-grove/Copy of Enscape_2026-06-08-14-00-34.webp",
                 "/projects/the-grove/Copy of Enscape_2026-06-08-14-07-47.webp",
-                "/projects/the-grove/Copy of IMG-20251008-WA0026.webp",
-                "/projects/the-grove/Copy of IMG-20251008-WA0029.webp",
                 "/projects/the-grove/IMG_3257.webp",
                 "/projects/the-grove/IMG_4131.webp",
                 "/projects/the-grove/IMG_4133.webp",
-                "/projects/the-grove/IMG_6360.webp",
                 "/projects/the-grove/IMG_6362.webp",
                 "/projects/the-grove/IMG_6364.webp",
-                "/projects/the-grove/IMG_6370.webp",
                 "/projects/the-grove/IMG_6371.webp",
                 "/projects/the-grove/IMG_6399.webp"
               ]

@@ -158,22 +158,7 @@ const Home = () => {
           </FadeUp>
         </div>
 
-        {/* Elegant Slide Loop Counter Indicator */}
-        <div className="absolute bottom-8 right-8 z-20 hidden md:flex items-center gap-3 text-white/70 text-xs font-mono tracking-widest pointer-events-none">
-          <span className="text-mh-gold">0{currentSlide + 1}</span>
-          <div className="w-12 h-[1px] bg-white/20 relative overflow-hidden">
-            <motion.div
-              key={currentSlide}
-              className="absolute inset-y-0 left-0 bg-mh-gold"
-              initial={{ width: "0%" }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 5.5, ease: "linear" }}
-            />
-          </div>
-          <span>0{slides.length}</span>
-        </div>
-
-      </section>
+        </section>
 
       {/* 2. Intro Statement */}
       <section className="py-24 md:py-40 px-4">
