@@ -1,7 +1,7 @@
 export const siteContent = {
   home: {
     hero: {
-      headline: "Building Spaces That Define Tomorrow",
+      headline: "Building spaces that define tomorrow",
       eyebrow: "MH DESIGN BUILD — ARCHITECTURAL DESIGN & CONSTRUCTION",
       slideshow: [
         { image: "/images/hero-slideshow/slide-1.webp", title: "MH Design Studio", location: "Belagavi" },

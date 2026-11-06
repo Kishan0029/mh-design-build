@@ -33,7 +33,7 @@ const Footer = () => {
                    className="h-20 md:h-24 w-auto invert brightness-0 opacity-90 group-hover:opacity-100 transition-opacity"
                  />
                </Link>
-               <p className="text-white/50 text-sm max-w-[200px] leading-relaxed">Building Spaces That Define Tomorrow.</p>
+               <p className="text-white/50 text-sm max-w-[200px] leading-relaxed">Building spaces that define tomorrow.</p>
             </div>
           </div>
           
