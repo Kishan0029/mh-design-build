@@ -372,7 +372,7 @@ export const siteContent = {
               area: "11103 sqft",
               client: "Private",
               scope: "Architectural design, MH Built",
-              image: "/projects/the-grove/Cover.webp",
+              image: "/projects/the-grove/cover.webp",
               description: "A contemporary apartment development defined by bold, articulated massing and clean architectural geometry on a 40' × 60' site.",
               fullDescription: "Set on a compact 40' × 60' site, The Grove is a contemporary apartment development defined by bold, articulated massing and clean architectural geometry. Projecting balcony volumes break the façade into a rhythmic composition, framed by a warm terracotta and grey palette that gives the building a sculptural, street-facing presence.\n\nThe typical floor plan houses a spacious three-bedroom apartment around a central lift and stair core, with large openings and generous balconies extending living spaces outward. The result is a refined, memorable expression of simplicity and proportion.",
               floorPlans: [
@@ -384,25 +384,23 @@ export const siteContent = {
                   title: "The Grove Architecture & Facade",
                   subtitle: "Completed Architecture Walkthrough",
                   url: "https://www.instagram.com/p/DdEg6W3u4ne/",
-                  thumbnail: "/projects/the-grove/Copy of GROVE REVISED1.webp"
+                  thumbnail: "/projects/the-grove/grove-facade.webp"
                 },
                 {
                   type: "reel",
                   title: "On-Site Construction & Structure",
                   subtitle: "Ground Execution & Craftsmanship",
                   url: "https://www.instagram.com/p/DXwbfMwyn2u/",
-                  thumbnail: "/projects/the-grove/IMG_6360.webp"
+                  thumbnail: "/projects/the-grove/IMG_6362.webp"
                 }
               ],
               imageGallery: [
-                "/projects/the-grove/Cover.webp",
-                "/projects/the-grove/Copy of GROVE REVISED1.webp",
-                "/projects/the-grove/1.webp",
-                "/projects/the-grove/2.webp",
-                "/projects/the-grove/Copy of BED2.webp",
-                "/projects/the-grove/Copy of Enscape_2026-06-03-16-29-26.webp",
-                "/projects/the-grove/Copy of Enscape_2026-06-08-14-00-34.webp",
-                "/projects/the-grove/Copy of Enscape_2026-06-08-14-07-47.webp",
+                "/projects/the-grove/cover.webp",
+                "/projects/the-grove/grove-facade.webp",
+                "/projects/the-grove/grove-dining.webp",
+                "/projects/the-grove/grove-bedroom.webp",
+                "/projects/the-grove/grove-bed2.webp",
+                "/projects/the-grove/grove-living-render.webp",
                 "/projects/the-grove/IMG_3257.webp",
                 "/projects/the-grove/IMG_4131.webp",
                 "/projects/the-grove/IMG_4133.webp",
