@@ -6,7 +6,6 @@ export const siteContent = {
       slideshow: [
         { image: "/images/hero-slideshow/slide-1.webp", title: "MH Design Studio", location: "Belagavi" },
         { image: "/images/hero-slideshow/slide-2.webp", title: "Villa 79", location: "Vidyanagar, Belgaum" },
-        { image: "/images/hero-slideshow/slide-3.webp", title: "Villa 79 Living", location: "Vidyanagar, Belgaum" },
         { image: "/images/hero-slideshow/slide-4.webp", title: "Villa 145", location: "Belagavi" },
         { image: "/images/hero-slideshow/slide-5.webp", title: "The Grove", location: "Angol, Belgaum" },
         { image: "/images/hero-slideshow/slide-6.webp", title: "Villa 563", location: "Belagavi" },
@@ -42,11 +41,11 @@ export const siteContent = {
       title: "We're on\nSocial Media",
       subtitle: "@mhdesignbuild.in",
       posts: [
-        { image: "/images/social/1.jpg", images: ["/images/social/1.jpg"], url: "https://www.instagram.com/p/DQMYSADkkEi/", type: "post", title: "Residential Architecture" },
-        { image: "/images/social/2.jpg", images: ["/images/social/2.jpg"], url: "https://www.instagram.com/p/DXd70M1kg52/", type: "post", title: "Spatial Detailing" },
-        { image: "/images/social/3.jpg", images: ["/images/social/3.jpg"], url: "https://www.instagram.com/reel/DZKjXS_JUDS/", type: "reel", title: "Villa 7200 Concept" },
-        { image: "/images/social/4.jpg", images: ["/images/social/4.jpg"], url: "https://www.instagram.com/reel/DW_6NONSDtL/", type: "reel", title: "Villa 79 Architecture" },
-        { image: "/images/social/5.jpg", images: ["/images/social/5.jpg"], url: "https://www.instagram.com/p/DTQL4nVEr4O/", type: "post", title: "Materiality & Finish" }
+        { image: "/images/social/1.jpg", images: ["/images/social/1.jpg"], url: "https://www.instagram.com/p/DQMYSADkkEi/", type: "reel", title: "Interior Craftsmanship" },
+        { image: "/images/social/2.jpg", images: ["/images/social/2.jpg"], url: "https://www.instagram.com/reel/DW_6NONSDtL/", type: "reel", title: "On Site — Villa 79" },
+        { image: "/images/social/3.jpg", images: ["/images/social/3.jpg"], url: "https://www.instagram.com/p/DXd70M1kg52/", type: "reel", title: "Our Services" },
+        { image: "/images/social/4.jpg", images: ["/images/social/4.jpg"], url: "https://www.instagram.com/reel/DZKjXS_JUDS/", type: "reel", title: "Materials & Finishes" },
+        { image: "/images/social/5.jpg", images: ["/images/social/5.jpg"], url: "https://www.instagram.com/p/DTQL4nVEr4O/", type: "post", title: "100+ Site Days" }
       ]
     },
     process: [

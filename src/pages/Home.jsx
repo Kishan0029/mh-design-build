@@ -105,29 +105,36 @@ const Home = () => {
 
   return (
     <div className="bg-mh-white min-h-screen">
-      {/* 1. Hero Section - Horizontal Architectural Showcase Slideshow */}
+      {/* 1. Hero Section - Infinite Architectural Showcase Slideshow Loop */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center text-mh-white overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-mh-black">
-          <AnimatePresence initial={false}>
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0, scale: 1.08 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{
-                opacity: { duration: 1.4, ease: "easeInOut" },
-                scale: { duration: 7, ease: "easeOut" }
-              }}
-              className="absolute inset-0 w-full h-full"
-            >
-              <img
-                src={slides[currentSlide].image}
-                alt={slides[currentSlide].title || "MH Design Build Hero"}
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-          </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-t from-mh-black/60 via-mh-black/25 to-mh-black/35 pointer-events-none"></div>
+        {/* Infinite Looping Slide Layers */}
+        <div className="absolute inset-0 z-0 bg-mh-black overflow-hidden pointer-events-none">
+          {slides.map((slide, idx) => {
+            const isActive = idx === currentSlide;
+            return (
+              <div
+                key={slide.image || idx}
+                className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+                  isActive ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              >
+                <div
+                  className={`w-full h-full transition-transform duration-[6000ms] ease-out ${
+                    isActive ? 'scale-100' : 'scale-105'
+                  }`}
+                >
+                  <img
+                    src={slide.image}
+                    alt={slide.title || "MH Design Build Hero"}
+                    className="w-full h-full object-cover"
+                    loading={idx <= 1 ? "eager" : "lazy"}
+                  />
+                </div>
+              </div>
+            );
+          })}
+          {/* Subtle architectural overlay for optimal contrast and readability */}
+          <div className="absolute inset-0 z-20 bg-gradient-to-t from-mh-black/50 via-mh-black/20 to-mh-black/25 pointer-events-none"></div>
         </div>
 
         <div className="container relative z-10 text-center max-w-4xl px-4">
@@ -138,7 +145,7 @@ const Home = () => {
         </div>
 
         {/* Center Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
           <FadeUp delay={8} className="flex flex-col items-center gap-4">
             <span className="text-[10px] uppercase tracking-[0.2em] text-center whitespace-nowrap mr-[-0.2em]">Scroll</span>
             <div className="w-[1px] h-[60px] bg-white/30 relative overflow-hidden">
@@ -149,6 +156,21 @@ const Home = () => {
               />
             </div>
           </FadeUp>
+        </div>
+
+        {/* Elegant Slide Loop Counter Indicator */}
+        <div className="absolute bottom-8 right-8 z-20 hidden md:flex items-center gap-3 text-white/70 text-xs font-mono tracking-widest pointer-events-none">
+          <span className="text-mh-gold">0{currentSlide + 1}</span>
+          <div className="w-12 h-[1px] bg-white/20 relative overflow-hidden">
+            <motion.div
+              key={currentSlide}
+              className="absolute inset-y-0 left-0 bg-mh-gold"
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 5.5, ease: "linear" }}
+            />
+          </div>
+          <span>0{slides.length}</span>
         </div>
 
       </section>
