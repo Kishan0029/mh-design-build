@@ -5,7 +5,6 @@ import { TextReveal, FadeUp } from '../components/TextReveal';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import MagneticButton from '../components/MagneticButton';
-import ApproachSection from '../components/ApproachSection';
 import { Check, Sparkles } from 'lucide-react';
 
 const Services = () => {
@@ -132,9 +131,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-      {/* 3. Our Approach Section */}
-      <ApproachSection />
 
       {/* 4. CTA */}
       <section className="py-24 md:py-40 px-4 bg-mh-off-white border-t border-black/10">
