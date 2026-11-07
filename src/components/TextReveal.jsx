@@ -51,7 +51,7 @@ export const TextReveal = ({ text, className, tag = "h2", delay = 0 }) => {
         variants={container}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="flex flex-wrap"
+        className={cn("flex flex-wrap w-full", className && className.includes("justify-center") ? "justify-center text-center" : "")}
       >
         {words.map((word, index) => {
           if (word === "\n") {

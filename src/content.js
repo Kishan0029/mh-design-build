@@ -10,7 +10,7 @@ export const siteContent = {
         { image: "/images/hero-slideshow/slide-5.webp", title: "The Grove", location: "Angol, Belgaum" },
         { image: "/images/hero-slideshow/slide-6.webp", title: "Villa 563", location: "Belagavi" },
         { image: "/images/hero-slideshow/slide-7.webp", title: "Villa 7199", location: "Belagavi" },
-        { image: "/images/hero-slideshow/slide-8.webp", title: "Villa 7200", location: "Belagavi" },
+        { image: "/images/hero-slideshow/slide-8.webp", title: "Villa 7200", location: "Mahantesh nagar, Belgaum" },
         { image: "/images/hero-slideshow/slide-9.webp", title: "The Teakwood Residence", location: "Tilakwadi, Belgaum" }
       ],
       videoUrl: "/videos/hero-video.mp4",
@@ -155,7 +155,7 @@ export const siteContent = {
     ]
   },
   services: {
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    heroImage: "/images/services/service_cover.webp",
     packages: [
       {
         id: "design-consultation",
@@ -509,7 +509,7 @@ export const siteContent = {
               forSale: true,
               name: "Villa 7200",
               builtByMH: true,
-              location: "Belgaum",
+              location: "Mahantesh nagar, Belgaum",
               category: "Residential",
               status: "Ongoing",
               area: "5800 sqft",

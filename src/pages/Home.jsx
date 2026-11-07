@@ -137,11 +137,11 @@ const Home = () => {
           <div className="absolute inset-0 z-20 bg-gradient-to-t from-mh-black/50 via-mh-black/20 to-mh-black/25 pointer-events-none"></div>
         </div>
 
-        <div className="container relative z-10 text-center max-w-4xl px-4">
-          <FadeUp delay={0}>
-            <span className="text-white/80 text-xs uppercase tracking-widest block mb-4">{home.hero.eyebrow}</span>
+        <div className="container relative z-10 text-center max-w-4xl px-4 flex flex-col items-center justify-center mx-auto">
+          <FadeUp delay={0} className="w-full flex justify-center text-center">
+            <span className="text-white/80 text-xs uppercase tracking-widest block mb-4 text-center mx-auto">{home.hero.eyebrow}</span>
           </FadeUp>
-          <TextReveal text={home.hero.headline} tag="h1" delay={2} className="text-4xl md:text-6xl lg:text-7xl justify-center font-serif leading-tight" />
+          <TextReveal text={home.hero.headline} tag="h1" delay={2} className="text-4xl md:text-6xl lg:text-7xl justify-center text-center font-serif leading-tight w-full" />
         </div>
 
         {/* Center Scroll Indicator */}
@@ -293,62 +293,41 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 8. Creative Staggered Social Media Collage */}
-      <section className="py-24 md:py-40 px-4 bg-mh-white border-t border-black/10 overflow-hidden">
+      {/* 8. Instagram Social Media Section (Uniform Small Cards like PC view) */}
+      <section className="py-20 md:py-36 px-4 bg-mh-white border-t border-black/10 overflow-hidden">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8 items-start">
-            
-            {/* Col 1 - Offset Down */}
-            <div className="flex flex-col gap-6 mt-10 sm:mt-16 lg:mt-32">
-              <InstagramCard post={home.socialMedia.posts[0]} index={0} />
-            </div>
+          {/* Section Header */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 md:mb-14 gap-4">
+            <FadeUp delay={1}>
+              <span className="text-xs uppercase tracking-[0.25em] text-mh-gold mb-2 block font-medium">
+                Instagram
+              </span>
+              <h2 className="text-3xl md:text-5xl font-serif text-mh-black leading-tight">
+                {home.socialMedia.title.replace('\n', ' ')}
+              </h2>
+            </FadeUp>
+            <FadeUp delay={2}>
+              <a
+                href={siteContent.contact.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-mh-gold uppercase tracking-[0.2em] text-xs hover:text-mh-black transition-colors font-medium group cursor-pointer"
+              >
+                @mhdesignbuild.in <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+              </a>
+            </FadeUp>
+          </div>
 
-            {/* Col 2 - High */}
-            <div className="flex flex-col gap-6 mt-0">
-              <InstagramCard post={home.socialMedia.posts[1]} index={1} />
-              <FadeUp delay={3} className="pt-2 px-1 hidden sm:block">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-mh-gold font-medium block">
-                  On-Site & Studio
-                </span>
-                <p className="text-xs text-mh-black/60 mt-1 leading-relaxed font-sans">
-                  Behind the scenes, site milestones and spatial detailing.
-                </p>
-              </FadeUp>
-            </div>
-
-            {/* Col 3 - Centerpiece with Artistic Title & Post */}
-            <div className="flex flex-col gap-6 col-span-2 sm:col-span-1 mt-2 sm:mt-0 lg:-mt-4">
-              <FadeUp delay={1} className="pb-3 md:pb-6">
-                <span className="text-xs uppercase tracking-[0.25em] text-mh-gold mb-2 block font-medium">
-                  Instagram
-                </span>
-                <h2 className="text-3xl md:text-5xl font-serif whitespace-pre-line leading-tight text-mh-black">
-                  {home.socialMedia.title}
-                </h2>
-              </FadeUp>
-              <InstagramCard post={home.socialMedia.posts[2]} index={2} />
-            </div>
-
-            {/* Col 4 - Mid Offset with Follow Link */}
-            <div className="flex flex-col gap-6 mt-4 sm:mt-8 lg:mt-16">
-              <InstagramCard post={home.socialMedia.posts[3]} index={3} />
-              <FadeUp delay={5} className="pt-2 px-1">
-                <a
-                  href={siteContent.contact.socials.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 text-mh-gold uppercase tracking-[0.2em] text-xs hover:text-mh-black transition-colors font-medium group cursor-pointer"
-                >
-                  @mhdesignbuild.in <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform duration-300" />
-                </a>
-              </FadeUp>
-            </div>
-
-            {/* Col 5 - Dramatic Low Offset */}
-            <div className="flex flex-col gap-6 col-span-2 sm:col-span-1 mt-6 sm:mt-12 lg:mt-36">
-              <InstagramCard post={home.socialMedia.posts[4]} index={4} />
-            </div>
-
+          {/* Cards Track: On mobile all 5 are small & exact in a horizontal swipeable row; on desktop they form a clean 5-column showcase */}
+          <div className="flex md:grid md:grid-cols-5 gap-3.5 md:gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+            {home.socialMedia.posts.map((post, index) => (
+              <div 
+                key={index} 
+                className="w-[155px] xs:w-[170px] sm:w-[190px] md:w-auto shrink-0 md:shrink snap-start"
+              >
+                <InstagramCard post={post} index={index} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
