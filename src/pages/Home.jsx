@@ -293,42 +293,126 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 8. Instagram Social Media Section (Uniform Small Cards like PC view) */}
-      <section className="py-20 md:py-36 px-4 bg-mh-white border-t border-black/10 overflow-hidden">
+      {/* 8. Creative Social Media Section */}
+      <section className="py-20 md:py-40 px-4 bg-mh-white border-t border-black/10 overflow-hidden">
         <div className="container mx-auto max-w-7xl">
-          {/* Section Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 md:mb-14 gap-4">
-            <FadeUp delay={1}>
-              <span className="text-xs uppercase tracking-[0.25em] text-mh-gold mb-2 block font-medium">
-                Instagram
-              </span>
-              <h2 className="text-3xl md:text-5xl font-serif text-mh-black leading-tight">
-                {home.socialMedia.title.replace('\n', ' ')}
-              </h2>
-            </FadeUp>
-            <FadeUp delay={2}>
-              <a
-                href={siteContent.contact.socials.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-mh-gold uppercase tracking-[0.2em] text-xs hover:text-mh-black transition-colors font-medium group cursor-pointer"
-              >
-                @mhdesignbuild.in <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform duration-300" />
-              </a>
-            </FadeUp>
+          
+          {/* DESKTOP VIEW: The original staggered luxury editorial collage */}
+          <div className="hidden lg:grid grid-cols-5 gap-6 lg:gap-8 items-start">
+            
+            {/* Col 1 - Offset Down */}
+            <div className="flex flex-col gap-6 mt-32">
+              <InstagramCard post={home.socialMedia.posts[0]} index={0} />
+            </div>
+
+            {/* Col 2 - High */}
+            <div className="flex flex-col gap-6 mt-0">
+              <InstagramCard post={home.socialMedia.posts[1]} index={1} />
+              <FadeUp delay={3} className="pt-2 px-1">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-mh-gold font-medium block">
+                  On-Site & Studio
+                </span>
+                <p className="text-xs text-mh-black/60 mt-1 leading-relaxed font-sans">
+                  Behind the scenes, site milestones and spatial detailing.
+                </p>
+              </FadeUp>
+            </div>
+
+            {/* Col 3 - Centerpiece with Artistic Title & Post */}
+            <div className="flex flex-col gap-6 -mt-4">
+              <FadeUp delay={1} className="pb-4 lg:pb-6">
+                <span className="text-xs uppercase tracking-[0.25em] text-mh-gold mb-2 block font-medium">
+                  Instagram
+                </span>
+                <h2 className="text-4xl lg:text-5xl font-serif whitespace-pre-line leading-tight text-mh-black">
+                  {home.socialMedia.title}
+                </h2>
+              </FadeUp>
+              <InstagramCard post={home.socialMedia.posts[2]} index={2} />
+            </div>
+
+            {/* Col 4 - Mid Offset with Follow Link */}
+            <div className="flex flex-col gap-6 mt-16">
+              <InstagramCard post={home.socialMedia.posts[3]} index={3} />
+              <FadeUp delay={5} className="pt-2 px-1">
+                <a
+                  href={siteContent.contact.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 text-mh-gold uppercase tracking-[0.2em] text-xs hover:text-mh-black transition-colors font-medium group cursor-pointer"
+                >
+                  @mhdesignbuild.in <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+                </a>
+              </FadeUp>
+            </div>
+
+            {/* Col 5 - Dramatic Low Offset */}
+            <div className="flex flex-col gap-6 mt-36">
+              <InstagramCard post={home.socialMedia.posts[4]} index={4} />
+            </div>
+
           </div>
 
-          {/* Cards Track: On mobile all 5 are small & exact in a horizontal swipeable row; on desktop they form a clean 5-column showcase */}
-          <div className="flex md:grid md:grid-cols-5 gap-3.5 md:gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
-            {home.socialMedia.posts.map((post, index) => (
-              <div 
-                key={index} 
-                className="w-[155px] xs:w-[170px] sm:w-[190px] md:w-auto shrink-0 md:shrink snap-start"
-              >
-                <InstagramCard post={post} index={index} />
+          {/* MOBILE & TABLET VIEW: Title on top, all 5 cards identical small size */}
+          <div className="block lg:hidden">
+            {/* Header */}
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+              <FadeUp delay={1}>
+                <span className="text-xs uppercase tracking-[0.25em] text-mh-gold mb-2 block font-medium">
+                  Instagram
+                </span>
+                <h2 className="text-3xl md:text-4xl font-serif text-mh-black leading-tight">
+                  {home.socialMedia.title.replace('\n', ' ')}
+                </h2>
+              </FadeUp>
+              <FadeUp delay={2}>
+                <a
+                  href={siteContent.contact.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-mh-gold uppercase tracking-[0.2em] text-xs hover:text-mh-black transition-colors font-medium"
+                >
+                  @mhdesignbuild.in <ArrowRight size={14} />
+                </a>
+              </FadeUp>
+            </div>
+
+            {/* All 5 Small & Exact Cards in a clean 2-column grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 sm:gap-4">
+              {home.socialMedia.posts.map((post, index) => (
+                <div key={index} className="w-full">
+                  <InstagramCard post={post} index={index} />
+                </div>
+              ))}
+              {/* 6th Card: Follow Us on Instagram (keeps grid balanced on 2-col) */}
+              <div className="w-full sm:hidden">
+                <FadeUp delay={6} className="h-full">
+                  <a
+                    href={siteContent.contact.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-mh-black text-white p-5 flex flex-col justify-between items-center text-center border border-mh-gold/30 shadow-sm hover:border-mh-gold transition-all"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-mh-gold group-hover:scale-110 transition-transform">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                      </svg>
+                    </div>
+                    <div className="flex flex-col gap-1 items-center">
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-mh-gold font-medium">Join us on</span>
+                      <span className="text-xs font-serif font-medium text-white group-hover:text-mh-gold transition-colors">@mhdesignbuild.in</span>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-[0.15em] text-white/60 group-hover:text-white transition-colors inline-flex items-center gap-1">
+                      Follow &rarr;
+                    </span>
+                  </a>
+                </FadeUp>
               </div>
-            ))}
+            </div>
           </div>
+
         </div>
       </section>
 
